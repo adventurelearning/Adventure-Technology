@@ -95,7 +95,7 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
     ];
 
     return (
-        <div class="bg-black">
+        <div class="bg-black pt-36">
              <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col lg:flex-row items-start justify-around px-6 py-16 min-h-screen">
                 {/* Sticky left side */}
                 <div className="sticky top-26 w-full lg:w-1/2 xl:w-2/5 lg:pr-10 mb-8 lg:mb-0">

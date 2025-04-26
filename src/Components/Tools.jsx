@@ -17,7 +17,7 @@ const Tools = () => {
             { name: 'CSS', image: 'https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png' },
             { name: 'JavaScript', image: 'https://cdn2.iconfinder.com/data/icons/designer-skills/128/code-programming-javascript-software-develop-command-language-512.png' },
             { name: 'React', image: 'https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react_color-512.png' },
-            { name: 'NodeJS', image: 'https://cdn4.iconfinder.com/data/icons/logos-3/188/nodejs-light-512.png' },
+            { name: 'NodeJS', image: 'https://e7.pngegg.com/pngimages/353/697/png-clipart-node-js-javascript-front-and-back-ends-computer-software-others-miscellaneous-angle.png' },
             { name: 'MongoDB', image: 'https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-512.png' },
         ],
         'Software Development': [
@@ -52,16 +52,19 @@ const Tools = () => {
     };
 
     return (
-        <div className="bg-black text-white min-h-screen p-8">
+        <div className="bg-black text-white min-h-screen p-8 pb-20">
             <div className="max-w-6xl mx-auto bg-black bg-opacity-70 rounded-xl shadow-lg overflow-hidden">
                 <h1 className="text-white text-3xl md:text-4xl text-start leading-snug py-8 px-8">
                     <span className="font-semibold">Explore</span> the Tools We Use
-                    <span className="block text-blue-400 font-medium mt-2">Across Various Tech Domains</span>
+                    <span className="block font-medium mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-white">
+                        Across Various Tech Domains
+                    </span>
+
                 </h1>
                 <div className="flex flex-col md:flex-row">
                     {/* Left Side - Categories */}
-                    <div className="md:w-1/2 bg-blue-600 rounded-l-lg shadow-md">
-                        <h2 className="text-lg font-semibold text-white uppercase tracking-wider p-6 border-b border-blue-500">
+                    <div className="md:w-1/2 bg-gradient-to-r from-black via-cyan-1000 to-black rounded-l-lg shadow-xl border border-l-lg border-gray-700  p-2">
+                        <h2 className="text-lg font-semibold text-white uppercase tracking-wider p-6 border-b border-gray-500">
                             Categories
                         </h2>
                         <div className="space-y-2 p-4">
@@ -69,34 +72,48 @@ const Tools = () => {
                                 <button
                                     key={category}
                                     onClick={() => setActiveCategory(category)}
-                                    className={`w-full py-3 px-4 text-left text-lg font-medium rounded-md transition-colors duration-300 focus:outline-none ${activeCategory === category
-                                        ? 'bg-blue-700 text-white shadow-inner'
-                                        : 'bg-blue-500 hover:bg-blue-400 text-gray-100'
-                                        }`}
+                                    className={`w-full py-3 px-4 text-left text-lg font-medium rounded-md transition-all duration-300 focus:outline-none
+                              ${activeCategory === category
+                                            ? 'text-white bg-gradient-to-r from-blue-800 via-blue-900 to-gray-700 shadow-lg ring-1 ring-blue-300/30'
+                                            : 'text-gray-100 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 hover:from-blue-900 '}
+                            `}
                                 >
                                     {category}
                                 </button>
+
+
                             ))}
                         </div>
                     </div>
 
                     {/* Right Side - Tools */}
-                    <div className="md:w-1/2 bg-white rounded-r-lg p-8">
-                        <h2 className="text-lg font-semibold text-gray-800 uppercase tracking-wider mb-6 border-b border-gray-200 pb-2">
+                    <div className="md:w-1/2 bg-black border border-l-0 border-gray-700 rounded-r-lg p-8">
+                        <h2 className="text-lg font-semibold  not-first:text-white uppercase tracking-wider mb-6 border-b border-gray-200 pb-2">
                             Tools for <span className="text-blue-600">{activeCategory}</span>
                         </h2>
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-2 gap-6">
                             {toolsData[activeCategory]?.map((tool) => (
                                 <div
                                     key={tool.name}
-                                    className="bg-gray-100 rounded-md p-4 flex flex-col items-center justify-center space-y-2 transition-transform duration-300 hover:scale-105 hover:shadow-md"
-                                >
-                                    <div className="relative w-16 h-12 flex items-center justify-center">
-                                        <img src={tool.image} alt={tool.name} className="object-contain w-full h-full rounded-md " />
-                                        {/* <span className="font-semibold text-gray-700 text-lg text-end">{tool.name}</span> */}
-                                    </div>
+                                    className="group p-0.5 rounded-lg bg-gradient-to-b from-black via-gray-900 to-cyan-950 border-l border-t border-r border-gray-700 
                                     
+                                    transition-all duration-300 " 
+                                >
+                                    <div className="flex items-center gap-3 rounded-md px-4 py-3 ">
+                                        {/* Logo */}
+                                        <img
+                                            src={tool.image}
+                                            alt={tool.name}
+                                            className="w-12 h-12 object-contain"
+                                        />
+                                        {/* Text */}
+                                        <span className="font-semibold text-white text-lg">
+                                            {tool.name}
+                                        </span>
+                                    </div>
+
                                 </div>
+
                             ))}
                         </div>
                         {toolsData[activeCategory]?.length === 0 && (
