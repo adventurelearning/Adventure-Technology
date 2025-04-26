@@ -7,6 +7,17 @@ const ConsultationForm = () => {
         <div className="lg:grid lg:grid-cols-2">
           
           {/* Left Section */}
+          <div className=" text-white py-16 px-8 sm:px-12 flex flex-col justify-center items-start">
+            <div>
+              <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                Our Technology <br />
+                <span className="font-semibold">Experts Are Change</span> <br />
+                Catalysts
+              </h2>
+              <p className="mt-4 text-lg">
+                Book A Free Consultation Call With Our Experts Today
+              </p>              
+            </div>
           <div className="text-white p-10 flex flex-col justify-center bg-transparent">
             <h2 className="text-4xl font-bold leading-tight">
               Our Technology <br />
