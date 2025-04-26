@@ -1,86 +1,195 @@
 .home-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    top: 40%;
-    transform: translateY(-50%);
-  }
-  .home-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-  
-  .content {
-    position: relative;
-    z-index: 1;
-    color: white;
-    text-align: center;
-    top: 40%;
-    transform: translateY(-50%);
-  }
-  
-  /* Big font title animation */
-  .animate-title {
-    font-size: 6rem;
-    font-weight: bold;
-    opacity: 0;
-    animation: fadeInUp 2s ease-out forwards;
-  }
-  
-  /* Simple animation for <h3> tag */
-  .animate-line {
-    font-size: 1.5rem;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+/* Big font title animation */
+.animate-title {
+  font-size: 6rem;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Simple animation for <h3> tag */
+.animate-line {
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2.5s ease-out 0.5s forwards;
+}
+
+/* Keyframes for fadeInUp */
+@keyframes fadeInUp {
+  0% {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 2.5s ease-out 0.5s forwards;
   }
-  
-  /* Keyframes for fadeInUp */
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-    
-  
+}
+
+.register-button {
+  position: relative;
+  background: linear-gradient(to bottom, #0057D3, #1e7cff);
+  /* Subtle vertical gradient */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  /* Slightly more pronounced shadow */
+  border: 1px solid rgba(0, 87, 211, 0.2);
+  /* Subtle border */
+  overflow: hidden;
+  /* Clip the shine effect */
+}
+
+.register-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-20deg);
+  /* Slightly less aggressive skew */
+  animation: shine 2.5s infinite linear;
+  /* Faster animation */
+}
+
+@keyframes shine {
+  0% {
+    left: -150%;
+  }
+
+  100% {
+    left: 150%;
+  }
+}
+
+.header-style {
+  background: linear-gradient(90deg, #0057D3, #0084FF); /* Starting with your base color */
+  /* Experiment with variations and additional stops: */
+  /* background: linear-gradient(45deg, #0057D3, #00A3FF); */
+  /* background: linear-gradient(to right, #0057D3, #007BFF, #00A3FF); */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.header-style a:hover {
+  opacity: 0.8; /* Slightly fade on hover for better interaction */
+}
+
 /* body {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: <weight>;
     font-style: normal;
   } */
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-letter {
+    opacity: 0;
+    animation: fadeInUp 0.4s ease forwards;
+  }
+  
+
+  /* providers dot */
+
+
+  @layer utilities {
+    @keyframes ping-custom {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  
+    .animate-ping-custom {
+      animation: ping-custom 1.5s ease-out infinite;
+    }
+  }
+
+  /* why avd */
+  .glow-cyan {
+    box-shadow: inset 0 0 20px #8f8d8d;
+    border: 0px solid rgba(62, 73, 75, 0.3); /* Optional: subtle border */
+  }
+
+  /*service  scrroll  */
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+}
