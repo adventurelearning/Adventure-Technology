@@ -3,9 +3,9 @@ import './App.css'
 import Header from './Components/Header'
 import Navbar from './Components/Navbar'
 import { Routes,Route } from 'react-router-dom'
-import Home from './Components/Home'
-import Header1 from './Components/Header1'
-import Navbar1 from './Components/Navbar1'
+import Home from './Pages/Home/Home'
+
+
 
 
 
@@ -18,11 +18,9 @@ function App() {
     <>
       <div>
         <Header />
-        <Navbar/>
-        {/* <Header1/>
-        <Navbar1/> */}
+        {/* <Navbar/> */}
         <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home/>}/>
 
         </Routes>
 

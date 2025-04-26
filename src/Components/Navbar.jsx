@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import ATSlogo from '../assets/ATSlogo.svg';
+import LogoWhite from '../assets/LogoWhite.svg';
 
 // ✅ Utility: Determine if link is active
 const getLinkClasses = (pathname, path) => {
-  const baseClasses = 'hover:text-[#0057D3] transition-colors';
-  const activeClasses = 'text-[#0057D3] font-semibold';
+  const baseClasses = 'hover:text-gray-200 transition-colors';
+  const activeClasses = 'text-gray-100 ';
   return `${baseClasses} ${pathname === path ? activeClasses : ''}`;
 };
 
@@ -27,60 +27,62 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow px-4 py-2 sticky top-0 z-50">
-      <div className="flex justify-between items-center">
+    <nav className=" px-4 py-2 sticky top-0 z-50">
+      <div className="flex justify-between items-center ">
         <Link to="/">
-          <img src={ATSlogo} alt="Logo" className="w-40 object-contain" />
+          <img src={LogoWhite} alt="Logo" className="w-64 object-contain" />
         </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex space-x-6 text-base text-gray-800 font-sans">
-          <li className='font-medium'><Link to="/" className={getLinkClasses(pathname, '/')}>Home</Link></li>
+        <ul className="hidden lg:flex space-x-12 text-base text-white font-Satoshi,Arial,sans-serif ">
+          <li ><Link to="/" className={getLinkClasses(pathname, '/')}>HOME</Link></li>
 
           {/* ✅ Services Dropdown - Desktop */}
+
           <li className="relative group">
-            <button className="flex items-center hover:text-[#0057D3] font-medium transition-colors">
-              Services
+            <button className="flex items-center hover:text-gray-200  transition-colors">
+              SERVICES
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
             </button>
-            <ul className="absolute z-50 text-sm bg-white mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
+            {/* <ul className="absolute z-50 text-sm text-gray-700 bg-white mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300">
               <li>
-                <Link to="/web-app" className={`block px-4 py-2 hover:bg-blue-50 hover:text-[#0057D3] transition-colors ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/web-app" className={`block px-4 py-2 hover:bg-blue-50 hover:text-gray-200 transition-colors ${getLinkClasses(pathname, '/web-app')}`}>
                   Web App Development
                 </Link>
               </li>
               <li>
-                <Link to="/embedded" className={`block px-4 py-2 hover:bg-blue-50 hover:text-[#0057D3] transition-colors ${getLinkClasses(pathname, '/embedded')}`}>
+                <Link to="/embedded" className={`block px-4 py-2 hover:bg-blue-50 hover:text-gray-200 transition-colors ${getLinkClasses(pathname, '/embedded')}`}>
                   Embedded System
                 </Link>
               </li>
               <li>
-                <Link to="/iot" className={`block px-4 py-2 hover:bg-blue-50 hover:text-[#0057D3] transition-colors ${getLinkClasses(pathname, '/iot')}`}>
+                <Link to="/iot" className={`block px-4 py-2 hover:bg-blue-50 hover:text-gray-200 transition-colors ${getLinkClasses(pathname, '/iot')}`}>
                   IoT
                 </Link>
               </li>
               <li>
-                <Link to="/machine-learning" className={`block px-4 py-2 hover:bg-blue-50 hover:text-[#0057D3] transition-colors ${getLinkClasses(pathname, '/machine-learning')}`}>
+                <Link to="/machine-learning" className={`block px-4 py-2 hover:bg-blue-50 hover:text-gray-200 transition-colors ${getLinkClasses(pathname, '/machine-learning')}`}>
                   Machine Learning
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </li>
 
-          <li className='font-medium'><Link to="/Products" className={getLinkClasses(pathname, '/Products')}>Products</Link></li>
-          <li className='font-medium' ><Link to="/Blogs" className={getLinkClasses(pathname, '/Blogs')}>Blogs</Link></li>
-          <li className='font-medium'><Link to="/Careers" className={getLinkClasses(pathname, '/Careers')}>Careers</Link></li>
-          <li className='font-medium'><Link to="/contact" className={getLinkClasses(pathname, '/contact')}>Contact Us</Link></li>
+          <li className=''><Link to="/Products" className={getLinkClasses(pathname, '/Products')}>INUSTRIES</Link></li>
+          <li className='' ><Link to="/Blogs" className={getLinkClasses(pathname, '/Blogs')}>PORTFOLIO</Link></li>
+          <li className=''><Link to="/Careers" className={getLinkClasses(pathname, '/Careers')}>CAREERS</Link></li>
+          {/* <li className=''><Link to="/contact" className={getLinkClasses(pathname, '/contact')}>CONTACT US</Link></li> */}
         </ul>
 
         {/* Register + Mobile Toggle */}
         <div className="flex items-center ">
           <Link
             to="/register"
-            className="hidden lg:inline-block px-5 py-2 rounded-lg bg-[#0057D3] text-white border border-transparent hover:bg-white hover:text-[#0057D3] hover:border-blue-700 transition-all"
+            className="register-button hidden lg:inline-block px-5 py-2 rounded-lg text-sm font-semibold text-white border border-transparent transition-all"
           >
-            Register
+            CONTACT US
           </Link>
+
 
 
           <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
