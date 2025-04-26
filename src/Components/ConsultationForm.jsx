@@ -2,9 +2,10 @@ import React from 'react';
 
 const ConsultationForm = () => {
   return (
-    <div className="bg-gradient-to-b from-black via-gray-900 to-blue-950 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="relative rounded-xl overflow-hidden max-w-screen-lg w-full">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-8">
+    <div className="bg-gradient-to-b from-[#184ecc] via-[#1d1d1f] to-[#184ecc] min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="rounded-xl overflow-hidden max-w-6xl w-full shadow-2xl">
+        <div className="lg:grid lg:grid-cols-2">
+          
           {/* Left Section */}
           <div className=" text-white py-16 px-8 sm:px-12 flex flex-col justify-center items-start">
             <div>
@@ -17,95 +18,79 @@ const ConsultationForm = () => {
                 Book A Free Consultation Call With Our Experts Today
               </p>              
             </div>
+          <div className="text-white p-10 flex flex-col justify-center bg-transparent">
+            <h2 className="text-4xl font-bold leading-tight">
+              Our Technology <br />
+              <span className="text-blue-400">Experts Are Change</span> <br />
+              Catalysts
+            </h2>
+            <p className="mt-4 text-lg text-gray-300">
+              Book a free consultation call with our experts today.
+            </p>
           </div>
 
           {/* Right Section - Form */}
-          <div className="bg-gray-900 py-16 px-8 sm:px-12 flex flex-col justify-center">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="full-name" className="block text-sm font-medium text-gray-300">
-                  Full Name
-                </label>
-                <div className="mt-1">
+          <div className="bg-[#091057] p-10 flex items-center justify-center">
+            <form className="w-full max-w-xl space-y-6">
+              
+              {/* Input Fields */}
+              {[
+                { id: 'name', type: 'text', label: 'Full Name' },
+                { id: 'email', type: 'email', label: 'Email' },
+                { id: 'number', type: 'tel', label: 'Contact Number' },
+              ].map(({ id, type, label }) => (
+                <div key={id} className="relative">
                   <input
-                    type="text"
-                    id="full-name"
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-700 rounded-md bg-gray-800 text-white"
-                    placeholder=""
+                    type={type}
+                    id={id}
+                    name={id}
+                    required
+                    placeholder=" "
+                    className="peer w-full border-b-2 border-gray-500 bg-transparent py-3 px-2 text-white placeholder-transparent focus:border-white focus:outline-none text-lg"
                   />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300">
-                  E-Mail ID
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="email"
-                    id="email"
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-700 rounded-md bg-gray-800 text-white"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="contact-number" className="block text-sm font-medium text-gray-300">
-                  Contact Number
-                </label>
-                <div className="mt-1">
-                  <input
-                    type="tel"
-                    id="contact-number"
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-700 rounded-md bg-gray-800 text-white"
-                    placeholder=""
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-300">
-                  Select a Budget Range
-                </label>
-                <div className="mt-1">
-                  <select
-                    id="budget"
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-700 rounded-md bg-gray-800 text-white"
+                  <label
+                    htmlFor={id}
+                    className="absolute left-2 top-3 text-gray-400 text-sm transition-all duration-200 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-white"
                   >
-                    <option>Select Budget</option>
-                    <option>Under $5,000</option>
-                    <option>$5,000 - $10,000</option>
-                    <option>$10,000 - $20,000</option>
-                    <option>Over $20,000</option>
-                  </select>
+                    {label}
+                  </label>
                 </div>
-              </div>
+              ))}
 
-              <div>
-                <label htmlFor="project-brief" className="block text-sm font-medium text-gray-300">
-                  Describe Your Project/Idea In Brief (Helps Us <br />
-                  Come Back Better Prepared)
+              {/* Textarea */}
+              <div className="relative">
+                <textarea
+                  id="project"
+                  name="project"
+                  rows="4"
+                  required
+                  placeholder=" "
+                  className="peer w-full border-b-2 border-gray-500 bg-transparent py-3 px-2 text-white placeholder-transparent focus:border-blue-500 focus:outline-none text-lg resize-none"
+                ></textarea>
+                <label
+                  htmlFor="project"
+                  className="absolute left-2 top-3 text-gray-400 text-sm transition-all duration-200 peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-blue-400"
+                >
+                  Describe Your Project/Idea In Brief
                 </label>
-                <div className="mt-1">
-                  <textarea
-                    id="project-brief"
-                    rows={4}
-                    className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-700 rounded-md bg-gray-800 text-white"
-                  ></textarea>
-                </div>
+                <span className="block text-sm text-gray-400 mt-1">
+                  Helps us come back better prepared
+                </span>
               </div>
 
+              {/* Submit Button */}
               <div>
                 <button
                   type="submit"
-                  className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-md transition-colors duration-300"
                 >
                   Submit a Request
                 </button>
               </div>
+
             </form>
           </div>
+
         </div>
       </div>
     </div>
