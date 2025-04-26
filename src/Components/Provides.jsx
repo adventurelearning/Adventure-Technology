@@ -4,10 +4,10 @@ import React, { useRef, useEffect, useState } from 'react';
 import webDevelopmentImage from '../assets/Provids/WEB DEVELOPMENT.svg';
 import softwareDevelopmentImage from '../assets/Provids/Software Development.svg';
 import iotDevelopmentImage from '../assets/Provids/IOT (1).svg';
-import aiMlImage from '../assets/Provids/WEB DEVELOPMENT.svgg';
+// import aiMlImage from '../assets/Provids/WEB DEVELOPMENT.svgg';
 import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
-import digitalMarketingImage from '../assets/Provids/WEB DEVELOPMENT.svg';
-import itConsultingImage from '../assets/Provids/WEB DEVELOPMENT.svg';
+// import digitalMarketingImage from '../assets/Provids/WEB DEVELOPMENT.svg';
+// import itConsultingImage from '../assets/Provids/WEB DEVELOPMENT.svg';
 
 const services = [
   {
@@ -36,7 +36,7 @@ const services = [
     title: 'AI & ML Solutions',
     description:
       'At Adventure Technology, we harness the power of AI and Machine Learning to build intelligent systems that learn, adapt, and optimize. From predictive analytics to natural language processing, our solutions help businesses automate processes, uncover insights, and drive smarter decision-making.',
-    link: aiMlImage,  // Referencing the local image
+    link: webDevelopmentImage,  // Referencing the local image
   },
   {
     id: '05',
@@ -50,14 +50,14 @@ const services = [
     title: 'Digital Marketing',
     description:
       'At Adventure Technology, we craft data-driven digital marketing strategies that amplify your brand’s online presence. From SEO and paid ads to social media and content marketing, our solutions are designed to attract, engage, and convert your ideal audience.',
-    link: digitalMarketingImage,  // Referencing the local image
+    link: webDevelopmentImage,  // Referencing the local image
   },
   {
     id: '07',
     title: 'IT Consulting',
     description:
       'Adventure Technology provides expert IT consulting to help businesses align technology with their goals. From strategy to implementation, we guide digital transformation and optimize IT infrastructure for long-term success.',
-    link: itConsultingImage,  // Referencing the local image
+    link: webDevelopmentImage,  // Referencing the local image
   },
 ];
 
