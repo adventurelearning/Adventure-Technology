@@ -69,7 +69,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-950 via-gray-900 to-blue-950  py-20">
+    <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-semibold text-white text-center mb-12">
           Frequently Asked <span className="text-blue-400">Questions</span>

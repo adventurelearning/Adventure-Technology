@@ -31,7 +31,7 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
         setOpacity(0);
     };
     return (
-        <div className="bg-black py-16 ">
+        <div className="bg-black py-8">
             <div className="container mx-auto  text-white flex flex-col md:flex-row items-center justify-around px-6">
                 <div className="text-center md:text-left">
                     <h1 className="text-4xl mb-4 max-w-sm">

@@ -6,11 +6,9 @@ import Navbar from './Navbar';
 
 const HomeVdo = () => {
   return (
-    <div className="relative w-full h-[82vh] overflow-hidden text-white">
+    <div className="relative w-full h-[72vh] overflow-hidden text-white">
       {/* Navbar with gradient bg */}
-      <div className="relative z-20 bg-gradient-to-b from-gray-900 to-transparent">
-        <Navbar />
-      </div>
+   {/* <div>{<Navbar/>}</div> */}
 
       {/* Video Overlay (Dark Layer) */}
       <div className="absolute inset-0 bg-gray-800 opacity-60 z-10" />

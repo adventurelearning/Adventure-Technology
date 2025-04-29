@@ -1,13 +1,13 @@
 import React from 'react';
-import {
-  GlobeAltIcon,
-  ArrowsRightLeftIcon,
-  ComputerDesktopIcon,
-  ChartBarIcon,
-  CpuChipIcon,
-  WifiIcon,
-  ChatBubbleLeftRightIcon
-} from '@heroicons/react/24/solid';
+// import {
+//   GlobeAltIcon,
+//   ArrowsRightLeftIcon,
+//   ComputerDesktopIcon,
+//   ChartBarIcon,
+//   CpuChipIcon,
+//   WifiIcon,
+//   ChatBubbleLeftRightIcon
+// } from '@heroicons/react/24/solid';
 
 const ServiceHomenav = () => {
   const services = [

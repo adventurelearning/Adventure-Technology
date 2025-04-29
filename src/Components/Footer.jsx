@@ -7,7 +7,7 @@ function Footer() {
 
     // const navigate = useNavigate()
     return (
-        <footer className="bg-black text-white py-4  ">
+        <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-4">
             <div className="container mx-auto px-4 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-4 gap-2">
                 {/* Explore Section */}
                 <div>

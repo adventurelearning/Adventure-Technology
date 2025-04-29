@@ -7,6 +7,7 @@ import iotDevelopmentImage from '../assets/Provids/IOT (1).svg';
 import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
 import AIML from '../assets/Provids/AI & ML.svg';
 import marketing from '../assets/Provids/DIGITAL MARKETING.svg';
+import consulting from '../assets/Provids/IT CONSULTING.svg'
 // import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
 
 const services = [
@@ -40,7 +41,7 @@ const services = [
   },
   {
     id: '05',
-    title: 'Data Science & Data Analysis',
+    title: 'Data Science & Data Analytics',
     description:
       'We turn data into actionable insights. At Adventure Technology, our data science and analysis services help businesses uncover patterns, predict trends, and make smarter decisions through advanced analytics and machine learning.',
     link: dataScienceImage,
@@ -57,7 +58,7 @@ const services = [
     title: 'IT Consulting',
     description:
       'Adventure Technology provides expert IT consulting to help businesses align technology with their goals. From strategy to implementation, we guide digital transformation and optimize IT infrastructure for long-term success.',
-    link: webDevelopmentImage,
+    link: consulting,
   },
 ];
 
@@ -135,7 +136,7 @@ const Provides = () => {
             </div>
 
             {/* Right Image */}
-            <div className="w-1/2 flex justify-center pt-5 pr-10 transition-opacity duration-500">
+            <div className="w-3/4 flex justify-center pt-5 pr-10 transition-opacity duration-500">
               <img
                 src={service.link}
                 alt={service.title}
