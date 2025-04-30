@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import LogoWhite from '../assets/logo/ATS LOGO WHITE.svg';
+import LogoWhite from '../assets/logo/ATS WEB LOGO.svg';
 
 
 // ✅ Utility: Determine if link is active
@@ -51,7 +51,7 @@ function Navbar() {
           <img
             src={LogoWhite}
             alt="Logo"
-            className={`w-48 object-contain transition-all duration-300 ${isScrolled ? 'transform scale-100 translate-x-[-10px]' : ''}`}
+            className={`w-52 object-contain transition-all duration-300 ${isScrolled ? 'transform scale-100 translate-x-[-10px]' : ''}`}
           />
         </Link>
 
@@ -66,41 +66,41 @@ function Navbar() {
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
             </Link>
             <ul className="absolute z-50 text-sm text-gray-700 super-rich-dropdown mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0">
-              <Link to="/web" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+              <Link to="/web_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                 Web App Development
               </Link>
               <li>
-                <Link to="/embedded" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Soft_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Software Development
                 </Link>
               </li>
               <li>
-                <Link to="/embedded" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Uiux_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link to="/iot" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Iot_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   IoT Development
                 </Link>
               </li>
               <li>
-                <Link to="/machine-learning" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/AiMl_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   AI & ML Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/machine-learning" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Data_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Data Science & Data Analytics
                 </Link>
               </li>
               <li>
-                <Link to="/machine-learning" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Marketing_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/machine-learning" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Consulting_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   IT Consulting
                 </Link>
               </li>
