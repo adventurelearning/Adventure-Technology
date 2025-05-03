@@ -13,6 +13,7 @@ import AiMl from './Pages/Services/AiMlDevelopment/AiMl'
 import DataScience from './Pages/Services/DataScience/DataScience'
 import DigitalMarket from './Pages/Services/DigitalMarketing/DigitalMarket'
 import Consulting from './Pages/Services/Consulting/Consulting'
+import ContactForm from './Pages/Contact/Contact'
 
 function App() {
   return (
@@ -21,17 +22,19 @@ function App() {
         <Header />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />          
+          <Route path="/" element={<Home />} />
+          <Route path='/Contact' element={<ContactForm />} />
         </Routes>
+
         <Routes path='/service'>
-            <Route path='/web_dev' element={<WebDevelopment />} />
-            <Route path='/Soft_dev' element={<SoftwareDevelopment/>}/>
-            <Route path='/Uiux_dev' element={<UiUxDesign/>}/>
-            <Route path='/Iot_dev' element={<IotDevelopment/>}/>
-            <Route path='/AiMl_dev' element={<AiMl/>}/>
-            <Route path='/Data_dev' element={<DataScience/>}/>
-            <Route path='/Marketing_dev' element={<DigitalMarket/>}/>
-            <Route path='/Consulting_dev' element={<Consulting/>}/>
+          <Route path='/Web-Development' element={<WebDevelopment />} />
+          <Route path='/Software-Development' element={<SoftwareDevelopment />} />
+          <Route path='/UiUx-Design' element={<UiUxDesign />} />
+          <Route path='/Iot-development' element={<IotDevelopment />} />
+          <Route path='/Ai&Ml-Solutions' element={<AiMl />} />
+          <Route path='/DataScience-Analytics' element={<DataScience />} />
+          <Route path='/Digital-Marketing' element={<DigitalMarket />} />
+          <Route path='/IT-Consulting' element={<Consulting />} />
         </Routes>
         <Footer />
       </div>

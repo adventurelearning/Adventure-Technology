@@ -66,48 +66,48 @@ function Navbar() {
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
             </Link>
             <ul className="absolute z-50 text-sm text-gray-700 super-rich-dropdown mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0">
-              <Link to="/web_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+              <Link to="/Web-Development" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                 Web App Development
               </Link>
               <li>
-                <Link to="/Soft_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Software-Development" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Software Development
                 </Link>
               </li>
               <li>
-                <Link to="/Uiux_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/UiUx-Design" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link to="/Iot_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Iot-development" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   IoT Development
                 </Link>
               </li>
               <li>
-                <Link to="/AiMl_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Ai&Ml-Solutions" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   AI & ML Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/Data_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/DataScience-Analytics" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Data Science & Data Analytics
                 </Link>
               </li>
               <li>
-                <Link to="/Marketing_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/Digital-Marketing" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/Consulting_dev" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
+                <Link to="/IT-Consulting" className={`super-hover-link ${getLinkClasses(pathname, '/web-app')}`}>
                   IT Consulting
                 </Link>
               </li>
             </ul>
           </li>
 
-          <li><Link to="/Products" className={getLinkClasses(pathname, '/Products')}>INUSTRIES</Link></li>
+          <li><Link to="/Products" className={getLinkClasses(pathname, '/Products')}>INDUSTRIES</Link></li>
           <li><Link to="/Blogs" className={getLinkClasses(pathname, '/Blogs')}>PORTFOLIO</Link></li>
           <li><Link to="/Careers" className={getLinkClasses(pathname, '/Careers')}>CAREERS</Link></li>
           {/* <li className=''><Link to="/contact" className={getLinkClasses(pathname, '/contact')}>CONTACT US</Link></li> */}
@@ -116,7 +116,7 @@ function Navbar() {
         {/* Register + Mobile Toggle */}
         <div className={`flex items-center transition-all duration-1000 ${isScrolled ? '' : ''}`}>
           <Link
-            to="/register"
+            to="/Contact"
             className={`register-button hidden lg:inline-block px-5 py-2 rounded-lg text-sm font-semibold text-white border border-transparent transition-all ${isScrolled ? 'transform translate-x-[10px]' : ''}`}
           >
             CONTACT US

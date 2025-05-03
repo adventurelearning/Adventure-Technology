@@ -13,33 +13,33 @@ const DataFAQ = () => {
   const faqData = [
     {
       id: 1, // Added unique ID for each FAQ item
-      question: 'How long does it take to build a website?',
+      question: 'How long does it take to complete a data analysis project?',
       answer:
-        'The timeline for a website typically ranges from 4 to 8 weeks depending on the complexity of the project, the number of pages, and custom features. E-commerce websites or highly complex projects may take longer.',
+        'The timeline for a data analysis project typically ranges from a few weeks to a couple of months, depending on the complexity of the data, the depth of analysis, and the number of variables involved. Complex machine learning models may require more time for training and evaluation.',
     },
     {
       id: 2,
-      question: 'What determines the cost of a website project?',
+      question: 'What factors influence the cost of a data science project?',
       answer:
-        'Several factors contribute to the overall cost of a website, including the type of website (e.g., business site, e-commerce), design complexity, the features you need (like custom forms or integrations), and how much content you want to include. We’ll work with you to create a customized plan that fits your budget.',
+        'The cost of a data science project depends on factors such as the size and complexity of the data, the techniques and models used, project scope, the number of iterations, and any custom solutions required. We work with clients to define the scope and ensure a tailored pricing plan.',
     },
     {
       id: 3,
-      question: 'Do you offer ongoing support and maintenance?',
+      question: 'Do you offer ongoing support and updates for data models?',
       answer:
-        'Yes! We offer ongoing support and maintenance after launch. This includes regular updates, security patches, bug fixes, and performance optimizations to ensure your site continues to run smoothly.',
+        'Yes! We offer continuous support for data models, including performance monitoring, retraining with new data, and ongoing improvements. This ensures that your model remains relevant and performs optimally over time.',
     },
     {
       id: 4,
-      question: 'Can I update my website myself?',
+      question: 'Can I analyze my data myself after the project is completed?',
       answer:
-        'Yes! We build websites using user-friendly CMS platforms like WordPress or Webflow, allowing you to easily update content, images, and other elements without needing technical knowledge. We also offer training to get you started.',
+        'Yes! We provide clear documentation and often build user-friendly dashboards or tools that allow you to explore your data and insights independently. We also offer training sessions to empower you to perform basic analysis on your own.',
     },
     {
       id: 5,
-      question: 'Will my website be mobile-friendly?',
+      question: 'Will my analytics dashboard be mobile-friendly?',
       answer:
-        'Absolutely! All of our websites are designed with a mobile-first approach, ensuring they are fully responsive and look great on all devices, including smartphones, tablets, and desktops.',
+        'Absolutely! All of our dashboards are designed to be fully responsive, ensuring that they function smoothly across devices including mobile phones, tablets, and desktops.',
     },
   ];
 

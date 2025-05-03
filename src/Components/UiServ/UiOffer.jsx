@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const UiOffer = () => {
     const offers = [
-        { name: "Custom Web Application Development" },
-        { name: "E-commerce Web Development" },
-        { name: "Responsive Web Design & Development" },
-        { name: "API Development & Integration" },
-        { name: "Cloud-Based Web Applications" },
-        { name: "Maintenance & Support" },
+        { name: "User Research & Persona Development" },
+        { name: "Wireframing & Prototyping" },
+        { name: "UI Design for Web & Mobile" },
+        { name: "Interaction & Motion Design" },
+        { name: "Design Systems & Style Guides" },
+        { name: "Usability Testing & Iteration" },
     ];
 
     return (
@@ -23,7 +22,7 @@ const UiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight"
                     >
-                        Web App <span className="block text-blue-400">Development</span>
+                        UI/UX <span className="block text-blue-400">Design Services</span>
                     </motion.h1>
                     <motion.h3
                         initial={{ opacity: 0, x: -50 }}
@@ -31,7 +30,7 @@ const UiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                         className="text-2xl text-gray-200"
                     >
-                        Transform Your Ideas into <span className="block ">Dynamic Web Applications</span>
+                        Elevate Your Product with <span className="block">User-Centered Design</span>
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -39,13 +38,8 @@ const UiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
                     >
                         <button
-                            variant="default"
-                            size="lg"
-                            className=" text-white
-                                     px-8 py-3 rounded-full shadow-lg hover:shadow-xl
-                                     transition-all duration-300 hover:scale-105
-                                     border-2 border-white
-                                    "
+                            className="text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl
+                                       transition-all duration-300 hover:scale-105 border-2 border-white"
                         >
                             Get Started Today <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
                         </button>
@@ -56,10 +50,10 @@ const UiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                         className="text-lg text-gray-400 leading-relaxed"
                     >
-                        Web app development is at the core of modern business operations, helping companies
-                        reach customers, streamline processes, and enhance user experiences. Whether you need a
-                        custom-built solution, a complex enterprise app, or an e-commerce platform, our team is
-                        here to provide tailored, scalable, and secure web app development services.
+                        Great design isn't just about aesthetics — it's about solving real problems. 
+                        Our UI/UX design team combines research, strategy, and creativity to craft digital experiences 
+                        that are intuitive, accessible, and engaging. Whether you're launching a new product or 
+                        redesigning an existing one, we help you connect with users through thoughtful design.
                     </motion.p>
                 </div>
 
@@ -71,7 +65,7 @@ const UiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.8 }}
                         className="text-2xl font-semibold text-white uppercase tracking-wider mb-8 border-b border-gray-700 pb-3"
                     >
-                        What We Do in Web App Development
+                        Our UI/UX Capabilities
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                         {offers.map((offer) => (
@@ -98,4 +92,3 @@ const UiOffer = () => {
 };
 
 export default UiOffer;
-

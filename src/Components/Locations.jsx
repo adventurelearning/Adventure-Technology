@@ -1,10 +1,10 @@
 import React from 'react';
 import chennai from '../assets/locations/CHENNAI.svg';
-import coimbatore from '../assets/locations/COIMBATORE.svg'; 
+import coimbatore from '../assets/locations/COIMBATORE.svg';
 
 const Locations = () => {
     return (
-        <div className="py-20 px-3  bg-gradient-to-br from-gray-900 via-blue-900 to-black text-white border border-gray-500 border-l-0 border-r-0">
+        <div className="py-20 px-3  bg-gradient-to-b from-black  to-black text-white border border-gray-500 border-l-0 border-t-0 border-r-0">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
                 {/* Text Section */}
                 <div className="lg:w-1/2 text-center lg:text-start space-y-6">
@@ -15,6 +15,7 @@ const Locations = () => {
                         We are dedicated to providing exceptional service wherever you need us.
                         With a focus on quality and reliability, we're always here to support you.
                     </p>
+                    
                 </div>
 
                 {/* Image Section with Location Labels */}
@@ -30,8 +31,8 @@ const Locations = () => {
                             {/* <div className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 rounded-lg transition-opacity"></div> */}
                         </div>
 
-                        <p className="text-gray-300 text-sm pt-3">No.90, First floor,<br/>
-                            Rajaji road,Tambaram,<br/>
+                        <p className="text-gray-300 text-sm pt-3">No.90, First floor,<br />
+                            Rajaji road,Tambaram,<br />
                             Chennai,Tamil Nadu-600045</p>
                     </div>
 
@@ -46,8 +47,8 @@ const Locations = () => {
                             {/* <div className="absolute inset-0 bg-cyan-500 opacity-0 group-hover:opacity-10 rounded-lg transition-opacity"></div> */}
                         </div>
 
-                        <p className="text-gray-300 text-sm pt-3">No:121/4, 7th Street,<br/>
-                            Tatabad, Gandhipuram,<br/>
+                        <p className="text-gray-300 text-sm pt-3">No:121/4, 7th Street,<br />
+                            Tatabad, Gandhipuram,<br />
                             Coimbatore, Tamil Nadu-641012.</p>
                     </div>
                 </div>

@@ -6,40 +6,45 @@ const IotFAQ = () => {
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleAccordion = (id) => {
-    // Toggle between open and closed
     setExpandedId((prev) => (prev === id ? null : id));
   };
 
   const faqData = [
     {
-      id: 1, // Added unique ID for each FAQ item
-      question: 'How long does it take to build a website?',
+      id: 1,
+      question: 'What is IoT and how does it work?',
       answer:
-        'The timeline for a website typically ranges from 4 to 8 weeks depending on the complexity of the project, the number of pages, and custom features. E-commerce websites or highly complex projects may take longer.',
+        'IoT (Internet of Things) refers to the network of interconnected devices that communicate and share data with each other. These devices can range from everyday objects like thermostats and security cameras to complex industrial equipment. IoT devices use sensors and software to collect and transmit data to a central system or cloud for processing.',
     },
     {
       id: 2,
-      question: 'What determines the cost of a website project?',
+      question: 'How secure are IoT devices?',
       answer:
-        'Several factors contribute to the overall cost of a website, including the type of website (e.g., business site, e-commerce), design complexity, the features you need (like custom forms or integrations), and how much content you want to include. We’ll work with you to create a customized plan that fits your budget.',
+        'Security is a top priority for IoT devices. We implement robust security measures, including data encryption, secure communication protocols, and regular firmware updates, to protect your IoT devices from potential threats. However, as IoT evolves, it is essential to continually assess and upgrade security strategies.',
     },
     {
       id: 3,
-      question: 'Do you offer ongoing support and maintenance?',
+      question: 'Can IoT devices be integrated into existing systems?',
       answer:
-        'Yes! We offer ongoing support and maintenance after launch. This includes regular updates, security patches, bug fixes, and performance optimizations to ensure your site continues to run smoothly.',
+        'Yes, IoT devices can be integrated into existing systems. We ensure compatibility with your current hardware, software, and cloud platforms, providing seamless connectivity and data exchange between IoT devices and legacy systems.',
     },
     {
       id: 4,
-      question: 'Can I update my website myself?',
+      question: 'What are the common use cases of IoT?',
       answer:
-        'Yes! We build websites using user-friendly CMS platforms like WordPress or Webflow, allowing you to easily update content, images, and other elements without needing technical knowledge. We also offer training to get you started.',
+        'IoT has a wide range of use cases, including smart homes, healthcare (e.g., remote patient monitoring), industrial automation (e.g., predictive maintenance), agriculture (e.g., soil sensors), and logistics (e.g., fleet tracking). The possibilities are vast, and IoT can be applied in almost any industry to enhance efficiency, reduce costs, and improve data insights.',
     },
     {
       id: 5,
-      question: 'Will my website be mobile-friendly?',
+      question: 'How can IoT improve business operations?',
       answer:
-        'Absolutely! All of our websites are designed with a mobile-first approach, ensuring they are fully responsive and look great on all devices, including smartphones, tablets, and desktops.',
+        'IoT improves business operations by providing real-time data that can be analyzed for insights into performance, resource utilization, and customer behavior. This data can be used to optimize workflows, predict equipment failures, and reduce waste. It also enhances automation and remote monitoring, leading to better decision-making and cost savings.',
+    },
+    {
+      id: 6,
+      question: 'How do you handle IoT device management and maintenance?',
+      answer:
+        'We provide continuous monitoring and management for your IoT devices. This includes regular firmware updates, system health checks, security patching, and troubleshooting. We also offer ongoing support to ensure that your IoT system operates smoothly and efficiently over time.',
     },
   ];
 
@@ -73,7 +78,7 @@ const IotFAQ = () => {
         <div className="space-y-6">
           {faqData.map((item) => (
             <div
-              key={item.id} // Use the unique id for key
+              key={item.id}
               className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 transition-all duration-300 hover:shadow-blue-500/20"
             >
               <button

@@ -4,14 +4,14 @@ import SoftOffer from '../../../Components/SoftServ/SoftOffer'
 import SoftDevelopmentProcess from '../../../Components/SoftServ/SoftDevelopmentProcess'
 import SoftTools from '../../../Components/SoftServ/SoftTools'
 import SoftFAQ from '../../../Components/SoftServ/SoftFAQ'
-import WhySoft from '../../../Components/SoftServ/WhySoft'
+import WhyWeb from '../../../Components/webServ/WhyWeb'
 
 const SoftwareDevelopment = () => {
   return (
     <div>
       <SoftHome />
       <SoftOffer />
-      <WhySoft/>
+      <WhyWeb/> 
       <SoftTools />
       <SoftDevelopmentProcess />
       <SoftFAQ />

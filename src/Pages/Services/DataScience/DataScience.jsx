@@ -16,7 +16,7 @@ const DataScience = () => {
     <div>
       <DataHome/>
       <DataOffer/>
-      <WhyData/>
+      <WhyWeb/> 
       <DataTools/>
       <DataDevelopmentProcess/>
       <DataFAQ/>

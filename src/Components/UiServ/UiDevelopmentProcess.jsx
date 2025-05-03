@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    CompassFill,        // Discovery & Planning
+    CompassFill,        // Discovery & Research
     BrushFill,          // UI/UX Design
-    CodeSlash,          // Development
-    BugFill,            // Testing & Quality Assurance
-    RocketTakeoffFill,  // Deployment & Launch
-    Wrench              // Maintenance & Support
+    Layers,             // Prototyping
+    PersonCircle,       // User Testing
+    FileLock,           // Accessibility & Standards
+    Wrench              // Maintenance & Iteration
 } from 'react-bootstrap-icons';
 
 const primaryColorClass = 'bg-blue-600';
@@ -14,34 +14,34 @@ const iconSize = 40;
 
 const processSteps = [
     {
-        title: 'Discover & Planning',
-        description: 'We define goals, research your market, and outline the project strategy.',
-        icon: <CompassFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Discovery and Planning Icon" />,
+        title: 'Discovery & Research',
+        description: 'We start by understanding your users, their needs, and the business goals to inform our design decisions.',
+        icon: <CompassFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Discovery and Research Icon" />,
     },
     {
         title: 'UI/UX Design',
-        description: 'We design user-friendly, on-brand interfaces with clear navigation.',
+        description: 'We create user-centered, visually appealing designs, focusing on seamless experiences and brand consistency.',
         icon: <BrushFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="UI/UX Design Icon" />,
     },
     {
-        title: 'Development',
-        description: 'Our team builds responsive, high-performance applications using modern tech.',
-        icon: <CodeSlash className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Development Icon" />,
+        title: 'Prototyping',
+        description: 'We turn designs into interactive prototypes to visualize how the product will function and feel.',
+        icon: <Layers className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Prototyping Icon" />,
     },
     {
-        title: 'Testing & Quality Assurance',
-        description: 'We test across devices and browsers to ensure stability and security.',
-        icon: <BugFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Testing and Quality Assurance Icon" />,
+        title: 'User Testing',
+        description: 'We conduct usability tests to validate designs with real users and gather feedback for improvements.',
+        icon: <PersonCircle className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="User Testing Icon" />,
     },
     {
-        title: 'Deployment & Launch',
-        description: 'We launch your app smoothly with minimal downtime and full optimization.',
-        icon: <RocketTakeoffFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Deployment and Launch Icon" />,
+        title: 'Accessibility & Standards',
+        description: 'We ensure that your product meets accessibility standards and is usable by all, regardless of ability.',
+        icon: <FileLock className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Accessibility and Standards Icon" />,
     },
     {
-        title: 'Maintenance & Support',
-        description: 'We monitor, update, and support your app to keep it running flawlessly.',
-        icon: <Wrench className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Maintenance and Support Icon" />,
+        title: 'Maintenance & Iteration',
+        description: 'After launch, we continue monitoring user feedback, iterating on designs, and enhancing the product to improve performance.',
+        icon: <Wrench className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Maintenance and Iteration Icon" />,
     },
 ];
 
@@ -60,15 +60,16 @@ const itemVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
-const UiDevelopmentProcess = () => {
+const UiUxDesignProcess = () => {
     return (
         <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
-            <div className="container mx-auto px-6 ">
+            <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
-                    Our Web Development Process
+                    Our UI/UX Design Process
                 </h2>
                 <h3 className="text-lg text-center text-gray-400 mt-4">
-                    Delivering quality at every stage of development</h3>
+                    Delivering intuitive and accessible designs at every stage
+                </h3>
 
                 <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div
@@ -102,4 +103,4 @@ const UiDevelopmentProcess = () => {
     );
 };
 
-export default UiDevelopmentProcess;
+export default UiUxDesignProcess;

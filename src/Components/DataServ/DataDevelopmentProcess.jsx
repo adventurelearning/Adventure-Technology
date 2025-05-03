@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    CompassFill,        // Discovery & Planning
-    BrushFill,          // UI/UX Design
-    CodeSlash,          // Development
-    BugFill,            // Testing & Quality Assurance
-    RocketTakeoffFill,  // Deployment & Launch
-    Wrench              // Maintenance & Support
+    FileText,           // Problem Definition & Objective Setting
+    BrushFill,          // Data Collection & Preparation
+    BarChart,           // Exploratory Data Analysis (EDA)
+    GraphUp,            // Model Selection & Evaluation
+    Box,                // Deployment & Reporting
+    Wrench              // Monitoring & Continuous Improvement
 } from 'react-bootstrap-icons';
 
 const primaryColorClass = 'bg-blue-600';
@@ -14,34 +14,34 @@ const iconSize = 40;
 
 const processSteps = [
     {
-        title: 'Discover & Planning',
-        description: 'We define goals, research your market, and outline the project strategy.',
-        icon: <CompassFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Discovery and Planning Icon" />,
+        title: 'Problem Definition & Objective Setting',
+        description: 'We define the business problem, set clear objectives, and outline the analytics goals.',
+        icon: <FileText className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Problem Definition & Objective Setting Icon" />,
     },
     {
-        title: 'UI/UX Design',
-        description: 'We design user-friendly, on-brand interfaces with clear navigation.',
-        icon: <BrushFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="UI/UX Design Icon" />,
+        title: 'Data Collection & Preparation',
+        description: 'We gather, clean, and pre-process data to ensure it is ready for analysis.',
+        icon: <BrushFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Data Collection & Preparation Icon" />,
     },
     {
-        title: 'Development',
-        description: 'Our team builds responsive, high-performance applications using modern tech.',
-        icon: <CodeSlash className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Development Icon" />,
+        title: 'Exploratory Data Analysis (EDA)',
+        description: 'We explore the data to understand patterns, distributions, and key relationships.',
+        icon: <BarChart className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Exploratory Data Analysis (EDA) Icon" />,
     },
     {
-        title: 'Testing & Quality Assurance',
-        description: 'We test across devices and browsers to ensure stability and security.',
-        icon: <BugFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Testing and Quality Assurance Icon" />,
+        title: 'Model Selection & Evaluation',
+        description: 'We select the appropriate models and evaluate their performance using various metrics.',
+        icon: <GraphUp className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Model Selection & Evaluation Icon" />,
     },
     {
-        title: 'Deployment & Launch',
-        description: 'We launch your app smoothly with minimal downtime and full optimization.',
-        icon: <RocketTakeoffFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Deployment and Launch Icon" />,
+        title: 'Deployment & Reporting',
+        description: 'We deploy the models and present the findings through reports and interactive dashboards.',
+        icon: <Box className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Deployment & Reporting Icon" />,
     },
     {
-        title: 'Maintenance & Support',
-        description: 'We monitor, update, and support your app to keep it running flawlessly.',
-        icon: <Wrench className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Maintenance and Support Icon" />,
+        title: 'Monitoring & Continuous Improvement',
+        description: 'We monitor the model performance and continuously improve it with new data and insights.',
+        icon: <Wrench className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Monitoring & Continuous Improvement Icon" />,
     },
 ];
 
@@ -60,15 +60,16 @@ const itemVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
-const DataDevelopmentProcess = () => {
+const DataScienceProcess = () => {
     return (
         <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
-            <div className="container mx-auto px-6 ">
+            <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
-                    Our Web Development Process
+                    Our Data Science & Analytics Process
                 </h2>
                 <h3 className="text-lg text-center text-gray-400 mt-4">
-                    Delivering quality at every stage of development</h3>
+                    Delivering actionable insights through precision at every stage
+                </h3>
 
                 <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div
@@ -102,4 +103,4 @@ const DataDevelopmentProcess = () => {
     );
 };
 
-export default DataDevelopmentProcess;
+export default DataScienceProcess;

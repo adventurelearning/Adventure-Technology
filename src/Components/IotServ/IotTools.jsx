@@ -1,34 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-    BiLogoReact,
-    BiLogoAngular,
-    BiLogoVuejs,
-    BiLogoHtml5,
-    BiLogoCss3,
-    BiLogoJavascript,
-    BiLogoNodejs,
-    BiLogoMongodb,
-    BiLogoTailwindCss,
+    BiNetworkChart,
+    BiCloud,
+    BiDesktop,
+    BiChip,  // Use BiChip as an alternative for BiCpu
+    BiBuilding,
+    BiServer,
+    BiPowerOff,
 } from 'react-icons/bi';
 
 const IotTools = () => {
     const technologies = [
-        { name: 'HTML5', icon: BiLogoHtml5, color: 'text-orange-500' },
-        { name: 'CSS3', icon: BiLogoCss3, color: 'text-blue-600' },
-        { name: 'JavaScript', icon: BiLogoJavascript, color: 'text-yellow-400' },
-        { name: 'Vue.js', icon: BiLogoVuejs, color: 'text-green-600' },
-        { name: 'React', icon: BiLogoReact, color: 'text-blue-500' },
-        { name: 'Tailwind', icon: BiLogoTailwindCss, color: 'text-cyan-400' },
-        { name: 'Node.js', icon: BiLogoNodejs, color: 'text-green-500' },
-        { name: 'MongoDB', icon: BiLogoMongodb, color: 'text-green-600' },
+        { name: 'AWS IoT', icon: BiCloud, color: 'text-orange-500' },
+        { name: 'Azure IoT', icon: BiCloud, color: 'text-blue-600' },
+        { name: 'Google Cloud IoT', icon: BiCloud, color: 'text-yellow-400' },
+        { name: 'Device Management', icon: BiNetworkChart, color: 'text-green-600' },
+        { name: 'Raspberry Pi', icon: BiChip, color: 'text-red-600' },  // Replace with BiChip
+        { name: 'Kubernetes', icon: BiServer, color: 'text-blue-500' },
+        { name: 'Linux', icon: BiChip, color: 'text-gray-600' },  // Replace with BiChip
+        { name: 'IoT Protocols', icon: BiPowerOff, color: 'text-green-400' },
     ];
 
     return (
         <div className="bg-black py-16">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white mb-12 tracking-tight">
-                    Technologies We Use
+                    IoT Tools & Technologies We Use
                 </h2>
                 <motion.div
                     initial={{ opacity: 0 }}

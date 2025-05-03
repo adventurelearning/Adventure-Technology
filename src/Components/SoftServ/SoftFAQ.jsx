@@ -12,36 +12,37 @@ const SoftFAQ = () => {
 
   const faqData = [
     {
-      id: 1, // Added unique ID for each FAQ item
-      question: 'How long does it take to build a website?',
+      id: 1,
+      question: 'How long does it take to build a software application?',
       answer:
-        'The timeline for a website typically ranges from 4 to 8 weeks depending on the complexity of the project, the number of pages, and custom features. E-commerce websites or highly complex projects may take longer.',
+        'The timeline depends on the scope and complexity of your project. A simple MVP may take 6–10 weeks, while a full-featured enterprise application could take several months. We work in sprints and provide regular updates.',
     },
     {
       id: 2,
-      question: 'What determines the cost of a website project?',
+      question: 'What factors influence the cost of a software project?',
       answer:
-        'Several factors contribute to the overall cost of a website, including the type of website (e.g., business site, e-commerce), design complexity, the features you need (like custom forms or integrations), and how much content you want to include. We’ll work with you to create a customized plan that fits your budget.',
+        'Cost depends on features, technology stack, integrations, platform compatibility (web, desktop, mobile), and customizations. After understanding your goals, we provide a detailed estimate tailored to your requirements.',
     },
     {
       id: 3,
-      question: 'Do you offer ongoing support and maintenance?',
+      question: 'Do you offer post-launch maintenance and updates?',
       answer:
-        'Yes! We offer ongoing support and maintenance after launch. This includes regular updates, security patches, bug fixes, and performance optimizations to ensure your site continues to run smoothly.',
+        'Yes, we provide maintenance plans that include bug fixes, performance improvements, security updates, and feature enhancements. You can choose from monthly or on-demand support packages.',
     },
     {
       id: 4,
-      question: 'Can I update my website myself?',
+      question: 'Can you develop software for multiple platforms (web, mobile, desktop)?',
       answer:
-        'Yes! We build websites using user-friendly CMS platforms like WordPress or Webflow, allowing you to easily update content, images, and other elements without needing technical knowledge. We also offer training to get you started.',
+        'Absolutely. We build cross-platform software using technologies like React Native, Flutter, and Electron, as well as native mobile apps and responsive web applications.',
     },
     {
       id: 5,
-      question: 'Will my website be mobile-friendly?',
+      question: 'Will I be involved throughout the development process?',
       answer:
-        'Absolutely! All of our websites are designed with a mobile-first approach, ensuring they are fully responsive and look great on all devices, including smartphones, tablets, and desktops.',
+        'Yes. We follow agile methodologies with regular sprint reviews, demos, and feedback cycles to keep you involved and ensure alignment with your goals.',
     },
   ];
+  
 
   // Animation variants
   const itemVariants = {

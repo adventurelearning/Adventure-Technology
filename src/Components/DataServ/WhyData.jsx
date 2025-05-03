@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    CodeSlash,
+    BarChart,
     ShieldLock,
     GraphUp,
     Kanban,
@@ -11,51 +11,52 @@ import {
 const WhyData = () => {
     const expertisePoints = [
         {
-            title: 'Experienced Full-Stack Developers',
-            description: 'Our team brings 8+ years of combined experience building robust web applications using modern technologies like React, Node.js, and cloud platforms.',
-            icon: <CodeSlash className="text-blue-400" size={24} />,
-            borderColor: 'border-gray-500'
+            title: 'Experienced Data Scientists & Analysts',
+            description: 'Our team has over 8 years of combined experience in data analysis, machine learning, and predictive modeling, helping businesses unlock actionable insights.',
+            icon: <BarChart className="text-blue-400" size={24} />,
+            borderColor: 'border-blue-500'
         },
         {
-            title: 'SEO-Optimized, Clean Code',
-            description: 'We write semantic, performant code that ranks well on search engines while being maintainable and well-documented for future updates.',
+            title: 'Data-Driven Decision Making',
+            description: 'We leverage advanced analytics to transform raw data into strategic insights, guiding your business decisions with precision and confidence.',
             icon: <GraphUp className="text-purple-400" size={24} />,
-            borderColor: 'border-gray-500'
+            borderColor: 'border-purple-500'
         },
         {
-            title: 'Scalable & Secure Architecture',
-            description: 'Applications built with enterprise-grade security and scalability in mind, ready to handle your growing user base and traffic spikes.',
+            title: 'Scalable & Secure Data Solutions',
+            description: 'We ensure that your data architecture is robust and scalable, capable of handling large datasets securely and efficiently, using modern cloud and big data technologies.',
             icon: <ShieldLock className="text-green-400" size={24} />,
-            borderColor: 'border-gray-500'
+            borderColor: 'border-green-500'
         },
         {
-            title: 'Agile Project Management',
-            description: 'Transparent development process with regular updates, sprint reviews, and flexible adaptation to changing requirements.',
+            title: 'Agile Analytics & Reporting',
+            description: 'Our agile methodology allows us to deliver iterative results quickly, making it easier to adjust to changing business requirements and new data insights.',
             icon: <Kanban className="text-yellow-400" size={24} />,
-            borderColor: 'border-gray-500'
+            borderColor: 'border-yellow-500'
         },
         {
-            title: 'Dedicated Project Manager',
-            description: 'Single point of contact throughout your project ensuring clear communication and timely delivery of milestones.',
+            title: 'Dedicated Data Consultant',
+            description: 'We assign a dedicated data consultant to work with you closely, ensuring clear communication and guiding your analytics journey every step of the way.',
             icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-gray-500'
+            borderColor: 'border-pink-500'
         },
         {
-            title: 'Post-Launch Support',
-            description: 'Comprehensive maintenance packages including updates, security patches, and feature additions after deployment.',
+            title: 'Post-Project Support & Optimization',
+            description: 'We provide ongoing support and optimization, ensuring your data models, dashboards, and reports evolve with your business needs.',
             icon: <Tools className="text-orange-400" size={24} />,
-            borderColor: 'border-gray-500'
+            borderColor: 'border-orange-500'
         },
     ];
+
     return (
         <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto ">
-                <div className="text-center mb-12 ">
+            <div className="max-w-5xl mx-auto">
+                <div className="text-center mb-12">
                     <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Our Development Edge
+                        Why Choose Us for Data Science & Analytics
                     </h2>
                     <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Why clients trust us with their digital products
+                        Discover how we empower businesses to make data-driven decisions with our expertise.
                     </p>
                 </div>
 
@@ -63,7 +64,7 @@ const WhyData = () => {
                     {expertisePoints.map((point, index) => (
                         <div
                             key={index}
-                            className={`bg-gray-800  rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
                         >
                             <div className="flex items-center mb-4">
                                 <div className="p-2 rounded-lg bg-gray-700 mr-4">

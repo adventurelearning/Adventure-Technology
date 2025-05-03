@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const IotOffer = () => {
     const offers = [
-        { name: "Custom Web Application Development" },
-        { name: "E-commerce Web Development" },
-        { name: "Responsive Web Design & Development" },
-        { name: "API Development & Integration" },
-        { name: "Cloud-Based Web Applications" },
-        { name: "Maintenance & Support" },
+        { name: "IoT Device Integration" },
+        { name: "Smart Home Automation" },
+        { name: "IoT Platform Development" },
+        { name: "Cloud IoT Solutions" },
+        { name: "Real-Time Data Monitoring" },
+        { name: "IoT Maintenance & Support" },
     ];
 
     return (
@@ -23,7 +22,7 @@ const IotOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight"
                     >
-                        Web App <span className="block text-blue-400">Development</span>
+                        IoT Solutions <span className="block text-blue-400">Development</span>
                     </motion.h1>
                     <motion.h3
                         initial={{ opacity: 0, x: -50 }}
@@ -31,7 +30,7 @@ const IotOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                         className="text-2xl text-gray-200"
                     >
-                        Transform Your Ideas into <span className="block ">Dynamic Web Applications</span>
+                        Innovating the Future with <span className="block ">Connected Devices</span>
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -56,10 +55,7 @@ const IotOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                         className="text-lg text-gray-400 leading-relaxed"
                     >
-                        Web app development is at the core of modern business operations, helping companies
-                        reach customers, streamline processes, and enhance user experiences. Whether you need a
-                        custom-built solution, a complex enterprise app, or an e-commerce platform, our team is
-                        here to provide tailored, scalable, and secure web app development services.
+                        IoT solutions revolutionize industries by connecting physical devices to the digital world. Whether it’s enhancing your smart home, automating industrial processes, or developing secure IoT platforms, our team is here to provide scalable, secure, and tailored IoT solutions that drive innovation.
                     </motion.p>
                 </div>
 
@@ -71,7 +67,7 @@ const IotOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.8 }}
                         className="text-2xl font-semibold text-white uppercase tracking-wider mb-8 border-b border-gray-700 pb-3"
                     >
-                        What We Do in Web App Development
+                        What We Do in IoT Solutions
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                         {offers.map((offer) => (
@@ -98,4 +94,3 @@ const IotOffer = () => {
 };
 
 export default IotOffer;
-

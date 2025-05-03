@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const DataOffer = () => {
     const offers = [
-        { name: "Custom Web Application Development" },
-        { name: "E-commerce Web Development" },
-        { name: "Responsive Web Design & Development" },
-        { name: "API Development & Integration" },
-        { name: "Cloud-Based Web Applications" },
-        { name: "Maintenance & Support" },
+        { name: "Data Analysis & Visualization" },
+        { name: "Predictive Modeling & Forecasting" },
+        { name: "Data Cleaning & Preprocessing" },
+        { name: "Business Intelligence Solutions" },
+        { name: "Machine Learning & AI Model Development" },
+        { name: "Custom Data Dashboards & Reports" },
     ];
 
     return (
@@ -23,7 +22,7 @@ const DataOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight"
                     >
-                        Web App <span className="block text-blue-400">Development</span>
+                        Data Science & <span className="block text-blue-400">Analytics</span>
                     </motion.h1>
                     <motion.h3
                         initial={{ opacity: 0, x: -50 }}
@@ -31,7 +30,7 @@ const DataOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                         className="text-2xl text-gray-200"
                     >
-                        Transform Your Ideas into <span className="block ">Dynamic Web Applications</span>
+                        Unlock Insights and Make Data-Driven Decisions
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -56,10 +55,7 @@ const DataOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                         className="text-lg text-gray-400 leading-relaxed"
                     >
-                        Web app development is at the core of modern business operations, helping companies
-                        reach customers, streamline processes, and enhance user experiences. Whether you need a
-                        custom-built solution, a complex enterprise app, or an e-commerce platform, our team is
-                        here to provide tailored, scalable, and secure web app development services.
+                        Data science and analytics play a critical role in transforming raw data into actionable insights. Whether you need to analyze large datasets, build predictive models, or create custom dashboards, our team is ready to help you leverage the power of data to drive your business forward.
                     </motion.p>
                 </div>
 
@@ -71,7 +67,7 @@ const DataOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.8 }}
                         className="text-2xl font-semibold text-white uppercase tracking-wider mb-8 border-b border-gray-700 pb-3"
                     >
-                        What We Do in Web App Development
+                        What We Do in Data Science & Analytics
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                         {offers.map((offer) => (
@@ -98,4 +94,3 @@ const DataOffer = () => {
 };
 
 export default DataOffer;
-

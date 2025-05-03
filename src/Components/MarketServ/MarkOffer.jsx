@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const MarkOffer = () => {
     const offers = [
-        { name: "Custom Web Application Development" },
-        { name: "E-commerce Web Development" },
-        { name: "Responsive Web Design & Development" },
-        { name: "API Development & Integration" },
-        { name: "Cloud-Based Web Applications" },
-        { name: "Maintenance & Support" },
+        { name: "Search Engine Optimization (SEO)" },
+        { name: "Social Media Marketing (SMM)" },
+        { name: "Pay-Per-Click (PPC) Advertising" },
+        { name: "Content Marketing" },
+        { name: "Email Marketing" },
+        { name: "Affiliate Marketing" },
     ];
 
     return (
@@ -23,7 +22,7 @@ const MarkOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight"
                     >
-                        Web App <span className="block text-blue-400">Development</span>
+                        Digital Marketing <span className="block text-blue-400">Services</span>
                     </motion.h1>
                     <motion.h3
                         initial={{ opacity: 0, x: -50 }}
@@ -31,7 +30,7 @@ const MarkOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                         className="text-2xl text-gray-200"
                     >
-                        Transform Your Ideas into <span className="block ">Dynamic Web Applications</span>
+                        Boost Your Brand's Presence with <span className="block ">Effective Digital Strategies</span>
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -56,10 +55,7 @@ const MarkOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                         className="text-lg text-gray-400 leading-relaxed"
                     >
-                        Web app development is at the core of modern business operations, helping companies
-                        reach customers, streamline processes, and enhance user experiences. Whether you need a
-                        custom-built solution, a complex enterprise app, or an e-commerce platform, our team is
-                        here to provide tailored, scalable, and secure web app development services.
+                        Digital marketing is the key to growing your brand, reaching your target audience, and driving sales. Whether you're looking to improve your SEO, run targeted paid ads, or boost engagement on social media, our team is ready to help you with effective strategies tailored to your business needs.
                     </motion.p>
                 </div>
 
@@ -71,7 +67,7 @@ const MarkOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.8 }}
                         className="text-2xl font-semibold text-white uppercase tracking-wider mb-8 border-b border-gray-700 pb-3"
                     >
-                        What We Do in Web App Development
+                        What We Do in Digital Marketing
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                         {offers.map((offer) => (
@@ -98,4 +94,3 @@ const MarkOffer = () => {
 };
 
 export default MarkOffer;
-

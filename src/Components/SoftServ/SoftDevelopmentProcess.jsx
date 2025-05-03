@@ -14,33 +14,33 @@ const iconSize = 40;
 
 const processSteps = [
     {
-        title: 'Discover & Planning',
-        description: 'We define goals, research your market, and outline the project strategy.',
+        title: 'Discovery & Planning',
+        description: 'We define your goals, analyze requirements, and create a strategic development roadmap.',
         icon: <CompassFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Discovery and Planning Icon" />,
     },
     {
         title: 'UI/UX Design',
-        description: 'We design user-friendly, on-brand interfaces with clear navigation.',
+        description: 'We design intuitive, accessible, and consistent user experiences across platforms.',
         icon: <BrushFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="UI/UX Design Icon" />,
     },
     {
         title: 'Development',
-        description: 'Our team builds responsive, high-performance applications using modern tech.',
+        description: 'We build scalable and secure software using modern frameworks and best practices.',
         icon: <CodeSlash className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Development Icon" />,
     },
     {
         title: 'Testing & Quality Assurance',
-        description: 'We test across devices and browsers to ensure stability and security.',
+        description: 'Rigorous testing ensures your software is stable, secure, and meets all functional requirements.',
         icon: <BugFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Testing and Quality Assurance Icon" />,
     },
     {
         title: 'Deployment & Launch',
-        description: 'We launch your app smoothly with minimal downtime and full optimization.',
+        description: 'We deploy to your chosen environment with full optimization and support for rollout.',
         icon: <RocketTakeoffFill className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Deployment and Launch Icon" />,
     },
     {
         title: 'Maintenance & Support',
-        description: 'We monitor, update, and support your app to keep it running flawlessly.',
+        description: 'Ongoing monitoring, improvements, and updates keep your software secure and up-to-date.',
         icon: <Wrench className={`text-white ${primaryColorClass} px-2 py-2 rounded-lg mb-4`} size={iconSize} aria-label="Maintenance and Support Icon" />,
     },
 ];
@@ -65,10 +65,11 @@ const SoftDevelopmentProcess = () => {
         <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
             <div className="container mx-auto px-6 ">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
-                    Our Web Development Process
+                    Our Software Development Process
                 </h2>
                 <h3 className="text-lg text-center text-gray-400 mt-4">
-                    Delivering quality at every stage of development</h3>
+                    Building reliable, secure, and scalable software from idea to execution
+                </h3>
 
                 <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div

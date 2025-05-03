@@ -1,15 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-
 const AiOffer = () => {
     const offers = [
-        { name: "Custom Web Application Development" },
-        { name: "E-commerce Web Development" },
-        { name: "Responsive Web Design & Development" },
-        { name: "API Development & Integration" },
-        { name: "Cloud-Based Web Applications" },
-        { name: "Maintenance & Support" },
+        { name: "Custom AI Model Development" },
+        { name: "Machine Learning Solutions" },
+        { name: "AI-Powered Automation" },
+        { name: "Data Analytics & Insights" },
+        { name: "Predictive Analytics" },
+        { name: "AI Integration with Existing Systems" },
     ];
 
     return (
@@ -23,7 +22,7 @@ const AiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut" }}
                         className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white tracking-tight"
                     >
-                        Web App <span className="block text-blue-400">Development</span>
+                        AI & ML <span className="block text-blue-400">Solutions</span>
                     </motion.h1>
                     <motion.h3
                         initial={{ opacity: 0, x: -50 }}
@@ -31,7 +30,7 @@ const AiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
                         className="text-2xl text-gray-200"
                     >
-                        Transform Your Ideas into <span className="block ">Dynamic Web Applications</span>
+                        Empowering Your Business with Cutting-Edge AI & ML Technologies
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -41,7 +40,7 @@ const AiOffer = () => {
                         <button
                             variant="default"
                             size="lg"
-                            className=" text-white
+                            className="text-white
                                      px-8 py-3 rounded-full shadow-lg hover:shadow-xl
                                      transition-all duration-300 hover:scale-105
                                      border-2 border-white
@@ -56,10 +55,7 @@ const AiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
                         className="text-lg text-gray-400 leading-relaxed"
                     >
-                        Web app development is at the core of modern business operations, helping companies
-                        reach customers, streamline processes, and enhance user experiences. Whether you need a
-                        custom-built solution, a complex enterprise app, or an e-commerce platform, our team is
-                        here to provide tailored, scalable, and secure web app development services.
+                        AI and ML solutions are transforming industries by automating complex processes, driving data-driven decisions, and creating smarter systems. From custom AI model development to data analytics and AI-powered automation, our team is here to bring innovative solutions to your business.
                     </motion.p>
                 </div>
 
@@ -71,7 +67,7 @@ const AiOffer = () => {
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.8 }}
                         className="text-2xl font-semibold text-white uppercase tracking-wider mb-8 border-b border-gray-700 pb-3"
                     >
-                        What We Do in Web App Development
+                        What We Do in AI & ML Solutions
                     </motion.h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                         {offers.map((offer) => (
@@ -98,4 +94,3 @@ const AiOffer = () => {
 };
 
 export default AiOffer;
-

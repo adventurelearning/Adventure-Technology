@@ -2,48 +2,46 @@ import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const MarkFAQ = () => {
+const DigitalMarketingFAQ = () => {
   const [expandedId, setExpandedId] = useState(null);
 
   const toggleAccordion = (id) => {
-    // Toggle between open and closed
     setExpandedId((prev) => (prev === id ? null : id));
   };
 
   const faqData = [
     {
-      id: 1, // Added unique ID for each FAQ item
-      question: 'How long does it take to build a website?',
+      id: 1,
+      question: 'How long does it take to see results from digital marketing?',
       answer:
-        'The timeline for a website typically ranges from 4 to 8 weeks depending on the complexity of the project, the number of pages, and custom features. E-commerce websites or highly complex projects may take longer.',
+        'Typically, you’ll begin to see measurable improvements within 3 to 6 months, depending on your goals, channels used, and your industry. Paid ads may yield quicker results, while SEO and organic strategies take longer but offer lasting value.',
     },
     {
       id: 2,
-      question: 'What determines the cost of a website project?',
+      question: 'Which digital marketing channels should I invest in?',
       answer:
-        'Several factors contribute to the overall cost of a website, including the type of website (e.g., business site, e-commerce), design complexity, the features you need (like custom forms or integrations), and how much content you want to include. We’ll work with you to create a customized plan that fits your budget.',
+        'That depends on your business goals and audience. We help you prioritize the right mix—SEO for long-term growth, Google Ads for immediate visibility, and social media or email marketing for nurturing leads and retention.',
     },
     {
       id: 3,
-      question: 'Do you offer ongoing support and maintenance?',
+      question: 'Do you manage campaigns or just provide strategy?',
       answer:
-        'Yes! We offer ongoing support and maintenance after launch. This includes regular updates, security patches, bug fixes, and performance optimizations to ensure your site continues to run smoothly.',
+        'We offer both! Whether you need full hands-on management of PPC, SEO, and social media campaigns, or strategic consulting and training for your internal team, we tailor services to your needs.',
     },
     {
       id: 4,
-      question: 'Can I update my website myself?',
+      question: 'How do you measure campaign performance?',
       answer:
-        'Yes! We build websites using user-friendly CMS platforms like WordPress or Webflow, allowing you to easily update content, images, and other elements without needing technical knowledge. We also offer training to get you started.',
+        'We track key performance indicators (KPIs) like ROI, conversions, click-through rates, engagement, and more using tools like Google Analytics, Ads Manager, and custom dashboards tailored to your goals.',
     },
     {
       id: 5,
-      question: 'Will my website be mobile-friendly?',
+      question: 'Can digital marketing help small or local businesses?',
       answer:
-        'Absolutely! All of our websites are designed with a mobile-first approach, ensuring they are fully responsive and look great on all devices, including smartphones, tablets, and desktops.',
+        'Absolutely! In fact, local SEO, Google Business optimization, and geo-targeted ad campaigns are powerful tools for driving foot traffic and online leads for small and location-based businesses.',
     },
   ];
 
-  // Animation variants
   const itemVariants = {
     open: {
       opacity: 1,
@@ -73,12 +71,12 @@ const MarkFAQ = () => {
         <div className="space-y-6">
           {faqData.map((item) => (
             <div
-              key={item.id} // Use the unique id for key
+              key={item.id}
               className="rounded-xl shadow-lg bg-gray-800 border border-gray-700 transition-all duration-300 hover:shadow-blue-500/20"
             >
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className={`w-full flex items-center justify-between py-5 px-6 text-gray-100 font-semibold focus:outline-none transition duration-300  ${
+                className={`w-full flex items-center justify-between py-5 px-6 text-gray-100 font-semibold focus:outline-none transition duration-300 ${
                   expandedId === item.id
                     ? 'bg-gray-700 rounded-t-xl border-b border-gray-600'
                     : 'bg-gray-800 hover:bg-gray-700 rounded-xl'
@@ -115,4 +113,4 @@ const MarkFAQ = () => {
   );
 };
 
-export default MarkFAQ;
+export default DigitalMarketingFAQ;

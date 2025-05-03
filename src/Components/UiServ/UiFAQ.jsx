@@ -13,33 +13,39 @@ const UiFAQ = () => {
   const faqData = [
     {
       id: 1, // Added unique ID for each FAQ item
-      question: 'How long does it take to build a website?',
+      question: 'What is the difference between UI and UX design?',
       answer:
-        'The timeline for a website typically ranges from 4 to 8 weeks depending on the complexity of the project, the number of pages, and custom features. E-commerce websites or highly complex projects may take longer.',
+        'UI (User Interface) design focuses on the look and feel of a product—how users interact with it visually. UX (User Experience) design, on the other hand, ensures that the overall experience is intuitive, user-friendly, and solves user problems effectively.',
     },
     {
       id: 2,
-      question: 'What determines the cost of a website project?',
+      question: 'How do you ensure the designs are user-friendly?',
       answer:
-        'Several factors contribute to the overall cost of a website, including the type of website (e.g., business site, e-commerce), design complexity, the features you need (like custom forms or integrations), and how much content you want to include. We’ll work with you to create a customized plan that fits your budget.',
+        'We conduct thorough user research, including user personas, journey mapping, and usability testing. This helps us understand your audience and create intuitive, accessible, and engaging designs that align with their needs.',
     },
     {
       id: 3,
-      question: 'Do you offer ongoing support and maintenance?',
+      question: 'What tools do you use for UI/UX design?',
       answer:
-        'Yes! We offer ongoing support and maintenance after launch. This includes regular updates, security patches, bug fixes, and performance optimizations to ensure your site continues to run smoothly.',
+        'We use a combination of industry-standard tools such as Figma, Sketch, Adobe XD for design and prototyping. For collaboration and feedback, we also integrate tools like InVision and Zeplin.',
     },
     {
       id: 4,
-      question: 'Can I update my website myself?',
+      question: 'How do you test the usability of a design?',
       answer:
-        'Yes! We build websites using user-friendly CMS platforms like WordPress or Webflow, allowing you to easily update content, images, and other elements without needing technical knowledge. We also offer training to get you started.',
+        'We conduct usability tests with real users to observe how they interact with the design. Based on feedback, we iterate and refine the design to eliminate pain points and enhance usability.',
     },
     {
       id: 5,
-      question: 'Will my website be mobile-friendly?',
+      question: 'What is the importance of responsive design?',
       answer:
-        'Absolutely! All of our websites are designed with a mobile-first approach, ensuring they are fully responsive and look great on all devices, including smartphones, tablets, and desktops.',
+        'Responsive design ensures that a product is usable and aesthetically pleasing across all devices—desktop, tablet, and mobile. It is crucial for providing a seamless experience regardless of the device the user is on.',
+    },
+    {
+      id: 6,
+      question: 'How do you make sure your designs are accessible?',
+      answer:
+        'We follow WCAG (Web Content Accessibility Guidelines) to ensure that our designs are accessible to users with disabilities. This includes things like color contrast, keyboard navigation, and screen reader compatibility.',
     },
   ];
 
@@ -67,7 +73,7 @@ const UiFAQ = () => {
     <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-semibold text-white text-center mb-12">
-          Frequently Asked <span className="text-blue-400">Questions</span>
+          UI/UX Design Frequently Asked <span className="text-blue-400">Questions</span>
         </h2>
 
         <div className="space-y-6">
