@@ -11,7 +11,7 @@ const HomeVdo = () => {
    {/* <div>{<Navbar/>}</div> */}
 
       {/* Video Overlay (Dark Layer) */}
-      <div className="absolute inset-0 bg-gray-800 opacity-60 z-10" />
+      <div className="absolute inset-0 bg-gray-800 opacity-60 z-10"/>
 
       {/* Background Video */}
       <video

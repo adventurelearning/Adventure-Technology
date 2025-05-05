@@ -6,8 +6,9 @@ import WhyAdventure from '../../Components/WhyAdventure'
 import Tools from '../../Components/Tools'
 import Faq from '../../Components/Faq'
 import ConsultationForm from '../../Components/ConsultationForm'
-import TeamWork from '../../Components/TeamWork'
 import Locations from '../../Components/Locations'
+import TeamWork from '../../Components/TeamWork'
+
 
 const Home = () => {
   return (
