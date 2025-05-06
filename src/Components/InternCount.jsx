@@ -17,7 +17,7 @@ const InternCount = () => {
   };
 
   return (
-    <div className="bg-black px-4 sm:px-20 py-10">
+    <div className="bg-black px-4 sm:px-20  pb-20">
       <div className="border-2 border-gray-600 rounded-lg p-8 flex flex-col md:flex-row justify-around items-center text-center bg-gradient-to-r from-gray-900 to-black h-52">
         {stats.map((stat, index) => (
           <motion.div

@@ -71,7 +71,7 @@ const InternfAQ = () => {
     <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-20">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-semibold text-white text-center mb-12">
-          Internship <span className="text-blue-400">FAQs</span>
+        Frequently Asked<span className="text-blue-400"> Questions</span>
         </h2>
 
         <div className="space-y-6">

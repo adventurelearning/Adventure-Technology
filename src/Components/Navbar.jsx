@@ -89,7 +89,7 @@ function Navbar() {
             <ul className="absolute z-50 text-sm text-gray-700 super-rich-dropdown mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0">
               <li><Link to="/AboutUs" className={`super-hover-link ${getLinkClasses(pathname, '/AboutUs')}`}>About Us</Link></li>
               <li><Link to="/Internship" className={`super-hover-link ${getLinkClasses(pathname, '/Internship')}`}>Internship</Link></li>
-              <li><Link to="/Careers" className={`super-hover-link ${getLinkClasses(pathname, '/Careers')}`}>Careers</Link></li>
+              <li><Link to="/Career" className={`super-hover-link ${getLinkClasses(pathname, '/Career')}`}>Careers</Link></li>
             </ul>
           </li>
         </ul>

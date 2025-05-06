@@ -24,6 +24,7 @@ import Agriculture from './Components/Agriculture';
 import Manufacturing from './Components/Manufacturing';
 import Internship from './Components/Internship';
 import ScrollToTop from './Components/Scrolltotop';
+import Careers from './Components/Careers';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
 
         {/* Careers */}
         <Route path="/Internship" element={<Internship />} />
+        <Route path="/Career" element={<Careers/>} />
       </Routes>
 
       <Footer />

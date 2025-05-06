@@ -14,7 +14,7 @@ const InternHome = () => {
       <div className="absolute inset-0 bg-gray-900 opacity-60 z-10" />
 
       {/* Main Text Content */}
-      <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-6 md:px-16 ml-14">
+      <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-6 md:px-16 ">
         <h1 className="text-3xl md:text-5xl font-semibold mb-4">
           {/* Innovative Technology Solutions<span className="block"> for Every Industry</span> */}
           Hands-on Experience Through<span className="block mt-2">Exciting Internship Roles</span>
