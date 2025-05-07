@@ -18,7 +18,7 @@ const AgricultureHome = () => {
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 animate-gradient-x'>
               Agriculture Software
             </span>
-            <span className='block mt-2 text-white'>Development Company</span>
+            <span className='block mt-2 text-white'>Development Service</span>
           </h1>
 
           {/* Subheading with animation */}
