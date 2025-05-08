@@ -1,154 +1,103 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-
-// Particle animation component (unchanged)
-const Particles = () => {
-    const canvasRef = useRef(null);
-    const particles = useRef([]);
-
-    useEffect(() => {
-        const canvas = canvasRef.current;
-        const ctx = canvas.getContext('2d');
-        let animationFrameId;
-
-        const setCanvasSize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
-        setCanvasSize();
-
-        class Particle {
-            constructor(x, y, radius, color) {
-                this.x = x;
-                this.y = y;
-                this.radius = radius;
-                this.color = color;
-                this.opacity = 0;
-                this.fadeInSpeed = 0.02;
-                this.velocity = {
-                    x: (Math.random() - 0.5) * 2,
-                    y: (Math.random() - 0.5) * 2,
-                };
-            }
-
-            draw() {
-                if (this.opacity > 0) {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = this.color;
-                    ctx.globalAlpha = this.opacity;
-                    ctx.fill();
-                    ctx.closePath();
-                    ctx.globalAlpha = 1;
-                }
-            }
-
-            update() {
-                this.x += this.velocity.x;
-                this.y += this.velocity.y;
-
-                if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-                    this.velocity.x = -this.velocity.x;
-                }
-                if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-                    this.velocity.y = -this.velocity.y;
-                }
-
-                if (this.opacity < 1) {
-                    this.opacity += this.fadeInSpeed;
-                }
-                this.draw();
-            }
-        }
-
-        const initParticles = () => {
-            particles.current = [];
-            const numParticles = Math.min(300, window.innerWidth * 0.4);
-            for (let i = 0; i < numParticles; i++) {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height;
-                const radius = Math.random() * 2 + 1;
-                const color = `rgba(100, 100, 100, ${Math.random() * 0.3 + 0.1})`;
-                particles.current.push(new Particle(x, y, radius, color));
-            }
-        };
-        initParticles();
-
-        const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.current.forEach(particle => particle.update());
-            animationFrameId = requestAnimationFrame(animate);
-        };
-        animate();
-
-        const handleResize = () => {
-            setCanvasSize();
-            initParticles();
-        };
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            cancelAnimationFrame(animationFrameId);
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    return (
-        <canvas
-            ref={canvasRef}
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-                zIndex: -1,
-            }}
-        />
-    );
-};
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { motion, AnimatePresence } from 'framer-motion'; 
 
 function ContactForm() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        phone: '',      
-        message: '',
+        number: '',
+        project: '',
     });
 
-    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [errors, setErrors] = useState({});
+    const [submitStatus, setSubmitStatus] = useState('');
+    const [showPopup, setShowPopup] = useState(false);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) newErrors.name = 'Name is required';
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Invalid email format';
+        }
+        if (!formData.number.trim()) {
+            newErrors.number = 'Contact number is required';
+        } else if (!/^[0-9+\-\s]+$/.test(formData.number)) {
+            newErrors.number = 'Invalid phone number';
+        }
+        if (!formData.project.trim()) {
+            newErrors.project = 'Project description is required';
+        }
+        return newErrors;
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
+        setErrors((prev) => ({ ...prev, [name]: '' }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
-        setIsSubmitted(true);
-        // Reset form after submission
-        setTimeout(() => {
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                message: '',
+        setSubmitStatus('');
+        const validationErrors = validate();
+
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+            Object.keys(validationErrors).forEach((field) => {
+                const input = document.getElementById(field);
+                if (input) {
+                    input.classList.add('animate-shake');
+                    setTimeout(() => input.classList.remove('animate-shake'), 500);
+                }
             });
-            setIsSubmitted(false);
-        }, 3000);
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        try {
+            const response = await axios.post('https://adventure-back-end.vercel.app/api/contact-tech', {
+                name: formData.name,
+                email: formData.email,
+                phoneNumber: formData.number,
+                message: formData.project,
+            });
+
+            if (response.status === 200 || response.status === 201) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', number: '', project: '' });
+                setErrors({});
+            } else {
+                throw new Error(`Failed to submit with status ${response.status}`);
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setSubmitStatus('error');
+        } finally {
+            setShowPopup(true);
+            setIsSubmitting(false);
+        }
     };
+
+    useEffect(() => {
+        if (showPopup) {
+            const timer = setTimeout(() => setShowPopup(false), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [showPopup]);
+
 
     return (
         <div className="bg-gradient-to-b from-blue-900 via-black to-blue-900 min-h-screen flex items-center justify-center p-4 md:p-8 relative overflow-hidden">
-            <Particles />
-            
+
+
             <div className="w-full max-w-6xl rounded-2xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Left Content */}
-                <motion.div 
+                <motion.div
                     className="p-8 md:p-12 flex flex-col justify-center"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -157,7 +106,7 @@ function ContactForm() {
                     <h1 className="text-3xl md:text-4xl font-semibold text-white mb-4 leading-tight">
                         Ready to turn your project idea into <span className="text-blue-400">reality</span>?
                     </h1>
-                    
+
                     <h2 className="text-xl md:text-2xl font-semibold text-gray-300 mb-8">
                         Get In Touch With Us
                     </h2>
@@ -191,138 +140,125 @@ function ContactForm() {
                                     <h3 className="text-lg font-semibold text-white">{step.title}</h3>
                                     <p className="text-gray-400">{step.description}</p>
                                 </div>
-                            </motion.div>                            
+                            </motion.div>
                         ))}
-                    </div>     
-                                   
+                    </div>
+
                 </motion.div>
 
-                {/* Right Form */}
-                <motion.div 
-                    className="p-8 md:p-12 flex items-center justify-center"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                >
-                    <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8 w-full max-w-lg">
-                        {isSubmitted ? (
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                className="text-center py-12"
-                            >
-                                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                                    <svg className="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                    </svg>
-                                </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
-                                <p className="text-gray-400">We've received your message and will get back to you soon.</p>
-                            </motion.div>
-                        ) : (
-                            <>
+                {/* Right side form */}
+                <motion.div>
+                   
+                        <motion.div
+                            className="w-full max-w-lg"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                            <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
                                 <motion.h3
                                     initial={{ opacity: 0, y: -20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.4 }}
-                                    className="text-2xl font-bold text-white mb-6 text-center"
+                                    className="text-2xl font-semibold text-white mb-6 text-center"
                                 >
                                     Tell Us About Your Project
                                 </motion.h3>
 
                                 <form onSubmit={handleSubmit} className="space-y-5">
-                                    {[
-                                        { id: 'name', type: 'text', placeholder: 'John Doe', icon: 'user' },
-                                        { id: 'email', type: 'email', placeholder: 'john@example.com', icon: 'mail' },
-                                        { id: 'phone', type: 'tel', placeholder: '+91 ', icon: 'phone' },                                       
-                                    ].map(({ id, type, placeholder, icon }, i) => (
-                                        <motion.div
+                                    {[{ id: 'name', type: 'text', placeholder: 'John Doe' }, { id: 'email', type: 'email', placeholder: 'john@example.com' }, { id: 'number', type: 'tel', placeholder: '+91 ' }].map(({ id, type, placeholder }) => (
+                                        <input
                                             key={id}
-                                            initial={{ opacity: 0, y: 20 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ duration: 0.6, delay: 0.6 + i * 0.15 }}
-                                        >
-                                            <div className="relative">
-                                                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                                    <svg className="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        {icon === 'user' && (
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                                                        )}
-                                                        {icon === 'mail' && (
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                                        )}
-                                                        {icon === 'phone' && (
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                                        )}                                                       
-                                                    </svg>
-                                                </div>
-                                                <input
-                                                    type={type}
-                                                    id={id}
-                                                    name={id}
-                                                    value={formData[id]}
-                                                    onChange={handleChange}
-                                                    className="w-full pl-10 pr-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                                                    placeholder={placeholder}
-                                                    required={id !== 'company'}
-                                                />
-                                            </div>
-                                        </motion.div>
+                                            id={id}
+                                            name={id}
+                                            type={type}
+                                            value={formData[id]}
+                                            onChange={handleChange}
+                                            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                            placeholder={placeholder}
+                                        />
                                     ))}
 
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 1.2 }}
-                                    >
-                                        <label htmlFor="message" className="sr-only">Message</label>
-                                        <textarea
-                                            id="message"
-                                            name="message"
-                                            value={formData.message}
-                                            onChange={handleChange}
-                                            rows={5}
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                                            placeholder="Describe your project in detail..."
-                                            required
-                                        ></textarea>
-                                    </motion.div>
+                                    <textarea
+                                        id="project"
+                                        name="project"
+                                        value={formData.project}
+                                        onChange={handleChange}
+                                        rows={5}
+                                        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                        placeholder="Describe your project in detail..."
+                                        required
+                                    ></textarea>
 
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.6, delay: 1.4 }}
-                                        className="flex items-center space-x-4"
-                                    >
-                                        <label className="flex items-center text-sm text-gray-400">
-                                            <input 
-                                                type="checkbox" 
-                                                required 
-                                                className="mr-2 rounded bg-gray-800 border-gray-700 text-blue-600 focus:ring-blue-500" 
-                                            /> 
-                                            I agree to the privacy policy
-                                        </label>
-                                    </motion.div>
-
-                                    <motion.button
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        transition={{ duration: 0.6, delay: 1.6 }}
+                                    <button
                                         type="submit"
-                                        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center"
+                                        disabled={isSubmitting}
+                                        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all"
                                     >
-                                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                        </svg>
-                                        Send Message
-                                    </motion.button>
+                                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    </button>
                                 </form>
-                            </>
-                        )}
-                    </div>
+                            </div>
+                        </motion.div>
+               
                 </motion.div>
+
+
+                {/* Popup modal */}
+                <AnimatePresence>
+                    {showPopup && (
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50"
+                            onClick={() => setShowPopup(false)}
+                        >
+                            <motion.div
+                                initial={{ scale: 0.9, y: 20 }}
+                                animate={{ scale: 1, y: 0 }}
+                                exit={{ scale: 0.9, y: 20 }}
+                                className="bg-gray-900 rounded-xl p-8 max-w-md w-full border border-gray-800 shadow-2xl relative"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <button
+                                    onClick={() => setShowPopup(false)}
+                                    className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+                                >
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+
+                                {submitStatus === 'success' ? (
+                                    <div className="text-center">
+                                        <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-900/30 mb-4">
+                                            <svg className="h-10 w-10 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+                                        <p className="text-gray-300 mb-6">We’ll contact you within 24 hours.</p>
+                                    </div>
+                                ) : (
+                                    <div className="text-center">
+                                        <div className="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-900/30 mb-4">
+                                            <svg className="h-10 w-10 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                        <h3 className="text-2xl font-bold text-white mb-2">Oops!</h3>
+                                        <p className="text-gray-300 mb-6">Submission failed. Try again later.</p>
+                                    </div>
+                                )}
+                            </motion.div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
+
         </div>
+
     );
 }
 

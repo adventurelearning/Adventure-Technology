@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import {
+  FaBars, FaTimes, FaChevronDown, FaChevronUp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope,
+  FaFacebook, FaTwitter, FaLinkedin, FaInstagram
+} from 'react-icons/fa';
 import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
 
-// ✅ Utility: Determine if link is active
+
 const getLinkClasses = (pathname, path) => {
   const baseClasses = 'hover:text-gray-200 transition-colors';
   const activeClasses = 'text-gray-100';
@@ -15,10 +18,15 @@ function Navbar() {
   const pathname = location.pathname;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // ❗ Optional: Remove if not needed
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({
     services: false,
+    company: false,
+    joinus: false,
   });
+  const servicesDropdownRef = useRef(null);
+  const companyDropdownRef = useRef(null);
+  const joinusDropdownRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +38,7 @@ function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMobileDropdown = (menu) => {
@@ -43,6 +48,27 @@ function Navbar() {
     }));
   };
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
+        setMobileDropdowns(prev => ({ ...prev, services: false }));
+      }
+      if (companyDropdownRef.current && !companyDropdownRef.current.contains(event.target)) {
+        setMobileDropdowns(prev => ({ ...prev, company: false }));
+      }
+    };
+
+    if (isMobileMenuOpen) { // Only add listener when menu is open
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
+
   return (
     <nav className="px-4 py-2 sticky top-0 z-50 bg-black transition-all duration-1000">
       <div className="flex items-center justify-between transition-all duration-1000 p-2">
@@ -51,49 +77,168 @@ function Navbar() {
           <img
             src={LogoWhite}
             alt="Logo"
-            className="w-52 object-contain transition-all duration-300"
+            className="w-44 object-contain transition-all duration-300"
           />
         </Link>
 
         {/* Desktop Nav */}
         <ul className="hidden lg:flex space-x-12 text-base text-white font-Satoshi,Arial,sans-serif">
           <li><Link to="/" className={getLinkClasses(pathname, '/')}>HOME</Link></li>
-
-          {/* ✅ Services Dropdown - Desktop */}
+          {/* Company Dropdown - Desktop */}
           <li className="relative group">
-            <Link to="/services" className="flex items-center hover:text-gray-200 transition-colors">
+            <button className="flex items-center hover:text-gray-200 transition-colors">
+              COMPANY
+              <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
+            </button>
+            <div className="absolute z-50 mt-2 left-1/2 transform -translate-x-1/2 w-[600px] rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-8 space-y-4">
+              <div className="grid grid-cols-2 gap-6 justify-items-center">
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/AboutUs" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base  mb-2">About Us</h3>
+                    <p className="text-sm font-normal text-gray-200 w-1/2">Learn more about our mission and values.</p>
+                  </Link>
+                </div>
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Contact" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base  mb-2">Contact</h3>
+                    <p className="text-sm font-normal text-gray-200 w-1/2">Reach out for support or partnerships.</p>
+                  </Link>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-6 justify-items-center">
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/terms" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base mb-2">Terms & Conditions</h3>
+                    <p className="text-sm font-normal text-gray-200 w-1/2">Understand how our services work.</p>
+                  </Link>
+                </div>
+                <div className="group cursor-pointer pr-14 transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/terms" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base  mb-2">Privacy Policy</h3>
+                    <p className="text-sm font-normal text-gray-200 w-1/2">See how we handle your data.</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          {/* Services Dropdown - Desktop */}
+          <li className="relative group">
+            <button className="flex items-center hover:text-gray-200 transition-colors">
               SERVICES
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
-            </Link>
-            <ul className="absolute z-50 text-sm text-gray-700 super-rich-dropdown mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0">
-              <li><Link to="/Web-Development" className={`super-hover-link ${getLinkClasses(pathname, '/Web-Development')}`}>Web App Development</Link></li>
-              <li><Link to="/Software-Development" className={`super-hover-link ${getLinkClasses(pathname, '/Software-Development')}`}>Software Development</Link></li>
-              <li><Link to="/UiUx-Design" className={`super-hover-link ${getLinkClasses(pathname, '/UiUx-Design')}`}>UI/UX Design</Link></li>
-              <li><Link to="/Iot-development" className={`super-hover-link ${getLinkClasses(pathname, '/Iot-development')}`}>IoT Development</Link></li>
-              <li><Link to="/Ai&Ml-Solutions" className={`super-hover-link ${getLinkClasses(pathname, '/Ai&Ml-Solutions')}`}>AI & ML Solutions</Link></li>
-              <li><Link to="/DataScience-Analytics" className={`super-hover-link ${getLinkClasses(pathname, '/DataScience-Analytics')}`}>Data Science & Data Analytics</Link></li>
-              <li><Link to="/Digital-Marketing" className={`super-hover-link ${getLinkClasses(pathname, '/Digital-Marketing')}`}>Digital Marketing</Link></li>
-              <li><Link to="/IT-Consulting" className={`super-hover-link ${getLinkClasses(pathname, '/IT-Consulting')}`}>IT Consulting</Link></li>
-            </ul>
+            </button>
+            <div className="absolute z-50 mt-2 left-1/2 transform -translate-x-1/2 w-[900px] rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-8 space-y-4">
+              <div className="grid grid-cols-3 gap-6 justify-items-center">
+                {/* Service 1: Development */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Web-Development" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base ">Web App Development</h3>
+                    <p className="text-gray-200 text-sm font-normal">Scalable web apps to meet your business needs.</p>
+                  </Link>
+                </div>
+
+                {/* Service 2: Software Development */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Software-Development" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base ">Software Development</h3>
+                    <p className="text-gray-200 text-sm font-normal">Custom solutions for business process automation.</p>
+                  </Link>
+                </div>
+
+                {/* Service 3: UI/UX Design */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/UiUx-Design" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base ">UI/UX Design</h3>
+                    <p className="text-gray-200 text-sm font-normal">Engaging and user-friendly digital experiences.</p>
+
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-6 mt-6 justify-items-center">
+                {/* Service 4: IoT Development */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Iot-development" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base ">IoT Development</h3>
+                    <p className="text-gray-200 text-sm font-normal">Connected devices transforming industries.</p>
+
+                  </Link>
+                </div>
+
+                {/* Service 5: Embedded Product Design */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Embedded-Design" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base ">Embedded Product Design</h3>
+                    <p className="text-gray-200 text-sm font-normal">Reliable embedded systems for various applications.</p>
+                  </Link>
+                </div>
+
+                {/* Service 6: Embedded Software */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Embedded-Software" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base ">Embedded Software</h3>
+                    <p className="text-gray-200 text-sm font-normal">Design efficient and reliable software for embedded systems.</p>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-3 gap-6 mt-6 justify-items-center">
+                {/* Service 7: AI & ML Solutions */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Ai&Ml-Solutions" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base ">AI & ML Solutions</h3>
+                    <p className="text-gray-200 text-sm font-normal">Leverage AI to automate and improve decisions.</p>
+                  </Link>
+                </div>
+
+                {/* Service 8: Data Science & Analytics */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/DataScience-Analytics" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold  ">Data Science &<span className='block'> Data Analytics</span></h3>
+                    <p className="text-gray-200 text-sm font-normal">Use data to drive actionable insights.</p>
+                  </Link>
+                </div>
+
+                {/* Service 9: Digital Marketing */}
+                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
+                  <Link to="/Digital-Marketing" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base ">Digital Marketing</h3>
+                    <p className="text-gray-200 text-sm font-normal">Boost brand visibility through digital strategies.</p>
+                  </Link>
+                </div>
+              </div>
+
+            </div>
           </li>
 
           <li><Link to="/Industries" className={getLinkClasses(pathname, '/Industries')}>INDUSTRIES</Link></li>
-          <li><Link to="/Blogs" className={getLinkClasses(pathname, '/Blogs')}>PORTFOLIO</Link></li>
 
-          {/* ✅ Company Dropdown */}
+          {/* Company Dropdown */}
           <li className="relative group">
-            <Link to="/Careers" className="flex items-center hover:text-gray-200 transition-colors">
-              COMPANY
+            <button className="flex items-center hover:text-gray-200 transition-colors">
+              JOIN US
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
-            </Link>
-            <ul className="absolute z-50 text-sm text-gray-700 super-rich-dropdown mt-2 py-2 w-48 rounded-md shadow-lg border border-gray-100 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0">
-              <li><Link to="/AboutUs" className={`super-hover-link ${getLinkClasses(pathname, '/AboutUs')}`}>About Us</Link></li>
-              <li><Link to="/Internship" className={`super-hover-link ${getLinkClasses(pathname, '/Internship')}`}>Internship</Link></li>
-              <li><Link to="/Career" className={`super-hover-link ${getLinkClasses(pathname, '/Career')}`}>Careers</Link></li>
-            </ul>
+            </button>
+            <div className="absolute z-50 right-0 mt-2 w-64 rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-6 space-y-4">
+              <div className="space-y-3">
+                <div className='group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg'>
+                  <Link to="/Internship" className="text-blue-400 hover:text-blue-300 text-sm font-medium">
+                    <h3 className="font-semibold text-base  mb-2">Internship</h3>
+                    <p className="text-sm text-gray-200 mb-2 font-normal">Your digital transformation partner, building software that adapts, evolves, and excels with your business.</p>
+                  </Link>
+                </div>
+                <hr className='border-t border-gray-700 ' />
+                <div className=" group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 ">
+                  <Link to="/Career" className="text-blue-400 hover:text-blue-300  font-medium">
+                    <h3 className="font-semibold text-base mb-2">Careers</h3>
+                    <p className="text-sm text-gray-200 mb-2  font-normal">We are always on the lookout for talented individuals passionate about software building.</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
-
 
         {/* Register + Mobile Toggle */}
         <div className="flex items-center transition-all duration-1000">
@@ -105,41 +250,303 @@ function Navbar() {
           </Link>
 
           {/* Hamburger */}
-          <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
-            {isMobileMenuOpen ? <FaTimes className="text-2xl text-white" /> : <FaBars className="text-2xl text-white" />}
+          <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>         
+            {isMobileMenuOpen ? <FaTimes className="text-2xl none text-white" /> : <FaBars className="text-2xl text-white" />}
           </div>
         </div>
       </div>
 
-      {/* ✅ Mobile Nav */}
-      <div className={`lg:hidden transition-all duration-300 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-        <ul className="mt-4 space-y-2 text-base font-medium text-white">
-          <li><Link to="/" className={getLinkClasses(pathname, '/')} onClick={() => setIsMobileMenuOpen(false)}>Home</Link></li>
-
-          {/* ✅ Services Dropdown - Mobile */}
-          <li>
-            <div
-              className="flex justify-between items-center py-2 px-2 cursor-pointer"
-              onClick={() => toggleMobileDropdown('services')}
-            >
-              <span className="text-gray-100">Services</span>
-              {mobileDropdowns.services ? <FaChevronUp className="text-gray-100" /> : <FaChevronDown className="text-gray-100" />}
+      {/* Mobile Nav */}
+      <div className={`fixed inset-0 z-50 lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-blue-950 "></div>
+        
+        <div className="relative h-full w-full overflow-y-auto">
+          <div className="flex justify-between p-2 pt-5">
+            <div>
+            <Link to="/" className="flex items-center pl-5">
+              <img
+                src={LogoWhite}
+                alt="Logo"
+                className="w-48 h-auto object-contain logo-img "
+              />
+            </Link>
             </div>
-            {mobileDropdowns.services && (
-              <ul className="pl-4 pb-2 space-y-2 text-sm text-gray-300">
-                <li><Link to="/web-app" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Web App Development</Link></li>
-                <li><Link to="/embedded" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Embedded System</Link></li>
-                <li><Link to="/iot" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>IoT</Link></li>
-                <li><Link to="/machine-learning" className="block py-2" onClick={() => setIsMobileMenuOpen(false)}>Machine Learning</Link></li>
-              </ul>
-            )}
-          </li>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
 
-          <li><Link to="/Products" className={getLinkClasses(pathname, '/Products')} onClick={() => setIsMobileMenuOpen(false)}>Products</Link></li>
-          <li><Link to="/Blogs" className={getLinkClasses(pathname, '/Blogs')} onClick={() => setIsMobileMenuOpen(false)}>Blogs</Link></li>
-          <li><Link to="/Careers" className={getLinkClasses(pathname, '/Careers')} onClick={() => setIsMobileMenuOpen(false)}>Careers</Link></li>
-          <li><Link to="/contact" className={getLinkClasses(pathname, '/contact')} onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link></li>
-        </ul>
+          <ul className="px-4 py-5 space-y-1 text-lg font-medium">
+            
+            <li>
+              <Link
+                to="/"
+                className={`block py-3 px-4 rounded-lg transition-all ${getLinkClasses(pathname, '/')}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="flex items-center text-white">
+                  {/* <FaHome className="mr-3" /> */}
+                  <span>Home</span>
+                </div>
+              </Link>
+            </li>
+
+            {/* Company Dropdown - Mobile */}
+            <li ref={companyDropdownRef} className="">
+              <div
+                className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-white/10 transition-colors"
+                onClick={() => toggleMobileDropdown('company')}
+              >
+                <div className="flex items-center">
+                  {/* <FaBuilding className="mr-3" /> */}
+                  <span className="text-white">Company</span>
+                </div>
+                {mobileDropdowns.company ?
+                  <FaChevronUp className="text-white transition-transform" /> :
+                  <FaChevronDown className="text-white transition-transform" />
+                }
+              </div>
+              {mobileDropdowns.company && (
+                <div className="bg-black/30 backdrop-blur-lg border-t border-white/10 space-y-3 px-4 py-3 animate-fadeIn">
+                  <Link
+                    to="/AboutUs"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">About Us</h3>
+                    
+                  </Link>
+
+                  <div className="border-t border-white/10"></div>
+
+                  <Link
+                    to="/Contact"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Contact</h3>
+                   
+                  </Link>
+
+                  <div className="border-t border-white/10"></div>
+
+                  <Link
+                    to="/TermsAndConditions"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Terms & Conditions</h3>
+                  </Link>
+
+                  <div className="border-t border-white/10"></div>
+
+                  <Link
+                    to="/PrivacyPolicy"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Privacy Policy</h3>
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            {/* Services Dropdown - Mobile */}
+            <li ref={servicesDropdownRef} className="">
+              <div
+                className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-white/10 transition-colors"
+                onClick={() => toggleMobileDropdown('services')}
+              >
+                <div className="flex items-center">
+                  {/* <FaCode className="mr-3" /> */}
+                  <span className="text-white">Services</span>
+                </div>
+                {mobileDropdowns.services ?
+                  <FaChevronUp className="text-white" /> :
+                  <FaChevronDown className="text-white" />
+                }
+              </div>
+              {mobileDropdowns.services && (
+                <div className="bg-black/30 backdrop-blur-lg border-t border-white/10 p-4 animate-fadeIn ">
+                  <div className="grid grid-cols-1 gap-1.5">
+                    <Link
+                      to="/Web-Development"
+                      className="block py-1 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Web Development</h3>                     
+                    </Link>
+
+                    <div className="border-t border-white/10 "></div>
+
+                    <Link
+                      to="/Software-Development"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Software Development</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/UiUx-Design"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">UI & UX Design</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Iot-development"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">IoT Development</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Ai&Ml-Solutions"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">AI & ML Solutions</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Embedded-Design"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Product Design</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Embedded-Software"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Software</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/DataScience-Analytics"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Data Science & Data Analytics</h3>                     
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Digital-Marketing"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Digital Marketing</h3>                     
+                    </Link>
+
+                  </div>
+                </div>
+              )}
+            </li>
+
+            <li>
+              <Link
+                to="/Industries"
+                className={`block py-3 px-4 rounded-lg transition-all ${getLinkClasses(pathname, '/Industries')}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="flex items-center text-white">
+                  {/* <FaIndustry className="mr-3" /> */}
+                  <span>Industries</span>
+                </div>
+              </Link>
+            </li>
+
+            {/* Join Us Dropdown - Mobile */}
+            <li ref={joinusDropdownRef} className="">
+              <div
+                className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-white/10 transition-colors"
+                onClick={() => toggleMobileDropdown('joinus')}
+              >
+                <div className="flex items-center">
+                  {/* <FaUsers className="mr-3" /> */}
+                  <span className="text-white">Join Us</span>
+                </div>
+                {mobileDropdowns.joinus ?
+                  <FaChevronUp className="text-white" /> :
+                  <FaChevronDown className="text-white" />
+                }
+              </div>
+              {mobileDropdowns.joinus && (
+                <div className="bg-black/30 backdrop-blur-lg border-t border-white/10 space-y-3 px-4 py-3 animate-fadeIn">
+                  <Link
+                    to="/Internship"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">Internship</h3>
+                    <p className="text-sm text-gray-300 mt-1">Start your career with us</p>
+                  </Link>
+
+                  <div className="border-t border-white/10"></div>
+
+                  <Link
+                    to="/Careers"
+                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <h3 className="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">Careers</h3>
+                    <p className="text-sm text-gray-300 mt-1">Join our team</p>
+                  </Link>
+                </div>
+              )}
+            </li>
+
+            <li>
+              <Link
+                to="/contact"
+                className={`block py-3 px-4 rounded-lg transition-all ${getLinkClasses(pathname, '/contact')}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="flex items-center text-white">
+                  {/* <FaEnvelope className="mr-3" /> */}
+                  <span>Contact Us</span>
+                </div>
+              </Link>
+            </li>
+          </ul>          
+        </div>
+        {/* Social Links at Bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/20 backdrop-blur-3xl">
+            <div className="flex justify-center space-x-6">
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <FaFacebook className="text-xl" />
+              </a>
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <FaTwitter className="text-xl" />
+              </a>
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <FaLinkedin className="text-xl" />
+              </a>
+              <a href="#" className="text-white hover:text-blue-400 transition-colors">
+                <FaInstagram className="text-xl" />
+              </a>
+            </div>
+            <p className="text-center text-gray-300 text-sm mt-4">
+              © {new Date().getFullYear()} Your Company. All rights reserved.
+            </p>
+          </div>
       </div>
     </nav>
   );

@@ -26,6 +26,10 @@ import Internship from './Components/Internship';
 import ScrollToTop from './Components/Scrolltotop';
 import Careers from './Components/Careers';
 import Aboutus from './Components/Aboutus';
+import EmpDesign from './Pages/Services/EmbeddedDesign/EmpDesign';
+import EmbSoft from './Pages/Services/EmbeddedSoft/EmbSoft';
+import TermsAndConditions from './Components/TermsAndConditions';
+import PrivacyPolicy from './Components/PrivacyPolicy';
 
 function App() {
   return (
@@ -58,13 +62,19 @@ function App() {
         <Route path="/DataScience-Analytics" element={<DataScience />} />
         <Route path="/Digital-Marketing" element={<DigitalMarket />} />
         <Route path="/IT-Consulting" element={<Consulting />} />
+        <Route path="/Embedded-Design" element={<EmpDesign/>} />     
+        <Route path='/Embedded-Software' element={<EmbSoft/>}/>  
 
         {/* Careers */}
         <Route path="/Internship" element={<Internship />} />
         <Route path="/Career" element={<Careers/>} />
         <Route path="/Aboutus" element={<Aboutus/>} />
-      </Routes>
 
+        {/*Terms&Condition*/}
+        <Route path="/TermsAndConditions" element={<TermsAndConditions/>}/>
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>}/>
+
+      </Routes>  
       <Footer />
     </>
   );

@@ -16,11 +16,12 @@ const InterForm = () => {
     });
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
+    const [url, setUrl] = useState('');
 
     const degrees = [
         { id: 'ug', name: 'Undergraduate' },
         { id: 'pg', name: 'Postgraduate' },
-        { id:'others',name:'Other'}
+        { id: 'others', name: 'Other' }
     ];
 
     const domains = [
@@ -34,7 +35,7 @@ const InterForm = () => {
         { id: 'Robotics', name: 'Robotics' },
     ];
 
-        const courseOptions = {
+    const courseOptions = {
         ug: {
             BA: [
                 "English", "History", "Economics", "Political Science", "Sociology",
@@ -217,37 +218,107 @@ const InterForm = () => {
         setErrors(newErrors);
         return isValid;
     };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm()) return;
+        if (!validateForm() || !url) {
+            if (!url) {
+                alert('Please upload your resume.');
+            }
+            return;
+        }
 
         setIsLoading(true);
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            console.log(formData);
-            alert('Form submitted successfully! Check console for data.');
-            setFormData({
-                fullName: '',
-                contactNumber: '',
-                email: '',
-                college: '',
-                degree: '',
-                completionYear: '',
-                internshipDomain: '',
-                mainCourse: '',
-                subCourse: '',
-                comments: '',
+            const response = await fetch('https://adventure-back-end.vercel.app/api/intern/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    fullName: formData.fullName,
+                    contactNumber: formData.contactNumber,
+                    email: formData.email,
+                    collegeName: formData.college,
+                    degree: formData.degree,
+                    mainCourse: formData.mainCourse,
+                    subCourse: formData.subCourse,
+                    internshipDomain: formData.internshipDomain,
+                    additionalComments: formData.comments,
+                    resumeUrl: url, // Include the uploaded resume URL
+                }),
             });
+
+            if (response.ok) {
+                console.log('Form submitted successfully!');
+                alert('Application submitted successfully!');
+                setFormData({
+                    fullName: '',
+                    contactNumber: '',
+                    email: '',
+                    college: '',
+                    degree: '',
+                    completionYear: '',
+                    internshipDomain: '',
+                    mainCourse: '',
+                    subCourse: '',
+                    comments: '',
+                });
+                setUrl(''); // Clear the resume URL after successful submission
+            } else {
+                const errorData = await response.json();
+                console.error('Form submission failed:', errorData);
+                alert('Form submission failed. Please try again.');
+            }
         } catch (error) {
-            console.error('Form submission failed:', error);
-            alert('Form submission failed. Please try again.');
+            console.error('Error submitting form:', error);
+            alert('An unexpected error occurred. Please try again.');
         } finally {
             setIsLoading(false);
         }
     };
 
+    const [uploading, setUploading] = useState(false);
+    const [uploadError, setUploadError] = useState(null);
+    const [resumeUrl, setResumeUrl] = useState('');
+
+    const handleResumeUpload = async (e) => {
+        const file = e.target.files[0];
+        if (!file || file.type !== 'application/pdf') {
+            alert('Please upload a valid PDF file.');
+            return;
+        }
+
+        setUploading(true);
+        setUploadError(null);
+
+        const data = new FormData();
+        data.append('file', file);
+        data.append('upload_preset', 'resume');
+
+        try {
+            const res = await fetch('https://api.cloudinary.com/v1_1/dlw21awck/raw/upload', {
+                method: 'POST',
+                body: data,
+            });
+
+            const result = await res.json();
+
+            if (result.secure_url) {
+                setResumeUrl(result.secure_url);
+                setUrl(result.secure_url); // Keep 'url' state updated for form submission
+                console.log('Resume uploaded to:', result.secure_url);
+            } else {
+                setUploadError('Upload failed: ' + result.error?.message);
+                console.error(result);
+            }
+        } catch (err) {
+            setUploadError('Error uploading PDF.');
+            console.error('Error uploading:', err);
+        } finally {
+            setUploading(false);
+        }
+    };
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
             <div className="container mx-auto px-4 py-12 flex md:flex-nowrap flex-col md:flex-row items-start gap-8">
@@ -321,7 +392,7 @@ const InterForm = () => {
                         </h2>
 
                         <p className="text-gray-400 mt-2">
-                        Your career starts here. Submit your application today
+                            Your career starts here. Submit your application today
                         </p>
                     </div>
 
@@ -464,7 +535,24 @@ const InterForm = () => {
                             </select>
                             {errors.internshipDomain && <p className="text-red-400 text-sm mt-1">{errors.internshipDomain}</p>}
                         </div>
-
+                        {/*Resume Upload*/}
+                        <div>
+                            <label className="block text-blue-200 mb-2">Resume Upload</label>
+                            <div className="flex items-center justify-center w-full">
+                                <label className="flex flex-col w-full h-32 border-2 border-blue-600 border-dashed rounded-lg cursor-pointer bg-gray-700 hover:bg-gray-600">
+                                    <div className="flex flex-col items-center justify-center pt-7">
+                                        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                        </svg>
+                                        <p className="pt-1 text-sm text-blue-300">Click to upload your resume (PDF)</p>
+                                        {uploading && <p className="text-xs text-blue-300">Uploading...</p>}
+                                        {uploadError && <p className="text-xs text-red-500">{uploadError}</p>}
+                                        {resumeUrl && <p className="text-xs text-green-400">Resume uploaded!</p>}
+                                    </div>
+                                    <input type="file" className="opacity-0" accept=".pdf" onChange={handleResumeUpload} required />
+                                </label>
+                            </div>
+                        </div>
                         {/* Comments */}
                         <div>
                             <label className="block text-gray-300 mb-2">Additional Comments</label>

@@ -4,7 +4,7 @@ import coimbatore from '../assets/locations/COIMBATORE.svg';
 
 const Locations = () => {
     return (
-        <div className="py-20 px-3  bg-gradient-to-b from-black  to-black text-white border border-gray-500 border-l-0 border-t-0 border-r-0">
+        <div className="py-20 px-3  bg-gradient-to-b from-black  to-black text-white border border-gray-500 border-l-0 border-t-1 border-b-0  border-r-0">
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
                 {/* Text Section */}
                 <div className="lg:w-1/2 text-center lg:text-start space-y-6">

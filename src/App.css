@@ -258,3 +258,17 @@
   background-color: #374151; /* Example dark hover background */
   color: #e5e7eb; /* Light text on hover */
 }
+
+/* Hide scrollbar for webkit browsers (Chrome, Safari, Edge) */
+html, body {
+  height: 100%;
+  overflow: hidden;  /* Hide the default scrollbar */
+}
+
+body {
+  overflow-y: scroll;  /* Still allow scrolling */
+}
+
+::-webkit-scrollbar {
+  display: none;  /* Hides the scrollbar */
+}

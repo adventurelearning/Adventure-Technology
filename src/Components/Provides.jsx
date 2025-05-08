@@ -7,8 +7,7 @@ import iotDevelopmentImage from '../assets/Provids/IOT (1).svg';
 import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
 import AIML from '../assets/Provids/AI & ML.svg';
 import marketing from '../assets/Provids/DIGITAL MARKETING.svg';
-import consulting from '../assets/Provids/IT CONSULTING.svg'
-// import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
+import consulting from '../assets/Provids/IT CONSULTING.svg';
 
 const services = [
   {
@@ -27,38 +26,52 @@ const services = [
   },
   {
     id: '03',
+    title: 'UI & UX Design',
+    description:
+      'At Adventure Technology, we craft intuitive and engaging digital experiences. Our UI/UX design services combine user research, interaction design, and visual aesthetics to deliver interfaces that are not only beautiful but also user-centric and effective.',
+    link: consulting,
+  },
+  {
+    id: '04',
     title: 'IoT Development',
     description:
       'At Adventure Technology, we design and develop smart IoT solutions that connect devices, systems, and people. From sensor integration to real-time data processing, our IoT platforms enhance automation, efficiency, and decision-making across industries.',
     link: iotDevelopmentImage,
   },
   {
-    id: '04',
+    id: '05',
     title: 'AI & ML Solutions',
     description:
       'At Adventure Technology, we harness the power of AI and Machine Learning to build intelligent systems that learn, adapt, and optimize. From predictive analytics to natural language processing, our solutions help businesses automate processes, uncover insights, and drive smarter decision-making.',
     link: AIML,
   },
   {
-    id: '05',
+    id: '06',
+    title: 'Embedded Product Design',
+    description:
+      'We design innovative and reliable embedded hardware solutions tailored to your industry needs. From PCB design to microcontroller integration, our expertise ensures optimized, scalable product development for smart devices and systems.',
+    link: consulting,
+  },
+  {
+    id: '07',
+    title: 'Embedded Software',
+    description:
+      'We specialize in embedded software development, including firmware, board support packages (BSP), and middleware. Our solutions ensure reliable, low-level hardware control and efficient performance for embedded systems across industries.',
+    link: consulting,
+  },
+  {
+    id: '08',
     title: 'Data Science & Data Analytics',
     description:
       'We turn data into actionable insights. At Adventure Technology, our data science and analysis services help businesses uncover patterns, predict trends, and make smarter decisions through advanced analytics and machine learning.',
     link: dataScienceImage,
   },
   {
-    id: '06',
+    id: '09',
     title: 'Digital Marketing',
     description:
       'At Adventure Technology, we craft data-driven digital marketing strategies that amplify your brand’s online presence. From SEO and paid ads to social media and content marketing, our solutions are designed to attract, engage, and convert your ideal audience.',
     link: marketing,
-  },
-  {
-    id: '07',
-    title: 'IT Consulting',
-    description:
-      'Adventure Technology provides expert IT consulting to help businesses align technology with their goals. From strategy to implementation, we guide digital transformation and optimize IT infrastructure for long-term success.',
-    link: consulting,
   },
 ];
 
@@ -70,17 +83,17 @@ const Provides = () => {
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = itemRefs.current.indexOf(entry.target);
-            setActiveIndex(index);
+            if (index !== -1) setActiveIndex(index);
           }
         });
       },
-      { threshold: 0.5, rootMargin: "-100px 0px -100px 0px" }
+      { threshold: 0.5, rootMargin: '-100px 0px -100px 0px' }
     );
 
-    itemRefs.current.forEach(item => {
+    itemRefs.current.forEach((item) => {
       if (item) observerRef.current.observe(item);
     });
 
@@ -100,7 +113,7 @@ const Provides = () => {
       {services.map((service, index) => (
         <div
           key={service.id}
-          ref={el => itemRefs.current[index] = el}
+          ref={(el) => (itemRefs.current[index] = el)}
           className="relative flex px-10"
         >
           {/* Timeline Column */}
@@ -114,7 +127,7 @@ const Provides = () => {
             </div>
 
             {/* Line */}
-            {index !== services.length - 0 && (
+            {index !== services.length - 1 && (
               <div className="absolute top-[4.5rem] h-full w-0.5 bg-white z-0"></div>
             )}
           </div>
@@ -127,9 +140,15 @@ const Provides = () => {
                 activeIndex === index ? 'opacity-100' : 'opacity-30'
               }`}
             >
-              <h1 className="mb-4 text-2xl font-semibold text-blue-600 leading-tight">{service.id}</h1>
-              <h2 className="text-white text-2xl font-semibold max-w-2xl mb-4 leading-relaxed">{service.title}</h2>
-              <p className="text-lg font-light opacity-80 max-w-sm mb-4 leading-7">{service.description}</p>
+              <h1 className="mb-4 text-2xl font-semibold text-blue-600 leading-tight">
+                {service.id}
+              </h1>
+              <h2 className="text-white text-2xl font-semibold max-w-2xl mb-4 leading-relaxed">
+                {service.title}
+              </h2>
+              <p className="text-lg font-light opacity-80 max-w-sm mb-4 leading-7">
+                {service.description}
+              </p>
               <button className="border border-blue-600 text-blue-500 px-4 py-2 rounded-lg">
                 Know More
               </button>
@@ -141,7 +160,9 @@ const Provides = () => {
                 src={service.link}
                 alt={service.title}
                 className={`rounded-lg w-1/2 h-auto transition-all duration-500 transform ${
-                  activeIndex === index ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+                  activeIndex === index
+                    ? 'opacity-100 scale-100'
+                    : 'opacity-0 scale-95'
                 }`}
               />
             </div>
