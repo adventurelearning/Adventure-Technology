@@ -10,7 +10,7 @@ const DigitalMarket = () => {
     <div>
       <MarkHome/>
       <MarkOffer/>
-      <WhyWeb/> 
+      {/* <WhyWeb/>  */}
       <MarkTools/>
       <MarkDevelopmentProcess/>
       <MarkFAQ/>

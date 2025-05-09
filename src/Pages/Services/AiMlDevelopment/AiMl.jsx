@@ -10,7 +10,7 @@ const AiMl = () => {
     <div>
       <AiHome/>
       <AiOffer/>
-      <WhyWeb/> 
+      {/* <WhyWeb/>  */}
       <AiTools/>
       <AiDevelopmentProcess/>
       <AiFAQ/>

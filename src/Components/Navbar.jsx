@@ -84,43 +84,6 @@ function Navbar() {
         {/* Desktop Nav */}
         <ul className="hidden lg:flex space-x-12 text-base text-white font-Satoshi,Arial,sans-serif">
           <li><Link to="/" className={getLinkClasses(pathname, '/')}>HOME</Link></li>
-          {/* Company Dropdown - Desktop */}
-          <li className="relative group">
-            <button className="flex items-center hover:text-gray-200 transition-colors">
-              COMPANY
-              <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
-            </button>
-            <div className="absolute z-50 mt-2 left-1/2 transform -translate-x-1/2 w-[600px] rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-8 space-y-4">
-              <div className="grid grid-cols-2 gap-6 justify-items-center">
-                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/AboutUs" className="text-blue-400 hover:text-blue-300 font-medium">
-                    <h3 className="font-semibold text-base  mb-2">About Us</h3>
-                    <p className="text-sm font-normal text-gray-200 w-1/2">Learn more about our mission and values.</p>
-                  </Link>
-                </div>
-                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/Contact" className="text-blue-400 hover:text-blue-300 font-medium">
-                    <h3 className="font-semibold text-base  mb-2">Contact</h3>
-                    <p className="text-sm font-normal text-gray-200 w-1/2">Reach out for support or partnerships.</p>
-                  </Link>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-6 justify-items-center">
-                <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/terms" className="text-blue-400 hover:text-blue-300 font-medium">
-                    <h3 className="font-semibold text-base mb-2">Terms & Conditions</h3>
-                    <p className="text-sm font-normal text-gray-200 w-1/2">Understand how our services work.</p>
-                  </Link>
-                </div>
-                <div className="group cursor-pointer pr-14 transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/terms" className="text-blue-400 hover:text-blue-300 font-medium">
-                    <h3 className="font-semibold text-base  mb-2">Privacy Policy</h3>
-                    <p className="text-sm font-normal text-gray-200 w-1/2">See how we handle your data.</p>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </li>
 
           {/* Services Dropdown - Desktop */}
           <li className="relative group">
@@ -212,12 +175,19 @@ function Navbar() {
             </div>
           </li>
 
+          {/* Industries */}
           <li><Link to="/Industries" className={getLinkClasses(pathname, '/Industries')}>INDUSTRIES</Link></li>
 
+          {/* AboutUs */}
+          <li className="relative group" >
+            <Link to="/AboutUs" className={getLinkClasses(pathname, '/AboutUs')}>
+              ABOUT US
+            </Link>
+          </li>
           {/* Company Dropdown */}
           <li className="relative group">
             <button className="flex items-center hover:text-gray-200 transition-colors">
-              JOIN US
+              CAREERS
               <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
             </button>
             <div className="absolute z-50 right-0 mt-2 w-64 rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-6 space-y-4">
@@ -231,7 +201,7 @@ function Navbar() {
                 <hr className='border-t border-gray-700 ' />
                 <div className=" group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 ">
                   <Link to="/Career" className="text-blue-400 hover:text-blue-300  font-medium">
-                    <h3 className="font-semibold text-base mb-2">Careers</h3>
+                    <h3 className="font-semibold text-base mb-2">Join Us</h3>
                     <p className="text-sm text-gray-200 mb-2  font-normal">We are always on the lookout for talented individuals passionate about software building.</p>
                   </Link>
                 </div>
@@ -250,7 +220,7 @@ function Navbar() {
           </Link>
 
           {/* Hamburger */}
-          <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>         
+          <div className="lg:hidden" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <FaTimes className="text-2xl none text-white" /> : <FaBars className="text-2xl text-white" />}
           </div>
         </div>
@@ -259,17 +229,17 @@ function Navbar() {
       {/* Mobile Nav */}
       <div className={`fixed inset-0 z-50 lg:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-blue-950 "></div>
-        
+
         <div className="relative h-full w-full overflow-y-auto">
           <div className="flex justify-between p-2 pt-5">
             <div>
-            <Link to="/" className="flex items-center pl-5">
-              <img
-                src={LogoWhite}
-                alt="Logo"
-                className="w-48 h-auto object-contain logo-img "
-              />
-            </Link>
+              <Link to="/" className="flex items-center pl-5">
+                <img
+                  src={LogoWhite}
+                  alt="Logo"
+                  className="w-48 h-auto object-contain logo-img "
+                />
+              </Link>
             </div>
             <button
               onClick={() => setIsMobileMenuOpen(false)}
@@ -282,7 +252,7 @@ function Navbar() {
           </div>
 
           <ul className="px-4 py-5 space-y-1 text-lg font-medium">
-            
+
             <li>
               <Link
                 to="/"
@@ -294,66 +264,6 @@ function Navbar() {
                   <span>Home</span>
                 </div>
               </Link>
-            </li>
-
-            {/* Company Dropdown - Mobile */}
-            <li ref={companyDropdownRef} className="">
-              <div
-                className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-white/10 transition-colors"
-                onClick={() => toggleMobileDropdown('company')}
-              >
-                <div className="flex items-center">
-                  {/* <FaBuilding className="mr-3" /> */}
-                  <span className="text-white">Company</span>
-                </div>
-                {mobileDropdowns.company ?
-                  <FaChevronUp className="text-white transition-transform" /> :
-                  <FaChevronDown className="text-white transition-transform" />
-                }
-              </div>
-              {mobileDropdowns.company && (
-                <div className="bg-black/30 backdrop-blur-lg border-t border-white/10 space-y-3 px-4 py-3 animate-fadeIn">
-                  <Link
-                    to="/AboutUs"
-                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">About Us</h3>
-                    
-                  </Link>
-
-                  <div className="border-t border-white/10"></div>
-
-                  <Link
-                    to="/Contact"
-                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Contact</h3>
-                   
-                  </Link>
-
-                  <div className="border-t border-white/10"></div>
-
-                  <Link
-                    to="/TermsAndConditions"
-                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Terms & Conditions</h3>
-                  </Link>
-
-                  <div className="border-t border-white/10"></div>
-
-                  <Link
-                    to="/PrivacyPolicy"
-                    className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Privacy Policy</h3>
-                  </Link>
-                </div>
-              )}
             </li>
 
             {/* Services Dropdown - Mobile */}
@@ -379,7 +289,7 @@ function Navbar() {
                       className="block py-1 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Web Development</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Web Development</h3>
                     </Link>
 
                     <div className="border-t border-white/10 "></div>
@@ -389,7 +299,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Software Development</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Software Development</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -398,7 +308,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">UI & UX Design</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">UI & UX Design</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -407,7 +317,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">IoT Development</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">IoT Development</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -416,7 +326,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">AI & ML Solutions</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">AI & ML Solutions</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -425,7 +335,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Product Design</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Product Design</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -434,7 +344,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Software</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Embedded Software</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -443,7 +353,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Data Science & Data Analytics</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Data Science & Data Analytics</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -452,7 +362,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Digital Marketing</h3>                     
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Digital Marketing</h3>
                     </Link>
 
                   </div>
@@ -473,6 +383,20 @@ function Navbar() {
               </Link>
             </li>
 
+            {/* Aboutus - Mobile */}
+            <li>
+              <Link
+                to="/AboutUs"
+                className={`block py-3 px-4 rounded-lg transition-all ${getLinkClasses(pathname, '/AboutUs')}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="flex items-center text-white">
+                  {/* <FaHome className="mr-3" /> */}
+                  <span>About Us</span>
+                </div>
+              </Link>
+            </li>
+
             {/* Join Us Dropdown - Mobile */}
             <li ref={joinusDropdownRef} className="">
               <div
@@ -481,7 +405,7 @@ function Navbar() {
               >
                 <div className="flex items-center">
                   {/* <FaUsers className="mr-3" /> */}
-                  <span className="text-white">Join Us</span>
+                  <span className="text-white">Careers</span>
                 </div>
                 {mobileDropdowns.joinus ?
                   <FaChevronUp className="text-white" /> :
@@ -502,11 +426,11 @@ function Navbar() {
                   <div className="border-t border-white/10"></div>
 
                   <Link
-                    to="/Careers"
+                    to="/Career"
                     className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    <h3 className="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">Careers</h3>
+                    <h3 className="font-semibold text-blue-400 group-hover:text-blue-300 transition-colors">Join Us</h3>
                     <p className="text-sm text-gray-300 mt-1">Join our team</p>
                   </Link>
                 </div>
@@ -525,28 +449,28 @@ function Navbar() {
                 </div>
               </Link>
             </li>
-          </ul>          
+          </ul>
         </div>
         {/* Social Links at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/20 backdrop-blur-3xl">
-            <div className="flex justify-center space-x-6">
-              <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                <FaFacebook className="text-xl" />
-              </a>
-              <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                <FaTwitter className="text-xl" />
-              </a>
-              <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                <FaLinkedin className="text-xl" />
-              </a>
-              <a href="#" className="text-white hover:text-blue-400 transition-colors">
-                <FaInstagram className="text-xl" />
-              </a>
-            </div>
-            <p className="text-center text-gray-300 text-sm mt-4">
-              © {new Date().getFullYear()} Your Company. All rights reserved.
-            </p>
+          <div className="flex justify-center space-x-6">
+            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+              <FaFacebook className="text-xl" />
+            </a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+              <FaTwitter className="text-xl" />
+            </a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+              <FaLinkedin className="text-xl" />
+            </a>
+            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+              <FaInstagram className="text-xl" />
+            </a>
           </div>
+          <p className="text-center text-gray-300 text-sm mt-4">
+            © {new Date().getFullYear()} Your Company. All rights reserved.
+          </p>
+        </div>
       </div>
     </nav>
   );

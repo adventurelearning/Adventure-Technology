@@ -2,14 +2,14 @@ import React from 'react';
 
 const IndustrialSection = () => {
     return (
-        <div className="bg-black py-20 text-white text-center md:text-left">
-            <div className="container mx-auto px-4 md:px-8">
-                <h1 className="text-4xl md:text-4xl font-semibold mb-8 leading-tight">
-                    Empowering Industrial Innovation<br className="hidden md:block" />
-                    with Intelligent, Connected, and <br className="hidden md:block" />
-                    Future-Ready Embedded Automation
+        <div className="bg-black py-12 sm:py-16 md:py-20 text-white text-center md:text-left">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8 leading-tight">
+                    Empowering Industrial Innovation<span className="md:block" >
+                    with Intelligent, Connected, and </span><span className=" md:block" >
+                    Future-Ready Embedded Automation</span>
                 </h1>
-                <div className="text-lg text-gray-300 mb-6">
+                <div className="text-lg text-gray-300 mb-6 text-justify">
                     <p className="mb-4">
                         At AutomationEdge Solutions, we specialize in developing high-performance embedded systems that transform industrial environments. From real-time machine control to IIoT-enabled analytics, our solutions improve operational efficiency, reduce downtime, and enable intelligent decision-making across industrial sectors.
                     </p>

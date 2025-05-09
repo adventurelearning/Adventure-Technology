@@ -2,12 +2,12 @@ import React from 'react';
 
 const AgricultureSection = () => {
     return (
-        <div className="bg-black py-20 text-white text-center md:text-left">
-            <div className="container mx-auto px-4 md:px-8">
-                <h1 className="text-4xl md:text-4xl font-semibold mb-8 leading-tight">
+        <div className="bg-black py-12 sm:py-16 md:py-20 text-white text-center md:text-left">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 md:mb-8 leading-tight">
                     Revolutionizing Agriculture with Custom Software Solutions
                 </h1>
-                <div className="text-lg text-gray-300 mb-6">
+                <div className="text-lg text-gray-300 mb-6 text-justify">
                     <p className="mb-4">
                         At [Your Company Name], we specialize in developing cutting-edge agricultural software solutions tailored to the unique needs of modern farmers and agribusinesses. Our solutions are designed to enhance productivity, streamline operations, and optimize farming practices across the entire supply chain.
                     </p>

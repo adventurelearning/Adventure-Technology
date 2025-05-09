@@ -10,7 +10,7 @@ const UiUxDesign = () => {
     <div>      
       <UiHome/>
       <UiOffer/>
-      <WhyWeb/> 
+      {/* <WhyWeb/>  */}
       <UiTools/>
       <UiDevelopmentProcess/>
       <UiFAQ/>      

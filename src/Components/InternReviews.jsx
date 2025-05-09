@@ -73,14 +73,14 @@ const InternReviews = () => {
     const currentReview = reviews[currentIndex];
 
     return (
-        <section className="py-20 bg-gradient-to-br from-black to-blue-900 "> {/* Added 'relative' here */}
+        <section className="py-5 md:py-5 lg:py-5 xl:py-5 bg-gradient-to-br from-black to-blue-900 "> {/* Added 'relative' here */}
             <div className="container mx-auto px-6">
                 <div className="text-center mb-8">
                     <h2 className="text-4xl lg:text-4xl font-semibold text-white bg-clip-text  mb-4 tracking-tight">
                         Our Intern <span className="text-blue-400">Experience</span>
                     </h2>
-                    <p className="text-xl text-gray-200  leading-relaxed">
-                        Real stories from our incredible interns, showcasing their growth, <span className='block'> contributions, and the vibrant culture of our programs.</span>
+                    <p className="text-lg  md:text-xl lg:text-xl xl:text-xl  text-gray-200  leading-relaxed">
+                        Real stories from our incredible interns, showcasing their growth, <span className='lg:block'> contributions, and the vibrant culture of our programs.</span>
                     </p>
                 </div>
 
@@ -99,7 +99,7 @@ const InternReviews = () => {
 
                         {/* Right: Review Text */}
                         <div className="md:w-2/3 md:pl-8 ">
-                            <p className={`text-gray-300 text-lg pt-10  leading-relaxed italic ${reviewHeight} overflow-hidden`}>
+                            <p className={`text-gray-300 text-lg md:pt-10  leading-relaxed italic ${reviewHeight} overflow-hidden`}>
                                 <span className="text-blue-400 font-semibold mr-2">“</span>
                                 {currentReview.content}
                                 <span className="text-blue-400 font-semibold ml-2">”</span>

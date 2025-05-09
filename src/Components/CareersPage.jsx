@@ -20,7 +20,7 @@ const CareerPage = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden gap-8">
+        <div className="min-h-screen bg-black  px-4 md:px-6 lg:px-8 relative overflow-hidden gap-8">
             {/* Background pattern elements - You can add these back if needed */}
 
             <div className="max-w-7xl mx-auto relative z-10">

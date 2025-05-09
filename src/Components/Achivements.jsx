@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = "rgba(255, 255, 255, 0.25)" }) => {
     const divRef = useRef(null);
@@ -33,12 +34,12 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
     return (
         <div className="bg-black py-8">
             <div className="container mx-auto  text-white flex flex-col md:flex-row items-center justify-around px-6">
-                <div className="text-center md:text-left">
+                <div className="text-start md:text-left">
                     <h1 className="text-4xl mb-4 max-w-sm">
                         Empowering Businesses with Technology That Breaks Every Barrier
                     </h1>
                 </div>
-                <div className="text-center md:text-left max-w-lg">
+                <div className="text-start md:text-left max-w-lg">
                     <h3 className="text-lg leading-relaxed">
                         Adventure Technology leads digital transformation,
                         helping businesses embrace change and discover growth opportunities.
@@ -53,45 +54,50 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
 
                         {/* Stat Card */}
                         <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">35+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Industries Mastered</h3>
+                            <div className="text-4xl font-bold text-blue-600">7+</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Industries Served with Excellence</h3>
                             <p className="mt-2 text-white w-3/4">
-                                With our agility & engineering expertise, we equip your critical business functions with customized tech, and expand digital capabilities.
+                                Leveraging our agility and deep engineering expertise, we deliver tailored technology solutions that empower key business functions across seven diverse industries.
                             </p>
                         </div>
+
 
                         {/* Repeat same structure for the other stat blocks */}
-                        <div className="text-start border-l border-gray-400 h-full  pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">1600+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Tech Evangelists</h3>
+                        <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
+                            <div className="text-4xl font-bold text-blue-600">30+</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Expert Technology Professionals</h3>
                             <p className="mt-2 text-white w-3/4">
-                                We are a dynamic team of technology enthusiasts and experts passionately driven to achieve the best results for our clients.
+                                Our team of 30+ skilled technologists and thought leaders is committed to delivering innovative solutions and driving meaningful impact for our clients.
                             </p>
                         </div>
 
-                        <div className="text-start border-l border-gray-400 h-full  pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">3000+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Solutions Designed And Delivered</h3>
+
+                        <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
+                            <div className="text-4xl font-bold text-blue-600">1200+</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Projects Successfully Delivered</h3>
                             <p className="mt-2 text-white w-3/4">
-                                We have empowered businesses with thousands of successful futuristic solutions that have helped them grow and scale.
+                                With over 1,200 solutions designed and delivered, we've helped businesses innovate, scale, and stay ahead in a rapidly evolving digital landscape.
                             </p>
                         </div>
 
-                        <div className="text-start border-l border-gray-400 h-full  pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">500+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Legacy Processes Transformed</h3>
+
+                        <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
+                            <div className="text-4xl font-bold text-blue-600">11+</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Years of Innovation & Legacy Transformation</h3>
                             <p className="mt-2 text-white w-3/4">
-                                We help businesses achieve their digital transformation goals by seamlessly integrating cutting-edge technologies into their legacy systems.
+                                We've been helping businesses transform for over 11 years by seamlessly integrating cutting-edge technologies into their legacy systems.
                             </p>
                         </div>
 
-                        <div className="text-start border-l border-gray-400 h-full  pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">05+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Strategic Federal Partnerships</h3>
+
+                        <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
+                            <div className="text-4xl font-bold text-blue-600">150+</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Federal Agency Partnerships</h3>
                             <p className="mt-2 text-white w-3/4">
-                                We drive collaborative initiatives that address critical challenges and deliver impactful solutions.
+                                We've built trusted relationships with over 150 federal agencies, collaborating to solve mission-critical challenges and deliver lasting impact.
                             </p>
                         </div>
+
 
                         {/* CTA Box */}
                         <div
@@ -103,13 +109,15 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
                             onMouseLeave={handleMouseLeave}
                             className={`relative rounded-3xl border border-neutral-800 bg-neutral-900 overflow-hidden p-8 self-start ${className}`}
                         >
+
                             <h1 className='text-2xl text-white font-semibold'>Let’s build what’s next,<br />the future starts now!</h1>
-                            <button
-                                to="/register"
-                                className="register-button hidden lg:inline-block mt-4 px-5 py-2 rounded-lg text-base font-semibold text-white border border-transparent transition-all"
-                            >
-                                Let’s team up
-                            </button>
+                            <Link to="/Contact">
+                                <button
+                                    className="register-button hidden cursor-pointer lg:inline-block mt-4 px-5 py-2 rounded-lg text-base font-semibold text-white border border-transparent transition-all"
+                                >
+                                    Let’s team up
+                                </button>
+                            </Link>
                             <div
                                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
                                 style={{

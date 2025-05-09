@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { motion, AnimatePresence } from 'framer-motion'; 
+import { motion, AnimatePresence } from 'framer-motion';
 
 function ContactForm() {
     const [formData, setFormData] = useState({
@@ -147,60 +147,60 @@ function ContactForm() {
                 </motion.div>
 
                 {/* Right side form */}
-                <motion.div>
-                   
-                        <motion.div
-                            className="w-full max-w-lg"
-                            initial={{ opacity: 0, y: 50 }}
+
+
+                {/* Right Form */}
+
+                <motion.div
+                    className="w-full max-w-lg"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-2  sm:p-8 md:p-8 lg:p-8 xl:p-8">
+                        <motion.h3
+                            initial={{ opacity: 0, y: -20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6 text-center pt-2 md:pt-0 lg:pt-0 xl:pt-0"
                         >
-                            <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-8">
-                                <motion.h3
-                                    initial={{ opacity: 0, y: -20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.4 }}
-                                    className="text-2xl font-semibold text-white mb-6 text-center"
-                                >
-                                    Tell Us About Your Project
-                                </motion.h3>
+                            Tell Us About Your Project
+                        </motion.h3>
 
-                                <form onSubmit={handleSubmit} className="space-y-5">
-                                    {[{ id: 'name', type: 'text', placeholder: 'John Doe' }, { id: 'email', type: 'email', placeholder: 'john@example.com' }, { id: 'number', type: 'tel', placeholder: '+91 ' }].map(({ id, type, placeholder }) => (
-                                        <input
-                                            key={id}
-                                            id={id}
-                                            name={id}
-                                            type={type}
-                                            value={formData[id]}
-                                            onChange={handleChange}
-                                            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder={placeholder}
-                                        />
-                                    ))}
+                        <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                            {[{ id: 'name', type: 'text', placeholder: 'John Doe' }, { id: 'email', type: 'email', placeholder: 'john@example.com' }, { id: 'number', type: 'tel', placeholder: '+91 ' }].map(({ id, type, placeholder }) => (
+                                <input
+                                    key={id}
+                                    id={id}
+                                    name={id}
+                                    type={type}
+                                    value={formData[id]}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    placeholder={placeholder}
+                                />
+                            ))}
 
-                                    <textarea
-                                        id="project"
-                                        name="project"
-                                        value={formData.project}
-                                        onChange={handleChange}
-                                        rows={5}
-                                        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="Describe your project in detail..."
-                                        required
-                                    ></textarea>
+                            <textarea
+                                id="project"
+                                name="project"
+                                value={formData.project}
+                                onChange={handleChange}
+                                rows={5}
+                                className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Describe your project in detail..."
+                                required
+                            ></textarea>
 
-                                    <button
-                                        type="submit"
-                                        disabled={isSubmitting}
-                                        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all"
-                                    >
-                                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                                    </button>
-                                </form>
-                            </div>
-                        </motion.div>
-               
+                            <button
+                                type="submit"
+                                disabled={isSubmitting}
+                                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold py-3 px-6 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all"
+                            >
+                                {isSubmitting ? 'Sending...' : 'Send Message'}
+                            </button>
+                        </form>
+                    </div>
                 </motion.div>
 
 

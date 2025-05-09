@@ -62,7 +62,7 @@ const itemVariants = {
 
 const AgricultureProcess = () => {
     return (
-        <div className="bg-gradient-to-br from-blue-900 via-black to-blue-900 py-16">
+        <div className="bg-gradient-to-br from-blue-900 via-black to-blue-900 pt-8">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
                     Our Agriculture Software Development Process
@@ -71,7 +71,7 @@ const AgricultureProcess = () => {
                     Developing secure, scalable, and sustainable solutions for the agriculture industry
                 </h3>
 
-                <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
+                <div className="border border-gray-700 rounded-xl p-2 md:p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

@@ -68,13 +68,13 @@ const InternfAQ = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-20">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-semibold text-white text-center mb-12">
-        Frequently Asked<span className="text-blue-400"> Questions</span>
+    <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-16 sm:py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-white text-center mb-8 sm:mb-12">
+          Frequently Asked<span className="text-blue-400"> Questions</span>
         </h2>
 
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6 ">
           {faqData.map((item) => (
             <div
               key={item.id}
@@ -82,17 +82,17 @@ const InternfAQ = () => {
             >
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className={`w-full flex items-center justify-between py-5 px-6 text-gray-100 font-semibold focus:outline-none transition duration-300  ${
+                className={`w-full text-start flex items-center justify-between py-4 sm:py-5 px-4 sm:px-6 text-gray-100 font-semibold focus:outline-none transition duration-300  ${
                   expandedId === item.id
                     ? 'bg-gray-700 rounded-t-xl border-b border-gray-600'
                     : 'bg-gray-800 hover:bg-gray-700 rounded-xl'
                 }`}
               >
-                <span className="text-lg">{item.question}</span>
+                <span className="text-base sm:text-lg">{item.question}</span>
                 {expandedId === item.id ? (
-                  <ChevronUpIcon className="h-7 w-7 text-blue-400" />
+                  <ChevronUpIcon className="h-6 w-6 sm:h-7 sm:w-7 text-blue-400" />
                 ) : (
-                  <ChevronDownIcon className="h-7 w-7 text-gray-400" />
+                  <ChevronDownIcon className="h-6 w-6 sm:h-7 sm:w-7 text-gray-400" />
                 )}
               </button>
 
@@ -103,9 +103,9 @@ const InternfAQ = () => {
                     initial="closed"
                     animate="open"
                     exit="closed"
-                    className="bg-gray-900 text-gray-300 overflow-hidden rounded-b-xl"
+                    className="bg-gray-900 text-start text-gray-300 overflow-hidden rounded-b-xl"
                   >
-                    <div className="py-5 px-6">
+                    <div className="py-4 sm:py-5 px-4 sm:px-6">
                       <p className="leading-relaxed">{item.answer}</p>
                     </div>
                   </motion.div>

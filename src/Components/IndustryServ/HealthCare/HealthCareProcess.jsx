@@ -62,7 +62,7 @@ const itemVariants = {
 
 const HealthCareProcess = () => {
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
+        <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 pt-8">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
                     Our Healthcare App Development Process
@@ -71,7 +71,7 @@ const HealthCareProcess = () => {
                     Transforming healthcare ideas into secure, scalable, and user-friendly digital solutions
                 </h3>
 
-                <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
+                <div className="border border-gray-700 rounded-xl p-2 md:p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

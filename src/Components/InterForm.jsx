@@ -8,21 +8,14 @@ const InterForm = () => {
         email: '',
         college: '',
         degree: '',
-        completionYear: '',
         internshipDomain: '',
         mainCourse: '',
-        subCourse: '',
+        trainingMode: '',
         comments: '',
     });
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [url, setUrl] = useState('');
-
-    const degrees = [
-        { id: 'ug', name: 'Undergraduate' },
-        { id: 'pg', name: 'Postgraduate' },
-        { id: 'others', name: 'Other' }
-    ];
 
     const domains = [
         { id: 'Full Stack Development', name: 'Full Stack Development' },
@@ -34,130 +27,6 @@ const InterForm = () => {
         { id: 'Cyber Security', name: 'Cyber Security' },
         { id: 'Robotics', name: 'Robotics' },
     ];
-
-    const courseOptions = {
-        ug: {
-            BA: [
-                "English", "History", "Economics", "Political Science", "Sociology",
-                "Psychology", "Philosophy", "Public Administration", "Journalism & Mass Communication",
-                "Fine Arts", "Languages (Hindi, Tamil, French, etc.)", "Theology", "Geography", "Linguistics",
-                "Anthropology", "Music", "Film Studies", "Tourism Management", "Criminology"
-            ],
-            BSc: [
-                "Physics", "Chemistry", "Mathematics", "Biology", "Computer Science",
-                "Biotechnology", "Microbiology", "Environmental Science", "Data Science", "Forensic Science",
-                "Zoology", "Botany", "Genetics", "Astronomy", "Ecology", "Geology", "Biochemistry", "Agriculture"
-            ],
-            BCom: [
-                "General", "Accounting & Finance", "Banking", "Corporate Secretaryship", "E-Commerce",
-                "Business Analytics", "Taxation", "Financial Markets", "Marketing", "International Business",
-                "Human Resource Management", "Supply Chain Management"
-            ],
-            BTech: [
-                "Computer Science", "Information Technology", "Mechanical Engineering", "Civil Engineering",
-                "Electrical & Electronics Engineering (EEE)", "Electronics & Communication Engineering (ECE)",
-                "Artificial Intelligence (AI)", "Data Science", "Biotechnology", "Aerospace Engineering",
-                "Automobile Engineering", "Robotics", "Chemical Engineering", "Civil Engineering (Structural, Construction)",
-                "Instrumentation & Control", "Industrial Engineering", "Petroleum Engineering", "Environmental Engineering",
-                "Mining Engineering", "Textile Engineering", "Materials Science & Engineering", "Biochemical Engineering",
-                "Food Technology", "Nuclear Engineering", "Mechatronics", "Renewable Energy Engineering", "Computer Engineering"
-            ],
-            BBA: [
-                "General", "HR", "Finance", "Marketing", "Operations", "International Business",
-                "Tourism Management", "Hospital Management", "Sports Management", "Retail Management",
-                "Event Management", "Supply Chain Management", "Logistics Management"
-            ],
-            BCA: [
-                "Computer Applications", "Information Technology", "Software Engineering", "Data Science",
-                "Networking", "Web Development", "Mobile App Development", "Cloud Computing", "Artificial Intelligence"
-            ],
-            BHM: [
-                "Hotel Management", "Tourism and Hospitality", "Event Management", "Culinary Arts", "Restaurant Management"
-            ],
-            BDes: [
-                "Product Design", "Graphic Design", "Fashion Design", "Interior Design", "User Experience Design", "Industrial Design"
-            ],
-            BFA: [
-                "Fine Arts", "Sculpture", "Painting", "Photography", "Animation", "Multimedia", "Applied Arts"
-            ],
-            BSW: [
-                "Social Work", "Community Development", "Human Rights", "Rural Development", "Disaster Management"
-            ],
-            BJMC: [
-                "Journalism & Mass Communication", "Advertising", "Public Relations", "Broadcasting",
-                "Film Making", "Photography", "Digital Media", "Content Writing"
-            ],
-            BPT: [
-                "Physiotherapy", "Rehabilitation", "Sports Medicine", "Orthopedic Physiotherapy"
-            ],
-            BPharm: [
-                "Pharmacy", "Pharmaceutical Sciences", "Medicinal Chemistry", "Clinical Pharmacy"
-            ],
-            BScN: [
-                "Nursing", "Healthcare Management", "Public Health", "Nursing Administration"
-            ],
-        },
-        pg: {
-            MA: [
-                "English", "History", "Economics", "Political Science", "Sociology", "Psychology",
-                "Philosophy", "Public Administration", "International Relations", "Linguistics", "Anthropology",
-                "Geography", "Journalism & Mass Communication", "Theology", "Fine Arts", "Music", "Tourism Management"
-            ],
-            MSc: [
-                "Physics", "Chemistry", "Mathematics", "Biology", "Computer Science", "Biotechnology", "Microbiology",
-                "Zoology", "Botany", "Environmental Science", "Data Science", "Genetics", "Astronomy", "Geology",
-                "Ecology", "Biochemistry", "Agriculture", "Food Science", "Applied Mathematics", "Physics (Quantum Mechanics)",
-                "Nuclear Physics", "Organic Chemistry", "Medical Microbiology"
-            ],
-            MCom: [
-                "General", "Accounting & Finance", "Banking", "E-Commerce", "Business Analytics", "Taxation",
-                "Financial Markets", "Corporate Governance", "Human Resource Management", "Marketing", "International Business"
-            ],
-            MTech: [
-                "Computer Science", "Information Technology", "Software Engineering", "Data Science", "Cybersecurity",
-                "Artificial Intelligence", "Robotics", "Machine Learning", "Biotechnology", "Mechanical Engineering",
-                "Civil Engineering", "Structural Engineering", "Electrical Engineering", "Electronics Engineering",
-                "Aerospace Engineering", "Automobile Engineering", "Chemical Engineering", "Environmental Engineering",
-                "Nanotechnology", "Biomedical Engineering", "Petroleum Engineering", "Renewable Energy Engineering",
-                "VLSI Design", "Power Systems Engineering", "Structural Engineering"
-            ],
-            MBA: [
-                "General", "HR", "Finance", "Marketing", "Operations", "International Business", "Supply Chain Management",
-                "Retail Management", "Hospital Management", "Tourism Management", "Sports Management", "Project Management",
-                "Entrepreneurship", "Digital Marketing", "Business Analytics", "Banking and Finance"
-            ],
-            MCA: [
-                "Computer Applications", "Information Technology", "Software Engineering", "Data Science", "AI & Machine Learning",
-                "Cybersecurity", "Networking", "Mobile App Development", "Cloud Computing"
-            ],
-            LLM: [
-                "Constitutional Law", "Corporate Law", "Criminal Law", "Human Rights Law", "Environmental Law",
-                "International Business Law", "Taxation Law", "Family Law", "Intellectual Property Law", "Cyber Law"
-            ],
-            MSW: [
-                "Social Work", "Community Development", "Human Rights", "Rural Development", "Mental Health",
-                "Disaster Management", "Urban Planning"
-            ],
-            MPharm: [
-                "Pharmacology", "Pharmaceutics", "Pharmaceutical Chemistry", "Pharmacognosy", "Clinical Pharmacy", "Medicinal Chemistry"
-            ],
-            MPT: [
-                "Physiotherapy", "Orthopedic Physiotherapy", "Neurological Physiotherapy", "Sports Physiotherapy",
-                "Pediatric Physiotherapy", "Geriatric Physiotherapy"
-            ],
-            MDes: [
-                "Product Design", "Fashion Design", "Graphic Design", "User Experience Design", "Interior Design", "Industrial Design"
-            ],
-            MEd: [
-                "Educational Leadership", "Special Education", "Curriculum and Instruction", "Educational Psychology",
-                "Distance Education", "Education Technology"
-            ]
-        }
-    };
-    const years = [];
-    for (let i = new Date().getFullYear(); i >= 2000; i--) {
-        years.push({ id: i.toString(), name: i.toString() });
-    }
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -195,18 +64,13 @@ const InterForm = () => {
             isValid = false;
         }
 
-        if (!formData.degree) {
-            newErrors.degree = 'Please select your degree';
+        if (!formData.degree.trim()) {
+            newErrors.degree = 'Degree is required';
             isValid = false;
         }
 
-        if (!formData.mainCourse) {
-            newErrors.mainCourse = 'Please select a main course';
-            isValid = false;
-        }
-
-        if (!formData.subCourse) {
-            newErrors.subCourse = 'Please select a sub course';
+        if (!formData.mainCourse.trim()) {
+            newErrors.mainCourse = 'Main Course is required';
             isValid = false;
         }
 
@@ -215,17 +79,20 @@ const InterForm = () => {
             isValid = false;
         }
 
+        if (!formData.trainingMode) {
+            newErrors.trainingMode = 'Please select a training mode';
+            isValid = false;
+        }
+
         setErrors(newErrors);
         return isValid;
     };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!validateForm() || !url) {
-            if (!url) {
-                alert('Please upload your resume.');
-            }
-            return;
+        if (!validateForm()) {
+            return; // Don't proceed if form is invalid
         }
 
         setIsLoading(true);
@@ -242,10 +109,9 @@ const InterForm = () => {
                     collegeName: formData.college,
                     degree: formData.degree,
                     mainCourse: formData.mainCourse,
-                    subCourse: formData.subCourse,
                     internshipDomain: formData.internshipDomain,
+                    trainingMode: formData.trainingMode,
                     additionalComments: formData.comments,
-                    resumeUrl: url, // Include the uploaded resume URL
                 }),
             });
 
@@ -258,10 +124,9 @@ const InterForm = () => {
                     email: '',
                     college: '',
                     degree: '',
-                    completionYear: '',
-                    internshipDomain: '',
                     mainCourse: '',
-                    subCourse: '',
+                    internshipDomain: '',
+                    trainingMode: '',
                     comments: '',
                 });
                 setUrl(''); // Clear the resume URL after successful submission
@@ -278,59 +143,18 @@ const InterForm = () => {
         }
     };
 
-    const [uploading, setUploading] = useState(false);
-    const [uploadError, setUploadError] = useState(null);
-    const [resumeUrl, setResumeUrl] = useState('');
-
-    const handleResumeUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file || file.type !== 'application/pdf') {
-            alert('Please upload a valid PDF file.');
-            return;
-        }
-
-        setUploading(true);
-        setUploadError(null);
-
-        const data = new FormData();
-        data.append('file', file);
-        data.append('upload_preset', 'resume');
-
-        try {
-            const res = await fetch('https://api.cloudinary.com/v1_1/dlw21awck/raw/upload', {
-                method: 'POST',
-                body: data,
-            });
-
-            const result = await res.json();
-
-            if (result.secure_url) {
-                setResumeUrl(result.secure_url);
-                setUrl(result.secure_url); // Keep 'url' state updated for form submission
-                console.log('Resume uploaded to:', result.secure_url);
-            } else {
-                setUploadError('Upload failed: ' + result.error?.message);
-                console.error(result);
-            }
-        } catch (err) {
-            setUploadError('Error uploading PDF.');
-            console.error('Error uploading:', err);
-        } finally {
-            setUploading(false);
-        }
-    };
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
             <div className="container mx-auto px-4 py-12 flex md:flex-nowrap flex-col md:flex-row items-start gap-8">
 
                 {/* Left Content */}
-                <div className="w-full md:w-1/2 sticky top-28 z-10">
+                <div className="w-full md:w-1/2 md:sticky md:top-28 md:z-10">
                     <motion.div
                         initial={{ x: -50 }}
                         animate={{ x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-4xl md:text-5xl font-semibold mb-6 bg-clip-text  ">
+                        <h1 className="text-4xl md:text-5xl font-semibold mb-6 bg-clip-text">
                             Launch Your Career
                         </h1>
                         <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-blue-300">
@@ -384,7 +208,7 @@ const InterForm = () => {
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="w-full md:w-1/2 bg-gray-900/80 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-2xl mt-8 md:mt-0"
+                    className="w-full md:w-1/2 bg-gray-900/80 backdrop-blur-sm p-4 rounded-2xl border border-gray-800 shadow-2xl mt-8 md:mt-0"
                 >
                     <div className="mb-8 text-center">
                         <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
@@ -396,9 +220,8 @@ const InterForm = () => {
                         </p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-4">
                         {/* Form Fields */}
-                        {/* Full Name */}
                         <div>
                             <label className="block text-gray-300 mb-2">Full Name *</label>
                             <input
@@ -457,67 +280,30 @@ const InterForm = () => {
                         {/* Degree */}
                         <div>
                             <label className="block text-gray-300 mb-2">Degree *</label>
-                            <select
+                            <input
+                                type="text"
                                 name="degree"
                                 value={formData.degree}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, degree: e.target.value, mainCourse: '', subCourse: '' });
-                                    setErrors({ ...errors, degree: '' });
-                                }}
-                                className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"
-                            >
-                                <option value="" className="bg-gray-800">-- Select Degree --</option>
-                                {degrees.map(d => (
-                                    <option key={d.id} value={d.id} className="bg-gray-800">{d.name}</option>
-                                ))}
-                            </select>
+                                onChange={handleChange}
+                                className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
+                                placeholder="Enter your degree (e.g., BSc, BTech, etc.)"
+                            />
                             {errors.degree && <p className="text-red-400 text-sm mt-1">{errors.degree}</p>}
                         </div>
 
                         {/* Main Course */}
                         <div>
                             <label className="block text-gray-300 mb-2">Main Course *</label>
-                            <select
+                            <input
+                                type="text"
                                 name="mainCourse"
                                 value={formData.mainCourse}
-                                onChange={(e) => {
-                                    setFormData({ ...formData, mainCourse: e.target.value, subCourse: '' });
-                                    setErrors({ ...errors, mainCourse: '', subCourse: '' });
-                                }}
-                                className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"
-                            >
-                                <option value="" className="bg-gray-800">-- Select Main Course --</option>
-                                {formData.degree === 'ug' && Object.keys(courseOptions.ug).map(course => (
-                                    <option key={course} value={course} className="bg-gray-800">{course}</option>
-                                ))}
-                                {formData.degree === 'pg' && Object.keys(courseOptions.pg).map(course => (
-                                    <option key={course} value={course} className="bg-gray-800">{course}</option>
-                                ))}
-                            </select>
+                                onChange={handleChange}
+                                className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
+                                placeholder="Enter your main course (e.g., Computer Science)"
+                            />
                             {errors.mainCourse && <p className="text-red-400 text-sm mt-1">{errors.mainCourse}</p>}
                         </div>
-
-                        {/* Sub Course */}
-                        {formData.mainCourse && (
-                            <div>
-                                <label className="block text-gray-300 mb-2">Sub Course *</label>
-                                <select
-                                    name="subCourse"
-                                    value={formData.subCourse}
-                                    onChange={handleChange}
-                                    className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"
-                                >
-                                    <option value="" className="bg-gray-800">-- Select Sub Course --</option>
-                                    {formData.degree === 'ug' && courseOptions.ug[formData.mainCourse].map(sub => (
-                                        <option key={sub} value={sub} className="bg-gray-800">{sub}</option>
-                                    ))}
-                                    {formData.degree === 'pg' && courseOptions.pg[formData.mainCourse].map(sub => (
-                                        <option key={sub} value={sub} className="bg-gray-800">{sub}</option>
-                                    ))}
-                                </select>
-                                {errors.subCourse && <p className="text-red-400 text-sm mt-1">{errors.subCourse}</p>}
-                            </div>
-                        )}
 
                         {/* Internship Domain */}
                         <div>
@@ -535,24 +321,23 @@ const InterForm = () => {
                             </select>
                             {errors.internshipDomain && <p className="text-red-400 text-sm mt-1">{errors.internshipDomain}</p>}
                         </div>
-                        {/*Resume Upload*/}
+
+                        {/* Training Mode */}
                         <div>
-                            <label className="block text-blue-200 mb-2">Resume Upload</label>
-                            <div className="flex items-center justify-center w-full">
-                                <label className="flex flex-col w-full h-32 border-2 border-blue-600 border-dashed rounded-lg cursor-pointer bg-gray-700 hover:bg-gray-600">
-                                    <div className="flex flex-col items-center justify-center pt-7">
-                                        <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                                        </svg>
-                                        <p className="pt-1 text-sm text-blue-300">Click to upload your resume (PDF)</p>
-                                        {uploading && <p className="text-xs text-blue-300">Uploading...</p>}
-                                        {uploadError && <p className="text-xs text-red-500">{uploadError}</p>}
-                                        {resumeUrl && <p className="text-xs text-green-400">Resume uploaded!</p>}
-                                    </div>
-                                    <input type="file" className="opacity-0" accept=".pdf" onChange={handleResumeUpload} required />
-                                </label>
-                            </div>
+                            <label className="block text-gray-300 mb-2">Training Mode *</label>
+                            <select
+                                name="trainingMode"
+                                value={formData.trainingMode}
+                                onChange={handleChange}
+                                className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"
+                            >
+                                <option value="">-- Select Mode --</option>
+                                <option value="online">Online Training</option>
+                                <option value="offline">Offline Training</option>
+                            </select>
+                            {errors.trainingMode && <p className="text-red-400 text-sm mt-1">{errors.trainingMode}</p>}
                         </div>
+
                         {/* Comments */}
                         <div>
                             <label className="block text-gray-300 mb-2">Additional Comments</label>
@@ -561,38 +346,24 @@ const InterForm = () => {
                                 value={formData.comments}
                                 onChange={handleChange}
                                 className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white placeholder-gray-500"
-                                rows={3}
-                                placeholder="Any additional info..."
+                                placeholder="Any additional information"
                             />
                         </div>
 
                         {/* Submit Button */}
-                        <div className="pt-4">
-                            <motion.button
+                        <div className="mt-6">
+                            <button
                                 type="submit"
+                                className="w-full bg-blue-600 hover:bg-blue-500 text-white py-3 px-6 rounded-lg transition duration-200 ease-in-out"
                                 disabled={isLoading}
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg"
                             >
-                                {isLoading ? (
-                                    <span className="flex items-center justify-center">
-                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                        </svg>
-                                        Processing...
-                                    </span>
-                                ) : 'Apply Now'}
-                            </motion.button>
+                                {isLoading ? 'Submitting...' : 'Submit Application'}
+                            </button>
                         </div>
                     </form>
                 </motion.div>
-
             </div>
         </div>
-
-
     );
 };
 

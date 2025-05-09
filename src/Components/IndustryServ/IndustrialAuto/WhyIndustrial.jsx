@@ -93,7 +93,7 @@ const WhyIndustrial = ({
     <div className="bg-black pt-15">
       <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col lg:flex-row items-start justify-around px-6 py-16 min-h-screen">
         {/* Sticky left side */}
-        <div className="sticky top-26 w-full lg:w-1/2 xl:w-2/5 lg:pr-10 mb-8 lg:mb-0">
+        <div className="md:sticky top-26 w-full lg:w-1/2 xl:w-2/5 lg:pr-10 mb-8 lg:mb-0">
           <div className="max-w-md mx-auto lg:mx-0">
             <h1 className="text-4xl mb-4">Why Choose Us for Industrial Automation?</h1>
             <h3 className="text-2xl mb-6">

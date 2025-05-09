@@ -4,19 +4,19 @@ import { FiTrendingUp, FiShield, FiUsers } from 'react-icons/fi';
 
 const CapabilitiesPage = () => {
     return (
-        <div className="bg-black text-white py-16">
+        <div className="bg-black text-white py-8">
             <div className="container mx-auto px-4">
                 <h2 className="text-4xl font-semibold text-blue-500 mb-4 text-center">Our Capabilities</h2>
                 <p className="text-lg text-gray-300 mb-8 text-center">
                     We craft exceptional websites and apps entirely in-house, ensuring end-to-end precision and uncompromising excellence.
                 </p>
                 <h3 className="text-3xl font-normal text-blue-500 mb-8 text-center md:text-left ml-5">
-                            Why Join Hands With Us?
-                        </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">              
+                    Why Join Hands With Us?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     {/* Left Column */}
                     <div>
-                       
+
                         <div className="space-y-6">
                             <CapabilityItem
                                 icon={<AiFillThunderbolt size={28} className="text-white bg-blue-500 rounded-full p-2 w-10 h-10" />}
@@ -59,13 +59,13 @@ const CapabilitiesPage = () => {
                 </div>
 
                 {/* CTA Section */}
-                <div className="text-start flex flex-1 items-start justify-between px-5">
-                    <div>
-                    <h2 className="text-5xl font-semibold text-blue-500  mb-2">Have a project in mind?</h2>
-                    <p className="text-4xl text-white font-semibold mb-6 mt-6">Let's Connect</p>
+                <div className="text-start flex flex-col md:flex-row flex-1 items-start md:items-center justify-between px-5 py-8 md:py-12">
+                    <div className="mb-6 md:mb-0">
+                        <h2 className="text-3xl md:text-5xl font-semibold text-blue-500 mb-2">Have a project in mind?</h2>
+                        <p className="text-2xl md:text-4xl text-white font-semibold mt-2">Let's Connect</p>
                     </div>
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white cursor-pointer font-semibold mt-8 py-3 px-8 rounded-sm text-xl border-1 border-white transition-transform hover:scale-105">
-                        Let's Talk 
+                    <button className="bg-blue-500 hover:bg-blue-700 text-white cursor-pointer font-semibold py-3 px-8 rounded-sm text-xl border-1 border-white transition-transform hover:scale-105">
+                        Let's Talk
                     </button>
                 </div>
             </div>

@@ -15,10 +15,10 @@ const Home = () => {
     <div>
         <HomeVdo/> 
         <Achivements/>
-        <Provides/>  
+        {/* <Provides/>   */}
         <WhyAdventure/> 
-        <Tools/>     
-        <TeamWork/>
+        {/* <Tools/>      */}
+        {/* <TeamWork/> */}
         <ConsultationForm/>  
         <Faq/>       
         <Locations/>

@@ -10,7 +10,7 @@ const IotDevelopment = () => {
     <div>      
       <IotHome/>
       <IotOffer/>
-      <WhyWeb/> 
+      {/* <WhyWeb/>  */}
       <IotTools/>
       <IotDevelopmentProcess/>
       <IotFAQ/>

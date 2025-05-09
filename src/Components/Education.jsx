@@ -19,7 +19,7 @@ const Education = () => {
             <EducationServ />
             <ELearningSection />
             <EducationCount />
-            <EduFeatures />
+            {/* <EduFeatures /> */}
             <EducationProcess />
             <WhyEduApp />
             <EducationFAQ />

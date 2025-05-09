@@ -45,13 +45,13 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
 
     const content = [
         {
-            icon: <i class="bi bi-broadcast-pin"></i>,
+            icon: <i className="bi bi-broadcast-pin"></i>,
             title: "Innovation-Driven",
             description:
                 "We create innovative digital solutions using cutting-edge technologies like AI to enhance user experiences and automate processes.",
         },
         {
-            icon: <i class="bi bi-person-check"></i>,
+            icon: <i className="bi bi-person-check"></i>,
             title: "Client-Centered Approach",
             description:
                 "We prioritize your needs, tailoring each project to suit your unique business goals, ensuring your growth and success.",
@@ -81,7 +81,7 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
                 "Our team of experts brings a wealth of knowledge across various domains, delivering high-quality solutions that solve complex challenges.",
         },
         {
-            icon: <i class="bi bi-box"></i>,
+            icon: <i className="bi bi-box"></i>,
             title: "Expertise in Cutting-Edge Technologies",
             description:
                 "We harness the power of the latest technologies, including AI, IoT, and cloud computing, to deliver scalable and future-proof solutions.",
@@ -95,10 +95,10 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
     ];
 
     return (
-        <div class="bg-black pt-36">
-             <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col lg:flex-row items-start justify-around px-6 py-16 min-h-screen">
-                {/* Sticky left side */}
-                <div className="sticky top-26 w-full lg:w-1/2 xl:w-2/5 lg:pr-10 mb-8 lg:mb-0">
+        <div className="bg-black pt-36">
+            <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col lg:flex-row items-start justify-around px-6 py-16 min-h-screen">
+                {/* Left side - Sticky on large screens, not sticky on smaller */}
+                <div className="w-full lg:w-1/2 xl:w-2/5 lg:pr-10 mb-8 lg:mb-0 lg:sticky lg:top-26">
                     <div className="max-w-md mx-auto lg:mx-0">
                         <h1 className="text-4xl mb-4">Why Choose Adventure Technology?</h1>
                         <h3 className='text-2xl mb-6'>
@@ -135,7 +135,7 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
                     </div>
                 </div>
 
-                {/* Scrollable content without visible scrollbar */}
+                {/* Scrollable content */}
                 <div className="flex-1 max-w-lg">
                     <div className="h-full overflow-y-auto pr-4" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
                         {/* Hide scrollbar for Webkit browsers */}
@@ -163,7 +163,6 @@ const WhyAdventure = ({ children, className = "h-full lg:mt-2 w-full", spotlight
                         ))}
                     </div>
                 </div>
-
             </div>
         </div>
     );

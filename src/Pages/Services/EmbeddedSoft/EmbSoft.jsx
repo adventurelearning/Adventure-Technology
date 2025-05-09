@@ -11,7 +11,7 @@ const EmbSoft= () => {
     <div>
       <EmbHome/>
       <EmbOffer/>
-      <WhyEmb/> 
+      {/* <WhyEmb/>  */}
       <EmbTools/>
       <EmbDevelopmentProcess/>
       <EmbFAQ/>

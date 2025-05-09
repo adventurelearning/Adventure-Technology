@@ -95,7 +95,7 @@ const IndustriesBox = () => {
     };
 
     return (
-        <div className="bg-black py-12 md:py-16">
+        <div className="bg-black md:py-16">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial="hidden"

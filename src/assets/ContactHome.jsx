@@ -4,7 +4,7 @@ import backgroundImage from '../assets/contact/contact.jpeg'; // Adjust the path
 const ContactHome = () => {
   return (
     <div
-      className="bg-cover bg-center w-full min-h-[70vh] flex items-center justify-center p-8 relative overflow-hidden"
+      className="bg-cover bg-center w-full min-h-[90vh] flex items-center justify-center p-8 relative overflow-hidden"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
@@ -15,7 +15,7 @@ const ContactHome = () => {
       {/* Content */}
       <div className="text-center relative z-10 max-w-4xl mx-auto px-4">
         {/* Animated heading */}
-        <h1 className="text-white font-semibold text-4xl sm:text-5xl md:text-6xl mb-6 relative inline-block">
+        <h1 className="text-white font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-6xl mb-6 relative inline-block">
           <span className="relative">
             Let's Connect & Create
             {/* Animated underline */}
@@ -24,12 +24,12 @@ const ContactHome = () => {
         </h1>
         
         {/* Glowing text paragraph */}
-        <p className="text-white/90 text-lg md:text-xl mt-6 leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
+        <p className="text-white/90 text-lg md:text-xl mt-0 leading-relaxed max-w-2xl mx-auto drop-shadow-lg">
           We're excited to hear about your project. Whether you have questions or ready to start, our team is here to help you succeed.
         </p>
 
         {/* Button group with hover effects */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
           <a
             href="mailto:contact@yourdomain.com"
             className="relative inline-flex items-center justify-center bg-transparent border-2 border-blue-400 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-400 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/30 transition-all duration-300 group overflow-hidden"
@@ -44,7 +44,7 @@ const ContactHome = () => {
           </a>
           
           <a
-            href="tel:+1234567890"
+            href="tel:+91 9884445571"
             className="relative inline-flex items-center justify-center bg-blue-500 text-white border-2 border-blue-500 px-8 py-3 rounded-full font-medium hover:bg-transparent hover:text-white hover:border-white hover:shadow-lg hover:shadow-white/20 transition-all duration-300 group overflow-hidden"
           >
             <span className="relative z-10 flex items-center">

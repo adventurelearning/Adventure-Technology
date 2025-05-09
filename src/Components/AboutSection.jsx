@@ -116,22 +116,23 @@ const AboutSection = () => {
                                 thrive in an ever-evolving digital landscape.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-start text-center">
                                 <motion.button
                                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 rounded-lg font-semibold shadow-lg transition-all flex items-center"
+                                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 text-center rounded-lg font-semibold shadow-lg transition-all flex items-center justify-center"
                                 >
-                                    View Open Positions <FiArrowRight className="ml-2" />
+                                    Our Core Values <FiArrowRight className="ml-2" />
                                 </motion.button>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
                                     className="bg-transparent border border-gray-600 hover:border-gray-500 text-white px-8 py-3.5 rounded-lg font-medium shadow-sm transition-all"
                                 >
-                                    Our Culture
+                                    Time Line
                                 </motion.button>
                             </div>
+
                         </motion.div>
                     </motion.div>
                 </div>

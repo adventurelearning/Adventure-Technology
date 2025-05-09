@@ -19,7 +19,7 @@ const Automotive = () => {
             <AutomotiveServ/>
             <AutomotiveSection />
             <AutomotiveCount />
-            <AutomotiveFeatures />
+            {/* <AutomotiveFeatures /> */}
             <AutomotiveProcess />
             <WhyAutomotive />
             <AutomotiveFAQ />

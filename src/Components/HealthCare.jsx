@@ -20,7 +20,7 @@ const HealthCare = () => {
             <HealthCareServ  />
             <HealthCareSection />
             <HealthCareCount />
-            <HealthCareFeatures />
+            {/* <HealthCareFeatures /> */}
             <HealthCareProcess />
             <WhyHealthCare />
             <HealthCareFAQ />

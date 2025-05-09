@@ -18,7 +18,7 @@ const Manufacturing = () => {
             <ManufacturingServ />
             <ManufacturingSection />
             <ManufacturingCount />
-            <ManufacturingFeatures />
+            {/* <ManufacturingFeatures /> */}
             <ManufacturingProcess />
             <WhyManufacturing />
             <ManufacturingFAQ />

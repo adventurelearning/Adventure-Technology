@@ -17,20 +17,17 @@ const InternCertificate = () => {
     }, [location.pathname]);
 
     return (
-        <div className="bg-black py-20">
-            <h2 className="text-4xl font-semibold  bg-clip-text text-white mb-12 text-center tracking-tight">
-                Internship Course<span className="text-blue-400"> Certification</span>
+        <div className="bg-black py-8 sm:py-16 md:py-20">
+            <h2 className="text-3xl sm:text-4xl font-semibold bg-clip-text text-white mb-8 lg:mb-12 xl:mb-12 sm:mb-12 text-center tracking-tight">
+                Internship <span className="text-blue-400"> Certification</span>
             </h2>
-            <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col lg:flex-row items-start justify-around px-6 py-16">
+            <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col sm:flex-row items-start justify-around px-4 sm:px-6 py-8 sm:py-12 md:py-16">
 
-
-                <div className="relative bg- rounded-2xl shadow-2xl p-6 max-w-6xl w-full mx-auto transform transition-all duration-500 hover:shadow-3xl ">
+                <div className="relative bg- rounded-2xl shadow-2xl p-4 sm:p-6 max-w-6xl w-full mx-auto transform transition-all duration-500 hover:shadow-3xl">
                     <div className="absolute -top-6 -left-6 w-24 h-24 bg-gradient-to-r from-blue-700 to-blue-500 rounded-full opacity-20 blur-xl"></div>
                     <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-gradient-to-l from-blue-500 to-blue-700 rounded-full opacity-20 blur-xl"></div>
 
-
-
-                    <div className="flex flex-col lg:flex-row gap-8 items-center">
+                    <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-center">
                         {/* Certificate Image */}
                         <div className="relative flex-shrink-0 group">
                             {/* Block context menu and drag */}
@@ -47,7 +44,7 @@ const InternCertificate = () => {
                                 <img
                                     src={certificte}
                                     alt="Professional Certificate"
-                                    className="w-96 object-cover select-none"
+                                    className="w-80 sm:w-96 object-cover select-none"
                                     onContextMenu={(e) => e.preventDefault()}
                                     onDragStart={(e) => e.preventDefault()}
                                     draggable="false"
@@ -58,7 +55,7 @@ const InternCertificate = () => {
                                     <span className="text-white font-semibold uppercase text-sm">Verified</span>
                                 </div>
 
-                                {/* Hover overlay badge text (edited part) */}
+                                {/* Hover overlay badge text */}
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                     <span className="text-white font-bold text-lg bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm">
                                         Certificate Protected
@@ -68,18 +65,18 @@ const InternCertificate = () => {
                         </div>
 
                         {/* Highlights */}
-                        <div className="flex-grow space-y-3">
+                        <div className="flex-grow space-y-4 sm:space-y-6">
                             {/* Block 1 */}
-                            <div className="relative p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="relative p-4 sm:p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                                 <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-blue-800 to-blue-500 rounded-l-xl"></div>
                                 <div className="flex items-center pl-6">
                                     <div className="bg-gradient-to-r from-black to-blue-500 p-3 rounded-xl shadow-lg">
-                                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                                         </svg>
                                     </div>
                                     <div className="ml-6">
-                                        <h3 className="text-xl font-bold text-white mb-2">Industry-Recognized Internship:</h3>
+                                        <h3 className="text-xl  font-bold text-white mb-2">Industry-Recognized Internship:</h3>
                                         <ul className="space-y-2 text-gray-300">
                                             <li className="flex items-center">
                                                 <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
@@ -91,7 +88,7 @@ const InternCertificate = () => {
                             </div>
 
                             {/* Block 2 */}
-                            <div className="relative p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="relative p-4 sm:p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                                 <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-blue-800 to-blue-500 rounded-l-xl"></div>
                                 <div className="flex items-center pl-6">
                                     <div className="bg-gradient-to-r from-black to-blue-500 p-3 rounded-xl shadow-lg">
@@ -112,12 +109,13 @@ const InternCertificate = () => {
                             </div>
 
                             {/* Block 3 */}
-                            <div className="relative p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                            <div className="relative p-4 sm:p-6 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-700 hover:from-blue-900 rounded-xl shadow-md hover:shadow-lg transition-shadow">
                                 <div className="absolute left-0 top-0 w-2 h-full bg-gradient-to-b from-blue-800 to-blue-500 rounded-l-xl"></div>
                                 <div className="flex items-center pl-6">
                                     <div className="bg-gradient-to-r from-black to-blue-500 p-3 rounded-xl shadow-lg">
+                                      
                                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                                         </svg>
                                     </div>
                                     <div className="ml-6">

@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const CareersHome = () => {
     return (
-        <div className="relative w-full h-[80vh] overflow-hidden text-white">
+        <div className="relative w-full h-[66vh] md:h-[80vh] lg:h-[80vh] xl:h-[80vh] overflow-hidden text-white">
             {/* Background Static Image */}
             <div className="relative w-full h-full">
                 {/* Background Image */}
@@ -22,24 +22,29 @@ const CareersHome = () => {
             <div className="absolute inset-0 bg-gray-900 opacity-60 z-10" />
 
             {/* Main Text Content */}
-            <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-6 md:px-16 ">
-                <h1 className="text-3xl md:text-5xl font-semibold mb-4">
+            <div className="absolute inset-0 z-20 flex flex-col justify-center items-center sm:items-start px-4 sm:px-6 md:px-16 text-center sm:text-left">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-semibold mb-4 leading-snug sm:leading-snug md:leading-tight">
                     {/* Innovative Technology Solutions<span className="block"> for Every Industry</span> */}
                     Looking for a great place<span className="block mt-2">to grow and thrive?</span>
 
                 </h1>
 
-                <h3 className="text-lg md:text-xl max-w-3xl mb-8">
+                <h3 className="text-base sm:text-lg md:text-xl max-w-full sm:max-w-2xl md:max-w-3xl mb-6 sm:mb-8">
                     This is a place to grow, learn and connect. Everything that makes you
-                    <span className='block'>who you are is welcome here</span>
+                    <span className='md:block'>who you are is welcome here</span>
                 </h3>
 
-                <button className="bg-blue-600 hover:bg-white hover:text-blue-600 px-4 py-3 mt-5 rounded-md text-lg font-medium text-white flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg">
-                    Explore Careers
-                    <span className="text-3xl pl-2">
-                        <i className="bi bi-arrow-right-short"></i>
-                    </span>
-                </button>
+                <Link
+                    smooth={true}
+                    duration={500}
+                    offset={-70} >
+                    <button className="bg-blue-600 cursor-pointer hover:bg-white hover:text-blue-600 px-4 py-2 sm:py-3 mt-3 sm:mt-5 rounded-md text-base sm:text-lg font-medium text-white flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg">
+                        Explore Careers
+                        <span className="text-3xl pl-2">
+                            <i className="bi bi-arrow-right-short"></i>
+                        </span>
+                    </button>
+                    </Link>
             </div>
         </div>
     );

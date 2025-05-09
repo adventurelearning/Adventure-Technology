@@ -1,42 +1,54 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-const InternCount = () => {
-  const stats = [
-    { value: "50+", label: "Real World Project" },
-    { value: "20+", label: "Trained Intern's" },
-    { value: "100+", label: "Domains Available" },
-    { value: "95%", label: "Intern Satisfaction Rate" },
-  ];
+const InternCount  = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [stats, setStats] = useState([
+        { value: 0, target: 50, label: 'Real World Project', suffix: '+' },
+        { value: 0, target: 20, label: "Trained Intern's", suffix: '+' },
+        { value: 0, target: 100, label: 'Domains Available', suffix: '+' },
+        { value: 0, target: 95, label: 'Intern Satisfaction Rate', suffix: '%' }       
+    ]);
 
-  const hoverEffect = {
-    hover: {
-      scale: 1.05,
-      transition: { duration: 0.2 },
-    },
-  };
+    useEffect(() => {
+        setIsVisible(true);
+        const interval = setInterval(() => {
+            setStats(prevStats =>
+                prevStats.map(stat => ({
+                    ...stat,
+                    value: stat.value < stat.target ? stat.value + 1 : stat.target
+                }))
+            );
+        }, 30);
 
-  return (
-    <div className="bg-black px-4 sm:px-20  pb-20">
-      <div className="border-2 border-gray-600 rounded-lg p-8 flex flex-col md:flex-row justify-around items-center text-center bg-gradient-to-r from-gray-900 to-black h-52">
-        {stats.map((stat, index) => (
-          <motion.div
-            key={index}
-            className="m-4"
-            whileHover="hover"
-            variants={hoverEffect}
-          >
-            <h3 className="text-5xl m-0 text-white font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              {stat.value}
-            </h3>
-            <p className="mt-3 text-gray-300 text-lg font-medium">
-              {stat.label}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
+        return () => clearInterval(interval); // Clean up interval on unmount
+    }, []);
 
-export default InternCount;
+    return (
+        <div className='bg-black py-10'>
+            {/* Stats Section */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={isVisible ? { opacity: 1 } : {}}
+                transition={{ delay: 1.2, duration: 0.6 }}
+                className="grid grid-cols-2 md:grid-cols-4 gap-6 px-10"
+            >
+                {stats.map((stat, index) => (
+                    <motion.div
+                        key={index}
+                        whileHover={{ y: -5 }}
+                        className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center"
+                    >
+                        <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                            {stat.value}{stat.suffix}
+                        </div>
+                        <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </div>
+    );
+}
+
+export default  InternCount;
+

@@ -19,7 +19,7 @@ const Agriculture = () => {
       <AgricultureServ />
       <AgricultureSection />
       <AgricultureCount />
-      <AgricultureFeatures />
+      {/* <AgricultureFeatures /> */}
       <AgricultureProcess />
       <WhyAgriculture />
       <AgricultureFAQ />

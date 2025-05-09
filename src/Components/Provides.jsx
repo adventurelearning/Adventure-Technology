@@ -119,9 +119,9 @@ const Provides = () => {
           {/* Timeline Column */}
           <div className="relative flex flex-col items-center w-20">
             {/* Dot */}
-            <div className="relative z-10 mt-10">
-              <div className="w-6 h-6 relative">
-                <div className="absolute inset-1 bg-white rounded-full z-10"></div>
+            <div className="relative z-10 mt-11">
+              <div className="w-6 h-6 relative">                
+                <div className="absolute inset-1 bg-blue-600 rounded-full z-10"></div>
                 <div className="absolute inset-0 bg-gray-500 rounded-full animate-ping-custom z-0"></div>
               </div>
             </div>

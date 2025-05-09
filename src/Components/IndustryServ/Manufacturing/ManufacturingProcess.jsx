@@ -62,7 +62,7 @@ const itemVariants = {
 
 const ManufacturingProcess = () => {
     return (
-        <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 py-16">
+        <div className="bg-gradient-to-br from-gray-900 via-black to-gray-900 pt-8">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white tracking-tight">
                     Our Manufacturing IT Services & Solutions Process
@@ -71,7 +71,7 @@ const ManufacturingProcess = () => {
                     Designing secure, scalable, and high-performance IT infrastructure for manufacturing excellence
                 </h3>
 
-                <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
+                <div className="border border-gray-700 rounded-xl p-2 md:p-10 backdrop-blur-md bg-gray-800/30 mt-12">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"
@@ -90,7 +90,7 @@ const ManufacturingProcess = () => {
 
                                 {/* Optional directional arrow for horizontal flow */}
                                 {index < processSteps.length - 1 && (
-                                    <div className="hidden md:flex absolute top-1/2 right-[-28px] transform -translate-y-1/2 text-blue-500 font-bold text-lg">
+                                    <div className="absolute top-1/2 transform -translate-y-1/2 md:right-[-28px] right-[-20px] md:flex hidden text-blue-500 font-bold text-lg">
                                         <i className="bi bi-arrow-right"></i>
                                     </div>
                                 )}
@@ -98,6 +98,7 @@ const ManufacturingProcess = () => {
                         ))}
                     </motion.div>
                 </div>
+
             </div>
         </div>
     );

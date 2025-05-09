@@ -103,12 +103,12 @@ const CareerOpportunities = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white px-4 py-8">
       <div className=" mx-auto">    
 
 
         {/* Form Section */}
-        <div className="mt-24">
+        <div className="">
           <h1 className="text-4xl font-semibold mb-6 text-center">
             Apply <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'>Here</span>
           </h1>
@@ -122,7 +122,7 @@ const CareerOpportunities = () => {
 
           <div className="flex items-center justify-center">
             <div id="application-form" className="bg-gray-800 bg-opacity-50 rounded-xl p-8 border border-blue-700 max-w-4xl w-full">
-              <h2 className="text-2xl font-semibold mb-6 text-center text-blue-100">Career Opportunity Application</h2>
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center text-blue-100">Career Opportunity Application</h2>
               {submissionStatus === 'success' && (
                 <div className="bg-green-500 text-white p-4 rounded-md mb-4 text-center">
                   Application submitted successfully! We will be in touch if a suitable opportunity arises.
