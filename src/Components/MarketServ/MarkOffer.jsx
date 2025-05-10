@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 const MarkOffer = () => {
     const offers = [
         { name: "Search Engine Optimization (SEO)" },
@@ -15,7 +15,7 @@ const MarkOffer = () => {
         <div className="bg-black py-12">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
                 {/* Left Side: Text Content */}
-                <div className="text-center md:text-left md:w-1/2 space-y-6">
+                <div className="text-start md:text-left md:w-1/2 space-y-6">
                     <motion.h1
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -37,17 +37,15 @@ const MarkOffer = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
                     >
-                        <button
-                            variant="default"
-                            size="lg"
-                            className=" text-white
-                                     px-8 py-3 rounded-full shadow-lg hover:shadow-xl
-                                     transition-all duration-300 hover:scale-105
-                                     border-2 border-white
-                                    "
-                        >
-                            Get Started Today <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
-                        </button>
+                        <Link to="/Contact">
+                            <button
+                                className="text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl
+                                       transition-all duration-300 hover:scale-105
+                                       border-2 border-white"
+                            >
+                                Start Your Project <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
+                            </button>
+                        </Link>
                     </motion.div>
                     <motion.p
                         initial={{ opacity: 0, x: -50 }}

@@ -29,10 +29,10 @@ const AboutHome = () => {
           <h3 className="text-lg sm:text-lg md:text-3xl max-w-full sm:max-w-2xl md:max-w-7xl mb-6 sm:mb-8">
           Where cutting-edge tech meets real-world business impact
           </h3>
-          <Link
+          <Link 
             smooth={true}
             duration={500}
-            offset={-70} >
+            offset={-70} to="" >
             <button className="bg-blue-600 cursor-pointer  hover:bg-white hover:text-blue-600 px-4 py-2 sm:py-3 mt-3 sm:mt-5 rounded-full text-base sm:text-lg font-medium text-white flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg">
               Explore Our Story
               <FiArrowRight className="ml-2" />
