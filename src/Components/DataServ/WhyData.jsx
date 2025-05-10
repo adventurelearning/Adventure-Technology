@@ -1,83 +1,75 @@
 import React from 'react';
-import {
-    BarChart,
-    ShieldLock,
-    GraphUp,
-    Kanban,
-    PersonBadge,
-    Tools
-} from 'react-bootstrap-icons';
+import { CheckCircle } from 'react-bootstrap-icons';
+import web1 from '../../assets/Service/WEB 1.svg';
+import web2 from '../../assets/Service/WEB 2.svg';
+import web3 from '../../assets/Service/WEB 3.svg';
+import web4 from '../../assets/Service/WEB 4.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
-const WhyData = () => {
+const WhyDataScience = () => {
     const expertisePoints = [
         {
-            title: 'Experienced Data Scientists & Analysts',
-            description: 'Our team has over 8 years of combined experience in data analysis, machine learning, and predictive modeling, helping businesses unlock actionable insights.',
-            icon: <BarChart className="text-blue-400" size={24} />,
-            borderColor: 'border-blue-500'
+            title: 'Data Collection & Cleaning',
+            description:
+                'We help businesses gather and clean raw data from multiple sources, transforming it into high-quality datasets ready for analysis and model building.',
+            list: [
+                'Data Scraping & ETL Processes',
+                'Data Quality Assurance',
+                'Handling Missing Data & Outliers',
+            ],
+            image: web1,
+        },
+        {
+            title: 'Advanced Data Visualization',
+            description:
+                'Our data visualization techniques provide interactive and insightful dashboards, helping businesses understand complex data patterns and trends.',
+            list: [
+                'Interactive Dashboards & Reports',
+                'Real-Time Data Monitoring',
+                'Visualization of Large Datasets',
+            ],
+            image: web2,
+        },
+        {
+            title: 'Predictive Analytics & Forecasting',
+            description:
+                'Using statistical models and machine learning algorithms, we help businesses predict future trends, optimize decisions, and mitigate risks.',
+            list: [
+                'Time-Series Forecasting',
+                'Regression & Classification Models',
+                'Risk Analysis & Predictive Modeling',
+            ],
+            image: web3,
         },
         {
             title: 'Data-Driven Decision Making',
-            description: 'We leverage advanced analytics to transform raw data into strategic insights, guiding your business decisions with precision and confidence.',
-            icon: <GraphUp className="text-purple-400" size={24} />,
-            borderColor: 'border-purple-500'
-        },
-        {
-            title: 'Scalable & Secure Data Solutions',
-            description: 'We ensure that your data architecture is robust and scalable, capable of handling large datasets securely and efficiently, using modern cloud and big data technologies.',
-            icon: <ShieldLock className="text-green-400" size={24} />,
-            borderColor: 'border-green-500'
-        },
-        {
-            title: 'Agile Analytics & Reporting',
-            description: 'Our agile methodology allows us to deliver iterative results quickly, making it easier to adjust to changing business requirements and new data insights.',
-            icon: <Kanban className="text-yellow-400" size={24} />,
-            borderColor: 'border-yellow-500'
-        },
-        {
-            title: 'Dedicated Data Consultant',
-            description: 'We assign a dedicated data consultant to work with you closely, ensuring clear communication and guiding your analytics journey every step of the way.',
-            icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-pink-500'
-        },
-        {
-            title: 'Post-Project Support & Optimization',
-            description: 'We provide ongoing support and optimization, ensuring your data models, dashboards, and reports evolve with your business needs.',
-            icon: <Tools className="text-orange-400" size={24} />,
-            borderColor: 'border-orange-500'
+            description:
+                'Our data-driven approach empowers businesses with actionable insights to make informed decisions, increase efficiency, and maximize profitability.',
+            list: [
+                'Data-Driven Business Strategy',
+                'Automated Reporting & Insights',
+                'Optimizing Operations Through Data',
+            ],
+            image: web4,
         },
     ];
 
     return (
-        <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Why Choose Us for Data Science & Analytics
+        <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        Our Data Science & Analytics Edge
                     </h2>
-                    <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Discover how we empower businesses to make data-driven decisions with our expertise.
+                    <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                        Leveraging data to drive actionable insights and business growth
                     </p>
                 </div>
 
-                <div className="gap-8">
+                <div className="space-y-16">
                     {expertisePoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="p-2 rounded-lg bg-gray-700 mr-4">
-                                    {point.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {point.title}
-                                </h3>
-                            </div>
-                            <p className="text-gray-300 pl-12">
-                                {point.description}
-                            </p>
-                        </div>
+                        <AnimatedCard key={index} point={point} />
                     ))}
                 </div>
             </div>
@@ -85,4 +77,54 @@ const WhyData = () => {
     );
 };
 
-export default WhyData;
+const AnimatedCard = ({ point }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const animation = useAnimation();
+
+    React.useEffect(() => {
+        if (inView) {
+            animation.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
+        } else {
+            animation.start({ opacity: 0, y: 50 });
+        }
+    }, [inView, animation]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col md:flex-row items-center w-full bg-gradient-to-b from-white/10 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animation}
+        >
+            {/* Left: Text */}
+            <div className="w-full md:w-1/2 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">{point.title}</h3>
+                <p className="text-gray-300 mb-4">{point.description}</p>
+                {point.list && (
+                    <ul className="space-y-2 mt-4">
+                        {point.list.map((item, i) => (
+                            <li key={i} className="flex items-start text-gray-200">
+                                <CheckCircle className="text-green-400 mt-1 mr-2" size={18} />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2 flex justify-center p-8">
+                <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-3/4 max-w-md h-auto object-contain pt-4 md:pt-10"
+                />
+            </div>
+        </motion.div>
+    );
+};
+
+export default WhyDataScience;

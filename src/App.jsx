@@ -15,7 +15,7 @@ import Consulting from './Pages/Services/Consulting/Consulting';
 import ContactForm from './Pages/Contact/Contact';
 import Industries from './Pages/Industries/Industries';
 import Education from './Components/Education';
-import Healthcare from './Components/Healthcare';
+import Healthcare from './Components/HealthCare';
 import Automotive from './Components/Automotive';
 import IndustrialAuto from './Components/IndustrialAuto';
 import Ecommerce from './Components/Ecommerce';
@@ -45,7 +45,7 @@ function App() {
 
         {/* Industry Pages */}
         <Route path="/Education" element={<Education />} />
-        <Route path="/Healthcare" element={<Healthcare/>} />
+        <Route path="/Healthcare" element={<Healthcare />} />
         <Route path="/Automotive" element={<Automotive />} />
         <Route path="/IndustrialAuto" element={<IndustrialAuto />} />
         <Route path="/Ecommerce" element={<Ecommerce />} />
@@ -55,10 +55,10 @@ function App() {
 
         {/* Services */}
         <Route path="/Web-Development" element={<WebDevelopment />} />
-        <Route path="/Software-Development" element={<SoftwareDevelopment />} />
+        <Route path="/App-Development" element={<SoftwareDevelopment />} />
         <Route path="/UiUx-Design" element={<UiUxDesign />} />
         <Route path="/Iot-development" element={<IotDevelopment />} />
-        <Route path="/Ai&Ml-Solutions" element={<AiMl />} />
+        <Route path="/AiMl-Solutions" element={<AiMl />} />
         <Route path="/DataScience-Analytics" element={<DataScience />} />
         <Route path="/Digital-Marketing" element={<DigitalMarket />} />
         <Route path="/IT-Consulting" element={<Consulting />} />

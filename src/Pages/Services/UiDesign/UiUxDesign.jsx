@@ -5,12 +5,13 @@ import WhyWeb from '../../../Components/webServ/WhyWeb'
 import UiTools from '../../../Components/UiServ/UiTools'
 import UiDevelopmentProcess from '../../../Components/UiServ/UiDevelopmentProcess'
 import UiFAQ from '../../../Components/UiServ/UiFAQ'
+import WhyUi from '../../../Components/UiServ/WhyUi'
 const UiUxDesign = () => {
   return (
     <div>      
       <UiHome/>
-      <UiOffer/>
-      <WhyWeb/> 
+      <UiOffer/> 
+      <WhyUi/>
       <UiTools/>
       <UiDevelopmentProcess/>
       <UiFAQ/>      

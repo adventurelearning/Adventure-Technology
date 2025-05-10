@@ -70,7 +70,7 @@ const EmbFAQ = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-20">
+    <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-10">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl font-semibold text-white text-center mb-12">
           Frequently Asked <span className="text-blue-400">Questions</span>
@@ -90,7 +90,7 @@ const EmbFAQ = () => {
                     : 'bg-gray-800 hover:bg-gray-700 rounded-xl'
                 }`}
               >
-                <span className="text-lg">{item.question}</span>
+                <span className="text-lg text-start">{item.question}</span>
                 {expandedId === item.id ? (
                   <ChevronUpIcon className="h-7 w-7 text-blue-400" />
                 ) : (
@@ -108,7 +108,7 @@ const EmbFAQ = () => {
                     className="bg-gray-900 text-gray-300 overflow-hidden rounded-b-xl"
                   >
                     <div className="py-5 px-6">
-                      <p className="leading-relaxed">{item.answer}</p>
+                      <p className="leading-relaxed text-start">{item.answer}</p>
                     </div>
                   </motion.div>
                 )}

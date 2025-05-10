@@ -1,87 +1,129 @@
 import React from 'react';
-import {
-    Cpu,
-    ShieldLock,
-    BarChart,
-    GraphUp,
-    PersonBadge,
-    Gear
-} from 'react-bootstrap-icons';
+import { CheckCircle } from 'react-bootstrap-icons';
+import web1 from '../../assets/Service/WEB 1.svg';
+import web2 from '../../assets/Service/WEB 2.svg';
+import web3 from '../../assets/Service/WEB 3.svg';
+import web4 from '../../assets/Service/WEB 4.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
 const WhyAi = () => {
     const expertisePoints = [
         {
-            title: 'Experienced AI/ML Engineers',
-            description: 'Our team has years of expertise in developing custom AI and machine learning models using advanced algorithms, deep learning, and natural language processing (NLP).',
-            icon: <Cpu className="text-blue-400" size={24} />,
-            borderColor: 'border-blue-500'
+            title: 'Advanced Machine Learning Models',
+            description:
+                'We build powerful machine learning models that learn from vast amounts of data, providing intelligent predictions, automation, and recommendations.',
+            list: [
+                'Supervised & Unsupervised Learning',
+                'Predictive Analytics & Forecasting',
+                'Natural Language Processing (NLP)',
+            ],
+            image: web1,
         },
         {
-            title: 'Data-Driven Insights & Analytics',
-            description: 'We specialize in turning raw data into actionable insights with advanced analytics, predictive modeling, and real-time decision-making tools.',
-            icon: <BarChart className="text-green-400" size={24} />,
-            borderColor: 'border-green-500'
+            title: 'AI-Powered Automation & Optimization',
+            description:
+                'Our AI solutions drive efficiency by automating complex tasks, optimizing processes, and making real-time decisions based on data.',
+            list: [
+                'Automated Data Processing',
+                'AI-Driven Process Optimization',
+                'Dynamic Resource Allocation',
+            ],
+            image: web2,
         },
         {
-            title: 'Scalable & Secure AI Systems',
-            description: 'Our AI solutions are designed to scale with your business needs while maintaining the highest standards of security, ensuring safe and reliable operations.',
-            icon: <ShieldLock className="text-purple-400" size={24} />,
-            borderColor: 'border-purple-500'
+            title: 'Deep Learning for Complex Data',
+            description:
+                'Leveraging deep learning techniques, we enable models to understand complex datasets, from images and video to time series and sensor data.',
+            list: [
+                'Convolutional Neural Networks (CNN)',
+                'Recurrent Neural Networks (RNN)',
+                'Transfer Learning for Faster Model Training',
+            ],
+            image: web3,
         },
         {
-            title: 'Advanced Machine Learning Algorithms',
-            description: 'We utilize cutting-edge machine learning techniques, including deep learning and reinforcement learning, to create intelligent systems that learn and evolve.',
-            icon: <GraphUp className="text-yellow-400" size={24} />,
-            borderColor: 'border-yellow-500'
-        },
-        {
-            title: 'AI-Powered Automation',
-            description: 'We help businesses automate repetitive tasks and workflows with AI, increasing productivity and efficiency while reducing human error.',
-            icon: <Gear className="text-orange-400" size={24} />,
-            borderColor: 'border-orange-500'
-        },
-        {
-            title: 'Continuous Model Monitoring & Optimization',
-            description: 'After deployment, we ensure that your AI models are continuously monitored and optimized for better performance and accuracy over time.',
-            icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-pink-500'
+            title: 'AI Model Deployment & Maintenance',
+            description:
+                'We ensure the smooth deployment and ongoing optimization of AI models, enabling real-time predictions and continuous learning from live data.',
+            list: [
+                'Model Deployment on Cloud/Edge',
+                'Continuous Model Training & Updates',
+                'Real-Time Monitoring & Performance Metrics',
+            ],
+            image: web4,
         },
     ];
 
     return (
-        <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Why Choose Our AI & ML Solutions
+        <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        Our AI & Machine Learning Edge
                     </h2>
-                    <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Empowering your business with innovative AI and machine learning solutions
+                    <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                        Transforming data into intelligent insights and automation
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="space-y-16">
                     {expertisePoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="p-2 rounded-lg bg-gray-700 mr-4">
-                                    {point.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {point.title}
-                                </h3>
-                            </div>
-                            <p className="text-gray-300 pl-12">
-                                {point.description}
-                            </p>
-                        </div>
+                        <AnimatedCard key={index} point={point} />
                     ))}
                 </div>
             </div>
         </div>
+    );
+};
+
+const AnimatedCard = ({ point }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const animation = useAnimation();
+
+    React.useEffect(() => {
+        if (inView) {
+            animation.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
+        } else {
+            animation.start({ opacity: 0, y: 50 });
+        }
+    }, [inView, animation]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col md:flex-row items-center w-full bg-gradient-to-b from-white/10 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animation}
+        >
+            {/* Left: Text */}
+            <div className="w-full md:w-1/2 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">{point.title}</h3>
+                <p className="text-gray-300 mb-4">{point.description}</p>
+                {point.list && (
+                    <ul className="space-y-2 mt-4">
+                        {point.list.map((item, i) => (
+                            <li key={i} className="flex items-start text-gray-200">
+                                <CheckCircle className="text-green-400 mt-1 mr-2" size={18} />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2 flex justify-center p-8">
+                <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-3/4 max-w-md h-auto object-contain pt-4 md:pt-10"
+                />
+            </div>
+        </motion.div>
     );
 };
 

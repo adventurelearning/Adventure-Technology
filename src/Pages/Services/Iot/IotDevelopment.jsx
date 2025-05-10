@@ -5,15 +5,16 @@ import WhyWeb from '../../../Components/webServ/WhyWeb'
 import IotTools from '../../../Components/IotServ/IotTools'
 import IotDevelopmentProcess from '../../../Components/IotServ/IotDevelopmentProcess'
 import IotFAQ from '../../../Components/IotServ/IotFAQ'
+import WhyIot from '../../../Components/IotServ/WhyIot'
 const IotDevelopment = () => {
   return (
-    <div>      
-      <IotHome/>
-      <IotOffer/>
-      <WhyWeb/> 
-      <IotTools/>
-      <IotDevelopmentProcess/>
-      <IotFAQ/>
+    <div>
+      <IotHome />
+      <IotOffer />
+      <WhyIot />
+      <IotTools />
+      <IotDevelopmentProcess />
+      <IotFAQ />
     </div>
   )
 }

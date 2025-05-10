@@ -1,87 +1,129 @@
 import React from 'react';
-import {
-    DeviceHdd,
-    ShieldLock,
-    GraphUp,
-    Cloud,
-    PersonBadge,
-    Tools
-} from 'react-bootstrap-icons';
+import { CheckCircle } from 'react-bootstrap-icons';
+import web1 from '../../assets/Service/WEB 1.svg';
+import web2 from '../../assets/Service/WEB 2.svg';
+import web3 from '../../assets/Service/WEB 3.svg';
+import web4 from '../../assets/Service/WEB 4.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
 const WhyIot = () => {
     const expertisePoints = [
         {
-            title: 'IoT Device Integration',
-            description: 'Our team specializes in seamlessly integrating various IoT devices into cohesive, efficient networks, enabling real-time data collection and control.',
-            icon: <DeviceHdd className="text-blue-400" size={24} />,
-            borderColor: 'border-gray-500'
+            title: 'End-to-End IoT System Development',
+            description:
+                'We build complete IoT ecosystems — from embedded firmware to cloud-based platforms — enabling seamless communication between hardware and software.',
+            list: [
+                'Device Firmware Development',
+                'Gateway & Protocol Integration (MQTT, CoAP)',
+                'Cloud Connectivity & Management',
+            ],
+            image: web1,
         },
         {
-            title: 'Cloud-Based IoT Solutions',
-            description: 'We offer scalable, cloud-powered IoT platforms that allow remote management, data analytics, and secure storage, providing insights and control at any time.',
-            icon: <Cloud className="text-purple-400" size={24} />,
-            borderColor: 'border-gray-500'
+            title: 'Real-Time Monitoring & Control',
+            description:
+                'Our solutions empower real-time visibility and remote control over connected devices, sensors, and industrial systems.',
+            list: [
+                'Live Dashboards & Alerts',
+                'Edge Computing Capabilities',
+                'Mobile & Web Control Interfaces',
+            ],
+            image: web2,
         },
         {
-            title: 'Scalable & Secure Architecture',
-            description: 'Our IoT solutions are built with enterprise-level security and scalability, ensuring that your IoT system grows and adapts to your evolving needs.',
-            icon: <ShieldLock className="text-green-400" size={24} />,
-            borderColor: 'border-gray-500'
+            title: 'Secure & Scalable Architecture',
+            description:
+                'We follow IoT security best practices with encrypted communication, authentication, and secure OTA updates — built to scale globally.',
+            list: [
+                'TLS/SSL Encryption & Secure Boot',
+                'Role-Based Access Control (RBAC)',
+                'Multi-Device Support & Fleet Management',
+            ],
+            image: web3,
         },
         {
-            title: 'Real-Time Monitoring & Analytics',
-            description: 'We deliver real-time data monitoring and analytics for your IoT systems, empowering you to make quick, data-driven decisions.',
-            icon: <GraphUp className="text-yellow-400" size={24} />,
-            borderColor: 'border-gray-500'
-        },
-        {
-            title: 'Dedicated IoT Experts',
-            description: 'Our team of IoT experts ensures smooth project execution, from design to deployment, with a focus on performance, security, and user experience.',
-            icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-gray-500'
-        },
-        {
-            title: 'Ongoing IoT Maintenance & Support',
-            description: 'We offer comprehensive post-deployment support and maintenance, including updates, troubleshooting, and optimization for your IoT systems.',
-            icon: <Tools className="text-orange-400" size={24} />,
-            borderColor: 'border-gray-500'
+            title: 'Maintenance, Updates & Analytics',
+            description:
+                'Post-deployment, we provide OTA updates, diagnostics, and performance analytics to keep your IoT products reliable and intelligent.',
+            list: [
+                'Over-The-Air (OTA) Firmware Updates',
+                'Device Health & Diagnostics',
+                'Usage Analytics & Insights',
+            ],
+            image: web4,
         },
     ];
 
     return (
-        <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Why Choose Our IoT Solutions
+        <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        Our IoT Development Edge
                     </h2>
-                    <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Discover the benefits of working with us for your IoT projects
+                    <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                        Building smart, secure, and scalable connected solutions
                     </p>
                 </div>
 
-                <div className="gap-8">
+                <div className="space-y-16">
                     {expertisePoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="p-2 rounded-lg bg-gray-700 mr-4">
-                                    {point.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {point.title}
-                                </h3>
-                            </div>
-                            <p className="text-gray-300 pl-12">
-                                {point.description}
-                            </p>
-                        </div>
+                        <AnimatedCard key={index} point={point} />
                     ))}
                 </div>
             </div>
         </div>
+    );
+};
+
+const AnimatedCard = ({ point }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const animation = useAnimation();
+
+    React.useEffect(() => {
+        if (inView) {
+            animation.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
+        } else {
+            animation.start({ opacity: 0, y: 50 });
+        }
+    }, [inView, animation]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col md:flex-row items-center w-full bg-gradient-to-b from-white/10 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animation}
+        >
+            {/* Left: Text */}
+            <div className="w-full md:w-1/2 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">{point.title}</h3>
+                <p className="text-gray-300 mb-4">{point.description}</p>
+                {point.list && (
+                    <ul className="space-y-2 mt-4">
+                        {point.list.map((item, i) => (
+                            <li key={i} className="flex items-start text-gray-200">
+                                <CheckCircle className="text-green-400 mt-1 mr-2" size={18} />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2 flex justify-center p-8">
+                <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-3/4 max-w-md h-auto object-contain pt-4 md:pt-10"
+                />
+            </div>
+        </motion.div>
     );
 };
 

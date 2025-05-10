@@ -58,12 +58,14 @@ const Footer = () => {
                             <div>
                                 <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">SERVICES</h3>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="#" className="hover:text-gray-300">WebApp Development</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Software Development</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">UI & UX Design</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">IOT Development</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">AI & ML Solutions</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Data Science & Analytics</Link></li>
+                                    <li><Link to="/Web-Development" className="hover:text-gray-300">WebApp Development</Link></li>
+                                    <li><Link to="/App-Development" className="hover:text-gray-300">Software Development</Link></li>
+                                    <li><Link to="/UiUx-Design" className="hover:text-gray-300">UI & UX Design</Link></li>
+                                    <li><Link to="/Iot-development" className="hover:text-gray-300">IOT Development</Link></li>
+                                    <li><Link to="/Iot-development" className="hover:text-gray-300">Embedded Product Design</Link></li>
+                                    <li><Link to="/Embedded-Software" className="hover:text-gray-300">Embedded Software</Link></li>
+                                    <li><Link to="/Ai&Ml-Solutions" className="hover:text-gray-300">AI & ML Solutions</Link></li>
+                                    <li><Link to="/DataScience-Analytics" className="hover:text-gray-300">Data Science & Analytics</Link></li>
                                 </ul>
                             </div>
 
@@ -71,11 +73,15 @@ const Footer = () => {
                             <div>
                                 <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">INDUSTRIES</h3>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="#" className="hover:text-gray-300">Manufacturing</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Agriculture</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Healthcare</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Automotive</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">E-commerce</Link></li>
+                                    <li><Link to="/Manufaturing" className="hover:text-gray-300">Manufacturing</Link></li>
+                                    <li><Link to="/Agriculture" className="hover:text-gray-300">Agriculture</Link></li>
+                                    <li><Link to="/Healthcare" className="hover:text-gray-300">Healthcare</Link></li>
+                                    <li><Link to="/Education" className="hover:text-gray-300">Education</Link></li>
+                                    <li><Link to="/Automotive" className="hover:text-gray-300">Automotive</Link></li>
+                                    <li><Link to="/Ecommerce" className="hover:text-gray-300">E-commerce</Link></li>
+                                    <li><Link to="/SaaS" className="hover:text-gray-300">SaaS</Link></li>
+                                    <li><Link to="/IndustrialAuto" className="hover:text-gray-300">IndustrialAuto</Link></li>
+                                    
                                 </ul>
                             </div>
 
@@ -83,9 +89,9 @@ const Footer = () => {
                             <div>
                                 <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">COMPANY</h3>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="/aboutus" className="hover:text-gray-300">About</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Internship</Link></li>
-                                    <li><Link to="#" className="hover:text-gray-300">Career</Link></li>
+                                    <li><Link to="/AboutUs" className="hover:text-gray-300">About</Link></li>
+                                    <li><Link to="/Internship" className="hover:text-gray-300">Internship</Link></li>
+                                    <li><Link to="/Career" className="hover:text-gray-300">Career</Link></li>
                                 </ul>
                             </div>
 
@@ -101,13 +107,13 @@ const Footer = () => {
                                             <p className="mt-2">Hire from us<span className="block">+91-9884220600</span></p>
                                         </div>
                                     </div>
-                                    <div className="flex items-start">
+                                    <div className="flex items-start pr-5">
                                         <HiOutlineMail className="w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
                                         <a
                                             href="mailto:info@adventurelearning.in"
                                             className="hover:text-gray-300 transition-colors duration-200"
                                         >
-                                            info@adventuretechsolution.in
+                                            info@adventuretechsolution.com
                                         </a>
                                     </div>
                                 </div>

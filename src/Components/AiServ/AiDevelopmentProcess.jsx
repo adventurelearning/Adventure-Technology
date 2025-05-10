@@ -70,7 +70,7 @@ const AiDevelopmentProcess = () => {
                 <h3 className="text-lg text-center text-gray-400 mt-4">
                     Delivering AI & ML solutions with precision at every stage</h3>
 
-                <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
+               <div className="border border-gray-700 rounded-xl p-2 md:p-10 backdrop-blur-md bg-gray-800/30 mt-5 md:mt-12">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

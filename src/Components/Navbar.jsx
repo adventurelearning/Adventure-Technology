@@ -103,7 +103,7 @@ function Navbar() {
 
                 {/* Service 2: Software Development */}
                 <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/Software-Development" className="text-blue-400 hover:text-blue-300  font-medium">
+                  <Link to="/App-Development" className="text-blue-400 hover:text-blue-300  font-medium">
                     <h3 className="font-semibold text-base ">Software Development</h3>
                     <p className="text-gray-200 text-sm font-normal">Custom solutions for business process automation.</p>
                   </Link>
@@ -295,7 +295,7 @@ function Navbar() {
                     <div className="border-t border-white/10 "></div>
 
                     <Link
-                      to="/Software-Development"
+                      to="/App-Development"
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
