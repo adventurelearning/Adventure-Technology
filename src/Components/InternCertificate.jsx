@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import certificte from "../assets/certificate/sample_c.svg";
+import certificte from "../assets/certificate/sample_c.jpeg";
 import { useLocation } from "react-router-dom";
 
 const InternCertificate = () => {

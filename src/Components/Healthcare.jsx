@@ -25,7 +25,7 @@ const Healthcare = () => {
             <WhyHealthCare />
             <HealthCareFAQ />
             <ConsultationForm/>  
-            <Locations/>            
+            <Locations/>
         </>
     );
 };
