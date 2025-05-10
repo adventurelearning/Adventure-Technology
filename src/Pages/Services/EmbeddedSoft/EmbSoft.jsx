@@ -33,7 +33,7 @@ const EmbSoft= () => {
 
       <EmbHome/>
       <EmbOffer/>
-      {/* <WhyEmb/>  */}
+      <WhyEmb/> 
       <EmbTools/>
       <EmbDevelopmentProcess/>
       <EmbFAQ/>

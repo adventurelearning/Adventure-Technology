@@ -33,7 +33,7 @@ const AiMl = () => {
 
       <AiHome/>
       <AiOffer/>
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <AiTools/>
       <AiDevelopmentProcess/>
       <AiFAQ/>

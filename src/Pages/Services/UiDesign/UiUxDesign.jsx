@@ -33,7 +33,7 @@ const UiUxDesign = () => {
 
       <UiHome/>
       <UiOffer/>
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <UiTools/>
       <UiDevelopmentProcess/>
       <UiFAQ/>      

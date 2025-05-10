@@ -33,7 +33,7 @@ const IotDevelopment = () => {
 </Helmet>      
       <IotHome/>
       <IotOffer/>
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <IotTools/>
       <IotDevelopmentProcess/>
       <IotFAQ/>

@@ -33,7 +33,7 @@ const DigitalMarket = () => {
 
       <MarkHome/>
       <MarkOffer/>
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <MarkTools/>
       <MarkDevelopmentProcess/>
       <MarkFAQ/>

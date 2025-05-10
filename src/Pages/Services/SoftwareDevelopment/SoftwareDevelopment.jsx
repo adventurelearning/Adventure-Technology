@@ -34,7 +34,7 @@ const SoftwareDevelopment = () => {
 
       <SoftHome />
       <SoftOffer />
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <SoftTools />
       <SoftDevelopmentProcess />
       <SoftFAQ />

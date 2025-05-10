@@ -34,7 +34,7 @@ const WebDevelopment = () => {
 
       <WebHome/>
       <WebOffer/>
-      {/* <WhyWeb/>       */}
+      <WhyWeb/>      
       <WebTools/>
       <WebDevelopmentProcess/>
       <WebFAQ/>
