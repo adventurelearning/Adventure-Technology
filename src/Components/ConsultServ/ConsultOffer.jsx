@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 const ITConsultingOffer = () => {
     const offers = [
         { name: "IT Strategy & Roadmapping" },
@@ -37,11 +37,15 @@ const ITConsultingOffer = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
                     >
-                        <button
-                            className="text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border-2 border-white"
-                        >
-                            Schedule a Consultation <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
-                        </button>
+                        <Link to="/Contact">
+                            <button
+                                className="text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl
+                                       transition-all duration-300 hover:scale-105
+                                       border-2 border-white"
+                            >
+                                Start Your Project <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
+                            </button>
+                        </Link>
                     </motion.div>
                     <motion.p
                         initial={{ opacity: 0, x: -50 }}

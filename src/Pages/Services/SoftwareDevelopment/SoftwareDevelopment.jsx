@@ -13,7 +13,7 @@ const SoftwareDevelopment = () => {
   return (
     <>
       <Helmet>
-        <title>Software Development Services | Adventure Technology</title>
+        <title>App Development Services | Adventure Technology</title>
         <meta
           name="description"
           content="Adventure Technology specializes in innovative software development solutions, crafting custom applications that optimize business processes and deliver outstanding performance."

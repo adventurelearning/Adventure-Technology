@@ -34,7 +34,7 @@ import { Helmet } from "react-helmet";
 
 function App() {
   return (
-    <>
+    <> <ScrollToTop/>
       <Helmet>
         <title>Adventure Technology</title>
         <meta
@@ -56,7 +56,7 @@ function App() {
           content="https://www.adventuretechnology.com/"
         />
       </Helmet>
-      <ScrollToTop />
+     
       <Header />
       <Navbar />
 

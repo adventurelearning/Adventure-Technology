@@ -20,12 +20,12 @@ const SoftHome = () => {
 
         const particles = [];
         const calculateParticlesNumber = () => {
-          let baseParticles = (window.innerWidth * window.innerHeight) / 6000;
-          // Adjust particle count for very small screens
-          if (window.innerWidth < 600) {
-            baseParticles = (window.innerWidth * window.innerHeight) / 4000;
-          }
-          return baseParticles;
+            let baseParticles = (window.innerWidth * window.innerHeight) / 6000;
+            // Adjust particle count for very small screens
+            if (window.innerWidth < 600) {
+                baseParticles = (window.innerWidth * window.innerHeight) / 4000;
+            }
+            return baseParticles;
         };
         let numParticles = calculateParticlesNumber();
 
@@ -132,11 +132,11 @@ const SoftHome = () => {
                         initial={{ opacity: 0, y: -60 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-                        className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl  font-semibold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
+                        className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
                     >
                          App Development for Scalable and
-                        <span className="block mt-2 sm:mt-3 text-gray-300 font-medium text-4xl">
-                            Intelligent Business Solutions
+                        <span className="block mt-2 sm:mt-3 text-gray-300 font-medium">
+                           Intelligent Business Solutions
                         </span>
                     </motion.h1>
                     <motion.h3
@@ -145,7 +145,7 @@ const SoftHome = () => {
                         transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
                         className="text-lg sm:text-xl text-gray-400 mx-auto mt-6 sm:mt-8"
                     >
-                           We develop secure, high-performance software designed to streamline your workflows.
+                         We develop secure, high-performance software designed to streamline your workflows.
                     </motion.h3>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
@@ -153,7 +153,7 @@ const SoftHome = () => {
                         transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
                         className="mt-8 sm:mt-10"
                     >
-                         <Link to="/Contact">
+                        <Link to="/Contact">
                         <button
                             variant="default"
                             size="lg"

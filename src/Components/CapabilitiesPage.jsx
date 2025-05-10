@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillThunderbolt, AiOutlineClockCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import { FiTrendingUp, FiShield, FiUsers } from 'react-icons/fi';
-
+import { Link } from 'react-router-dom';
 const CapabilitiesPage = () => {
     return (
         <div className="bg-black text-white py-8">
@@ -64,9 +64,11 @@ const CapabilitiesPage = () => {
                         <h2 className="text-3xl md:text-5xl font-semibold text-blue-500 mb-2">Have a project in mind?</h2>
                         <p className="text-2xl md:text-4xl text-white font-semibold mt-2">Let's Connect</p>
                     </div>
+                    <Link to="/Contact"> 
                     <button className="bg-blue-500 hover:bg-blue-700 text-white cursor-pointer font-semibold py-3 px-8 rounded-sm text-xl border-1 border-white transition-transform hover:scale-105">
                         Let's Talk
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

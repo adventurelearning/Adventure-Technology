@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import { Link } from 'react-router-dom';
 const IndustryHome = () => {
     const [currentImage, setCurrentImage] = useState(0);
 
@@ -87,17 +87,26 @@ const IndustryHome = () => {
                     Innovative Technology Solutions<span className='block'> for Every Industry</span>
                 </h1>
 
-                <h3 className="text-lg md:text-xl max-w-3xl mb-8 animate-fade-in animation-delay-200 text-left">
+                <h3 className="text-lg md:text-xl max-w-3xl mb-8 animate-fade-in animation-delay-200 text-strat">
                     From smart IoT systems to powerful AI-driven platforms, we provide <span>custom solutions</span> that solve real business challenges across a wide range of industries.
                 </h3>
 
                 {/* CTA Button */}
-                <button className="bg-blue-600 hover:bg-white hover:text-blue-600 px-6 py-3 mt-5 rounded-md text-lg font-medium text-white flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg animate-fade-in animation-delay-400">
-                    Consult Our Experts
-                    <span className="text-3xl pl-2">
-                        <i className="bi bi-arrow-right-short"></i>
-                    </span>
-                </button>
+                 <div className="pt-15 md:pt-8 lg:pt-8 xl:pt-8   animate-fadeIn delay-200">
+            <Link to="/Contact">
+            <button className="relative overflow-hidden group bg-blue-600 hover:bg-blue-700 px-8 py-3 md:px-6 md:py-3 rounded-lg text-lg font-semibold text-white transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl cursor-pointer">
+              <span className="relative z-10">Connect with Experts</span>
+              <i className="bi bi-arrow-right text-lg font-semibold ml-2 mt-2 md:mt-2 lg:mt-2 xl:mt-2"></i>
+
+              {/* Hover gradient effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+              {/* Button glow effect */}
+              <span className="absolute -bottom-1 -left-1 -right-1 -top-1 bg-blue-400/30 rounded-lg blur-md group-hover:opacity-70 transition-opacity duration-300"></span>
+            </button>
+            </Link>
+
+          </div>
 
             </div>
 
