@@ -5,7 +5,7 @@ const Tools = () => {
 
     const categories = [
         'Web Development',
-        'Software Development',
+        'App Development',
         'IOT Development',
         'AI & ML Solutions',
         'Data Science & Data Analysis',
@@ -20,14 +20,14 @@ const Tools = () => {
             { name: 'NodeJS', image: 'https://e7.pngegg.com/pngimages/353/697/png-clipart-node-js-javascript-front-and-back-ends-computer-software-others-miscellaneous-angle.png' },
             { name: 'MongoDB', image: 'https://cdn4.iconfinder.com/data/icons/logos-3/512/mongodb-2-512.png' },
         ],
-        'Software Development': [
+        'App Development': [
             {
                 name: 'Flutter',
-                image: 'https://cdn.jsdelivr.net/gh/google/flutter@latest/flutter_logo.svg'
+                image: 'https://www.svgrepo.com/show/353751/flutter.svg'
             },
             {
                 name: 'React Native',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/React_Native_Logo.png'
+                image: 'https://cdn0.iconfinder.com/data/icons/logos-brands-in-colors/128/react_color-512.png' 
             },
             {
                 name: 'Swift (iOS)',
@@ -38,35 +38,36 @@ const Tools = () => {
                 image: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png'
             },
             {
-                name: 'Firebase',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Firebase_Logo.png'
+                name: 'Androi Studio',
+                image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Android_Studio_icon_%282023%29.svg/2048px-Android_Studio_icon_%282023%29.svg.png'
             },
             {
-                name: 'AWS Amplify',
-                image: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/AWS_Amplify_logo.png'
+                name: 'Ionic',
+                image: 'https://www.svgrepo.com/show/373687/ionic.svg'
             }
 
         ],
         'IOT Development': [
-            { name: 'React Native', image: 'https://path/to/react-native-logo.png' },
-            { name: 'Flutter', image: 'https://path/to/flutter-logo.png' },
-            { name: 'Swift', image: 'https://path/to/swift-logo.png' },
-            { name: 'Kotlin', image: 'https://path/to/kotlin-logo.png' },
-            { name: 'Ionic', image: 'https://path/to/ionic-logo.png' },
+            { name: 'Arduino IDE', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Arduino_IDE_logo.svg/2048px-Arduino_IDE_logo.svg.png' },
+            { name: 'NodeRED', image: 'https://nodered.org/about/resources/media/node-red-icon.svg' },
+            { name: 'PlatformIO', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/PlatformIO_logo.svg/2500px-PlatformIO_logo.svg.png' },
+            { name: 'Python', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png' },
+            { name: 'Blynk', image: 'https://avatars.githubusercontent.com/u/11541426?v=4' },
         ],
         'AI & ML Solutions': [
-            { name: 'TensorFlow', image: 'https://path/to/tensorflow-logo.png' },
-            { name: 'Keras', image: 'https://path/to/keras-logo.png' },
-            { name: 'PyTorch', image: 'https://path/to/pytorch-logo.png' },
-            { name: 'Scikit-learn', image: 'https://path/to/scikit-learn-logo.png' },
-            { name: 'OpenCV', image: 'https://path/to/opencv-logo.png' },
+            { name: 'TensorFlow', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png' },
+            { name: 'Tableau', image: 'https://cdn.worldvectorlogo.com/logos/tableau-software.svg' },
+            { name: 'PyTorch', image: 'https://easyai.tech/wp-content/uploads/2019/01/pytorch.png' },
+            { name: 'Scikit-learn', image: 'https://cdn.prod.website-files.com/65264f6bf54e751c3a776db1/66d86935aaeb8c0b9fa1bde7_scikit-learn.png' },
+            { name: 'Power BI', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png' },
         ],
         'Data Science & Data Analysis': [
-            { name: 'Hadoop', image: 'https://path/to/hadoop-logo.png' },
-            { name: 'Spark', image: 'https://path/to/spark-logo.png' },
-            { name: 'Kafka', image: 'https://path/to/kafka-logo.png' },
-            { name: 'Flink', image: 'https://path/to/flink-logo.png' },
-            { name: 'Hive', image: 'https://path/to/hive-logo.png' },
+            { name: 'Python', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png' },
+            { name: 'Sql', image: 'https://www.svgrepo.com/show/331760/sql-database-generic.svg' },
+            { name: 'Power BI', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/New_Power_BI_Logo.svg/2048px-New_Power_BI_Logo.svg.png' },
+
+            { name: 'Hadoop', image: 'https://www.svgrepo.com/show/355048/hadoop.svg' },
+            { name: 'Tableau', image: 'https://cdn.worldvectorlogo.com/logos/tableau-software.svg' },
         ],
     };
 
