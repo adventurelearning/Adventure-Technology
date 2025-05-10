@@ -4,8 +4,10 @@ import MarkOffer from '../../../Components/MarketServ/MarkOffer'
 import MarkTools from '../../../Components/MarketServ/MarkTools'
 import MarkDevelopmentProcess from '../../../Components/MarketServ/MarkDevelopmentProcess'
 import MarkFAQ from '../../../Components/MarketServ/MarkFAQ'
-import WhyWeb from '../../../Components/webServ/WhyWeb'
+import WhyMark from '../../../Components/MarketServ/WhyMark'
+// import WhyWeb from '../../../Components/webServ/WhyWeb'
 import { Helmet } from 'react-helmet'
+
 const DigitalMarket = () => {
   return (
     <>
@@ -33,7 +35,7 @@ const DigitalMarket = () => {
 
       <MarkHome/>
       <MarkOffer/>
-      <WhyWeb/> 
+      <WhyMark/>
       <MarkTools/>
       <MarkDevelopmentProcess/>
       <MarkFAQ/>

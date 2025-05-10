@@ -1,135 +1,173 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const SoftHome = () => {
     const canvasRef = useRef(null);
 
     useEffect(() => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-  
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-  
-      const particles = [];
-      const numParticles = (window.innerWidth * window.innerHeight) / 4500;
-  
-      // Function to generate a random number within a range
-      function randomRange(min, max) {
-        return Math.random() * (max - min) + min;
-      }
-  
-      // Function to generate a random color
-      function randomColor() {
-        const colors = ['#ffffff', '#d3d3d3', '#a9a9a9', '#808080', '#4682b4', '#6495ed'];
-        return colors[Math.floor(Math.random() * colors.length)];
-      }
-  
-      // Create particles
-      for (let i = 0; i < numParticles; i++) {
-        particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: randomRange(1, 2),
-          color: randomColor(),
-          opacity: randomRange(0.3, 0.7),
-          speedX: randomRange(-0.1, 0.1),
-          speedY: randomRange(-0.1, 0.1),
-        });
-      }
-  
-      // Particle animation function
-      function animate() {
-        requestAnimationFrame(animate);
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-        particles.forEach(particle => {
-          // Move particle
-          particle.x += particle.speedX;
-          particle.y += particle.speedY;
-  
-          // Wrap around edges
-          if (particle.x > canvas.width) particle.x = 0;
-          if (particle.x < 0) particle.x = canvas.width;
-          if (particle.y > canvas.height) particle.y = 0;
-          if (particle.y < 0) particle.y = canvas.height;
-  
-          // Draw particle
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-          ctx.fillStyle = particle.color;
-          ctx.globalAlpha = particle.opacity;
-          ctx.fill();
-          ctx.closePath();
-        });
-      }
-  
-      animate();
-  
-      // Handle window resize to adjust canvas and particles
-      const handleResize = () => {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-  
-        // Re-initialize particles
-        particles.length = 0;
-        const newNumParticles = (window.innerWidth * window.innerHeight) / 2000;
-        for (let i = 0; i < newNumParticles; i++) {
-          particles.push({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            size: randomRange(1, 2),
-            color: randomColor(),
-            opacity: randomRange(0.3, 0.7),
-            speedX: randomRange(-0.1, 0.1),
-            speedY: randomRange(-0.1, 0.1),
-          });
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        const setCanvasSize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+
+        setCanvasSize();
+
+        const particles = [];
+        const calculateParticlesNumber = () => {
+          let baseParticles = (window.innerWidth * window.innerHeight) / 6000;
+          // Adjust particle count for very small screens
+          if (window.innerWidth < 600) {
+            baseParticles = (window.innerWidth * window.innerHeight) / 4000;
+          }
+          return baseParticles;
+        };
+        let numParticles = calculateParticlesNumber();
+
+        // Function to generate a random number within a range
+        function randomRange(min, max) {
+            return Math.random() * (max - min) + min;
         }
+
+        // Function to generate a random color
+        function randomColor() {
+            const colors = ['#ffffff', '#d3d3d3', '#a9a9a9', '#808080', '#4682b4', '#6495ed', '#9370db', '#dda0dd'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        const createParticles = () => {
+            particles.length = 0;
+            numParticles = calculateParticlesNumber();
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: randomRange(0.5, 2.5), // Increased size range
+                    color: randomColor(),
+                    opacity: randomRange(0.2, 0.8), // Increased opacity range
+                    speedX: randomRange(-0.2, 0.2), // Increased speed
+                    speedY: randomRange(-0.2, 0.2),
+                    trail: [],       // Array to store particle's past positions for the trail
+                    trailLength: 10, // Length of the trail
+                });
+            }
+        };
+
+        createParticles();
+
+        // Particle animation function
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach(particle => {
+                // Move particle
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+
+                // Wrap around edges
+                if (particle.x > canvas.width) particle.x = 0;
+                if (particle.x < 0) particle.x = canvas.width;
+                if (particle.y > canvas.height) particle.y = 0;
+                if (particle.y < 0) particle.y = canvas.height;
+
+                // Store the current position in the trail
+                particle.trail.push({ x: particle.x, y: particle.y });
+                // Keep the trail at the desired length
+                if (particle.trail.length > particle.trailLength) {
+                    particle.trail.shift();
+                }
+
+                // Draw particle with trail
+                for (let i = 0; i < particle.trail.length; i++) {
+                    const point = particle.trail[i];
+                    const opacityFactor = i / particle.trailLength; // Fade out the trail
+                    const sizeFactor = 0.7 + (i / particle.trailLength) * 0.6; // Size decreases
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, particle.size * sizeFactor, 0, Math.PI * 2);
+                    ctx.fillStyle = particle.color;
+                    ctx.globalAlpha = particle.opacity * (0.4 + opacityFactor * 0.6); // Make trail more visible
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+                // Draw the main particle
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.globalAlpha = particle.opacity;
+                ctx.fill();
+                ctx.closePath();
+            });
+        }
+
         animate();
-      };
-  
-      window.addEventListener('resize', handleResize);
-  
-      // Cleanup function to remove event listener
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
+
+        // Handle window resize to adjust canvas and particles
+        const handleResize = () => {
+            setCanvasSize();
+            createParticles();
+            animate();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup function to remove event listener
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
-  
+
     return (
-      <div className="relative w-full  bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden">
-        <canvas ref={canvasRef} className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
-        <div className="relative z-10 flex flex-col items-center justify-center  px-6 sm:px-12 mt-12">
-          <div className="text-center space-y-6 sm:space-y-8 max-w-5xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl lg:text-5xl font-semibold text-white tracking-tight mt-15">
-            Software Development for Scalable and
-              <span className="block mt-4">
-              Intelligent Business Solutions
-              </span> 
-            </h1>
-            <h3 className="text-lg  text-gray-300 mx-auto mt-10 ">
-            We develop secure, high-performance software designed to streamline your workflows.
-
-
-            </h3>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-37 mb-10"
-            >
-              <button
-                variant="default"              
-                className="bg-gradient-to-r from-blue-900 to-blue-950 text-white text-xl px-8 py-4 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-1 focus:ring-blue-400 focus:ring-opacity-75"
-              >
-                Start Consultation
-              </button>
-            </motion.div>
-          </div>
+        <div className="relative w-full h-screen bg-gradient-to-br from-black via-gray-900 to-blue-950 overflow-hidden">
+            <canvas ref={canvasRef} className="absolute inset-0 z-0" style={{ pointerEvents: 'none' }} />
+            <div className="relative z-10 flex flex-col items-center justify-center h-3/4 md:h-full px-6 sm:px-12">
+                <div className="text-start md:text-center space-y-6 sm:space-y-8 max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto">
+                    <motion.h1
+                        initial={{ opacity: 0, y: -60 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
+                        className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl  font-semibold text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400"
+                    >
+                         App Development for Scalable and
+                        <span className="block mt-2 sm:mt-3 text-gray-300 font-medium text-4xl">
+                            Intelligent Business Solutions
+                        </span>
+                    </motion.h1>
+                    <motion.h3
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.9, delay: 0.5, ease: "easeOut" }}
+                        className="text-lg sm:text-xl text-gray-400 mx-auto mt-6 sm:mt-8"
+                    >
+                           We develop secure, high-performance software designed to streamline your workflows.
+                    </motion.h3>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
+                        className="mt-8 sm:mt-10"
+                    >
+                         <Link to="/Contact">
+                        <button
+                            variant="default"
+                            size="lg"
+                            className="bg-gradient-to-r from-sky-700 via-blue-600 to-blue-800 text-white text-lg sm:text-xl px-7 sm:px-9 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                        >
+                            Get a Free Consultation
+                        </button>
+                        </Link>
+                    </motion.div>
+                </div>
+            </div>
         </div>
-      </div>
     );
-  };
+};
+
 export default SoftHome;
+

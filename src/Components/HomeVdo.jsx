@@ -40,12 +40,12 @@ const HomeVdo = () => {
 
       {/* Main Content */}
       <div className="relative z-20 flex flex-col items-center justify-center h-full md:h-3/4 lg:h-3/4 xl:h-3/4 px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto space-y-4 md:space-y-6 transform transition-all ">
-          <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-5xl font-bold leading-tight animate-fadeIn pt-40">
+        <div className="text-start md:text-center max-w-6xl mx-auto space-y-4 md:space-y-6 transform transition-all ">
+          <h1 className="text-5xl sm:text-5xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fadeIn pt-40">
             <span className="block text-white">
               Innovative Tech Solutions Firm for
             </span>
-            <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-white">
+            <span className="block mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold text-white">
               Future-Ready, Scalable Solutions
             </span>
           </h1>

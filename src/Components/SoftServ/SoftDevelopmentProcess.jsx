@@ -71,7 +71,7 @@ const SoftDevelopmentProcess = () => {
                     Building reliable, secure, and scalable software from idea to execution
                 </h3>
 
-                <div className="border border-gray-700 rounded-xl p-10 backdrop-blur-md bg-gray-800/30 mt-12">
+             <div className="border border-gray-700 rounded-xl p-2 md:p-10 backdrop-blur-md bg-gray-800/30 mt-5 md:mt-12">
                     <motion.div
                         variants={containerVariants}
                         initial="hidden"

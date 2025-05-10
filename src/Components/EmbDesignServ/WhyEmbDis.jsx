@@ -1,87 +1,129 @@
 import React from 'react';
-import {
-    Cpu,
-    ShieldLock,
-    BarChart,
-    GraphUp,
-    PersonBadge,
-    Gear
-} from 'react-bootstrap-icons';
+import { CheckCircle } from 'react-bootstrap-icons';
+import web1 from '../../assets/Service/WEB 1.svg';
+import web2 from '../../assets/Service/WEB 2.svg';
+import web3 from '../../assets/Service/WEB 3.svg';
+import web4 from '../../assets/Service/WEB 4.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
-const WhyEmbDis = () => {
+const WhyEmbDis= () => {
     const expertisePoints = [
         {
-            title: 'Expert Embedded Engineers',
-            description: 'Our team has deep experience in embedded hardware, firmware development, and real-time systems, with a focus on reliability and performance.',
-            icon: <Cpu className="text-blue-400" size={24} />,
-            borderColor: 'border-blue-500'
+            title: 'Product Concept and Design',
+            description:
+                'We transform ideas into tangible embedded product designs, considering form, function, and feasibility, ensuring your product is intuitive and manufacturable.',
+            list: [
+                'Innovative Product Conceptualization',
+                'Ergonomic Design for User Comfort',
+                'Design for Manufacturability (DFM)',
+            ],
+            image: web1,
         },
         {
-            title: 'End-to-End Product Development',
-            description: 'We handle every stage from schematics and PCB layout to firmware development and testing, ensuring smooth hardware-software integration.',
-            icon: <Gear className="text-orange-400" size={24} />,
-            borderColor: 'border-orange-500'
+            title: 'Hardware Design & Prototyping',
+            description:
+                'Our expertise lies in designing custom PCBs, selecting the right sensors and actuators, and developing reliable prototypes for embedded systems.',
+            list: [
+                'Custom PCB Design & Layout',
+                'Sensor & Actuator Selection',
+                'Prototyping and Iterative Testing',
+            ],
+            image: web2,
         },
         {
-            title: 'Secure & Compliant Designs',
-            description: 'We design with industry security standards in mind—important for critical applications like medical, industrial, and automotive devices.',
-            icon: <ShieldLock className="text-purple-400" size={24} />,
-            borderColor: 'border-purple-500'
+            title: 'System Architecture & Integration',
+            description:
+                'We design scalable and efficient system architectures, integrating hardware and software for seamless operation across embedded devices.',
+            list: [
+                'Modular System Architecture',
+                'Hardware-Software Integration',
+                'Real-Time Systems Design',
+            ],
+            image: web3,
         },
         {
-            title: 'Custom IoT Solutions',
-            description: 'From edge devices to connectivity, we design scalable IoT systems with embedded intelligence and remote monitoring capabilities.',
-            icon: <GraphUp className="text-yellow-400" size={24} />,
-            borderColor: 'border-yellow-500'
-        },
-        {
-            title: 'Performance Optimization',
-            description: 'We fine-tune systems for low-power consumption, speed, and memory efficiency to meet strict embedded constraints.',
-            icon: <BarChart className="text-green-400" size={24} />,
-            borderColor: 'border-green-500'
-        },
-        {
-            title: 'Lifecycle Support & Maintenance',
-            description: 'Beyond design, we provide long-term support, firmware updates, and revisions to keep your product reliable in the field.',
-            icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-pink-500'
+            title: 'User Interface (UI) for Embedded Systems',
+            description:
+                'We create user interfaces for embedded products, ensuring that the interaction between the user and the device is intuitive and responsive.',
+            list: [
+                'Embedded UI/UX Design',
+                'Responsive Touch Interfaces',
+                'Seamless User Experience',
+            ],
+            image: web4,
         },
     ];
 
     return (
-        <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Why Choose Our Embedded Design Services
+        <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        Our Embedded Product Design Expertise
                     </h2>
-                    <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Delivering robust, scalable embedded solutions from concept to deployment
+                    <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                        From concept to prototype, we help you design embedded products that are innovative, reliable, and ready for the market.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div className="space-y-16">
                     {expertisePoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="p-2 rounded-lg bg-gray-700 mr-4">
-                                    {point.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {point.title}
-                                </h3>
-                            </div>
-                            <p className="text-gray-300 pl-12">
-                                {point.description}
-                            </p>
-                        </div>
+                        <AnimatedCard key={index} point={point} />
                     ))}
                 </div>
             </div>
         </div>
+    );
+};
+
+const AnimatedCard = ({ point }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const animation = useAnimation();
+
+    React.useEffect(() => {
+        if (inView) {
+            animation.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
+        } else {
+            animation.start({ opacity: 0, y: 50 });
+        }
+    }, [inView, animation]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col md:flex-row items-center w-full bg-gradient-to-b from-white/10 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animation}
+        >
+            {/* Left: Text */}
+            <div className="w-full md:w-1/2 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">{point.title}</h3>
+                <p className="text-gray-300 mb-4">{point.description}</p>
+                {point.list && (
+                    <ul className="space-y-2 mt-4">
+                        {point.list.map((item, i) => (
+                            <li key={i} className="flex items-start text-gray-200">
+                                <CheckCircle className="text-green-400 mt-1 mr-2" size={18} />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2 flex justify-center p-8">
+                <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-3/4 max-w-md h-auto object-contain pt-4 md:pt-10"
+                />
+            </div>
+        </motion.div>
     );
 };
 

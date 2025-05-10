@@ -16,7 +16,7 @@ const WebOffer = () => {
         <div className="bg-black py-12">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
                 {/* Left Side: Text Content */}
-                <div className="text-center md:text-left md:w-1/2 space-y-6">
+                <div className="text-left md:text-left md:w-1/2 space-y-6">
                     <motion.h1
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}

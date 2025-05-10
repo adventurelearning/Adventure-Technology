@@ -77,10 +77,10 @@ function App() {
 
         {/* Services */}
         <Route path="/Web-Development" element={<WebDevelopment />} />
-        <Route path="/Software-Development" element={<SoftwareDevelopment />} />
+        <Route path="/App-Development" element={<SoftwareDevelopment />} />
         <Route path="/UiUx-Design" element={<UiUxDesign />} />
         <Route path="/Iot-development" element={<IotDevelopment />} />
-        <Route path="/Ai&Ml-Solutions" element={<AiMl />} />
+        <Route path="/AiMl-Solutions" element={<AiMl />} />
         <Route path="/DataScience-Analytics" element={<DataScience />} />
         <Route path="/Digital-Marketing" element={<DigitalMarket />} />
         <Route path="/IT-Consulting" element={<Consulting />} />

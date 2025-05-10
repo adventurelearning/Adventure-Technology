@@ -25,7 +25,7 @@ const EmbDisTools = () => {
     ];
 
     return (
-        <div className="bg-black py-16">
+        <div className="bg-black py-10">
             <div className="container mx-auto px-6">
                 <h2 className="text-3xl sm:text-4xl lg:text-4xl font-semibold text-center text-white mb-12 tracking-tight">
                     AI & ML Tools We Use

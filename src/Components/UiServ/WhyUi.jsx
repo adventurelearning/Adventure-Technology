@@ -1,87 +1,129 @@
 import React from 'react';
-import {
-    BrushFill,
-    PaletteFill,
-    Kanban,
-    GraphUp,
-    PersonBadge,
-    Tools
-} from 'react-bootstrap-icons';
+import { CheckCircle } from 'react-bootstrap-icons';
+import web1 from '../../assets/Service/WEB 1.svg';
+import web2 from '../../assets/Service/WEB 2.svg';
+import web3 from '../../assets/Service/WEB 3.svg';
+import web4 from '../../assets/Service/WEB 4.svg';
+import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from 'framer-motion';
 
 const WhyUi = () => {
     const expertisePoints = [
         {
-            title: 'Human-Centered Design Approach',
-            description: 'We prioritize your users at every stage, crafting interfaces that are intuitive, inclusive, and enjoyable.',
-            icon: <BrushFill className="text-blue-400" size={24} />,
-            borderColor: 'border-blue-500'
+            title: 'User Research & Strategy',
+            description:
+                'We conduct in-depth user research to uncover real user needs and align them with your business goals, forming a solid foundation for product design.',
+            list: [
+                'User Interviews & Surveys',
+                'Persona Development',
+                'Customer Journey Mapping',
+            ],
+            image: web1,
         },
         {
-            title: 'Consistent Visual Identity',
-            description: 'From typography to color schemes, we ensure your brand identity is reflected across all platforms and devices.',
-            icon: <PaletteFill className="text-purple-400" size={24} />,
-            borderColor: 'border-purple-500'
+            title: 'Wireframing & Prototyping',
+            description:
+                'From low-fidelity wireframes to interactive prototypes, we create design flows that lay the groundwork for intuitive, user-centric products.',
+            list: [
+                'Low & High Fidelity Wireframes',
+                'Interactive Clickable Prototypes',
+                'Collaborative Design Tools',
+            ],
+            image: web2,
         },
         {
-            title: 'Data-Driven Design Decisions',
-            description: 'We combine analytics and user feedback to create interfaces that convert, retain, and delight.',
-            icon: <GraphUp className="text-green-400" size={24} />,
-            borderColor: 'border-green-500'
+            title: 'Visual & Interaction Design',
+            description:
+                'We design beautiful, accessible, and consistent interfaces with attention to micro-interactions and usability for both web and mobile apps.',
+            list: [
+                'Design Systems & UI Kits',
+                'Responsive & Adaptive Layouts',
+                'Motion & Interaction Design',
+            ],
+            image: web3,
         },
         {
-            title: 'Agile UX Workflow',
-            description: 'Our iterative process includes rapid prototyping, testing, and refinement — ensuring your product evolves with your users.',
-            icon: <Kanban className="text-yellow-400" size={24} />,
-            borderColor: 'border-yellow-500'
-        },
-        {
-            title: 'Collaborative Design Process',
-            description: 'Our UI/UX specialists work closely with stakeholders and dev teams to align goals, reduce friction, and speed up delivery.',
-            icon: <PersonBadge className="text-pink-400" size={24} />,
-            borderColor: 'border-pink-500'
-        },
-        {
-            title: 'Post-Launch UX Optimization',
-            description: 'We provide ongoing support with usability testing, A/B testing, and enhancements based on real-world use.',
-            icon: <Tools className="text-orange-400" size={24} />,
-            borderColor: 'border-orange-500'
+            title: 'Usability Testing & Handoff',
+            description:
+                'We validate our designs through testing, ensuring intuitive experiences, and provide clean design handoff assets for developers.',
+            list: [
+                'A/B Testing & Heatmaps',
+                'User Feedback & Iteration',
+                'Developer-Ready Design Specs',
+            ],
+            image: web4,
         },
     ];
 
     return (
-        <div className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-                        Our UI/UX Expertise
+        <div className="bg-black py-16 px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-semibold text-white sm:text-5xl">
+                        Our UI/UX Design Edge
                     </h2>
-                    <p className="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">
-                        Why leading brands trust our design process to enhance their digital experiences
+                    <p className="mt-4 text-xl text-gray-400 max-w-3xl mx-auto">
+                        Delivering digital experiences that are as beautiful as they are usable
                     </p>
                 </div>
 
-                <div className="gap-8 space-y-6">
+                <div className="space-y-16">
                     {expertisePoints.map((point, index) => (
-                        <div
-                            key={index}
-                            className={`bg-gray-800 rounded-lg p-6 border-t-4 ${point.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
-                        >
-                            <div className="flex items-center mb-4">
-                                <div className="p-2 rounded-lg bg-gray-700 mr-4">
-                                    {point.icon}
-                                </div>
-                                <h3 className="text-xl font-semibold text-white">
-                                    {point.title}
-                                </h3>
-                            </div>
-                            <p className="text-gray-300 pl-12">
-                                {point.description}
-                            </p>
-                        </div>
+                        <AnimatedCard key={index} point={point} />
                     ))}
                 </div>
             </div>
         </div>
+    );
+};
+
+const AnimatedCard = ({ point }) => {
+    const { ref, inView } = useInView({
+        triggerOnce: true,
+        threshold: 0.2,
+    });
+    const animation = useAnimation();
+
+    React.useEffect(() => {
+        if (inView) {
+            animation.start({ opacity: 1, y: 0, transition: { duration: 0.6 } });
+        } else {
+            animation.start({ opacity: 0, y: 50 });
+        }
+    }, [inView, animation]);
+
+    return (
+        <motion.div
+            ref={ref}
+            className="flex flex-col md:flex-row items-center w-full bg-gradient-to-b from-white/10 to-black/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={animation}
+        >
+            {/* Left: Text */}
+            <div className="w-full md:w-1/2 p-8">
+                <h3 className="text-2xl font-semibold text-white mb-4">{point.title}</h3>
+                <p className="text-gray-300 mb-4">{point.description}</p>
+                {point.list && (
+                    <ul className="space-y-2 mt-4">
+                        {point.list.map((item, i) => (
+                            <li key={i} className="flex items-start text-gray-200">
+                                <CheckCircle className="text-green-400 mt-1 mr-2" size={18} />
+                                <span>{item}</span>
+                            </li>
+                        ))}
+                    </ul>
+                )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="w-full md:w-1/2 flex justify-center p-8">
+                <img
+                    src={point.image}
+                    alt={point.title}
+                    className="w-3/4 max-w-md h-auto object-contain pt-4 md:pt-10"
+                />
+            </div>
+        </motion.div>
     );
 };
 
