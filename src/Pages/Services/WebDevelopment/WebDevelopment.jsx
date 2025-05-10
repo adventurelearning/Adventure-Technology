@@ -11,7 +11,7 @@ const WebDevelopment = () => {
     <div>
       <WebHome/>
       <WebOffer/>
-      {/* <WhyWeb/>       */}
+      <WhyWeb/>      
       <WebTools/>
       <WebDevelopmentProcess/>
       <WebFAQ/>

@@ -11,7 +11,7 @@ const SoftwareDevelopment = () => {
     <div>
       <SoftHome />
       <SoftOffer />
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <SoftTools />
       <SoftDevelopmentProcess />
       <SoftFAQ />

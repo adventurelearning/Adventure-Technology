@@ -18,7 +18,7 @@ const IndustrialAuto = () => {
             <IndustriesServ/>
             <IndustrialSection />
             <IndustrialCount />
-            {/* <IndustrialFeatures /> */}
+            <IndustrialFeatures />
             <IndustrialProcess />
             <WhyIndustrial />
             <IndustrialFAQ />
