@@ -26,8 +26,6 @@ const Healthcare = () => {
             <HealthCareFAQ />
             <ConsultationForm/>  
             <Locations/>
-
-            
         </>
     );
 };
