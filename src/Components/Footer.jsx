@@ -83,7 +83,7 @@ const Footer = () => {
                             <div>
                                 <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">COMPANY</h3>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="#" className="hover:text-gray-300">About</Link></li>
+                                    <li><Link to="/aboutus" className="hover:text-gray-300">About</Link></li>
                                     <li><Link to="#" className="hover:text-gray-300">Internship</Link></li>
                                     <li><Link to="#" className="hover:text-gray-300">Career</Link></li>
                                 </ul>

@@ -21,7 +21,7 @@ function Ecommerce() {
             <EcommerceServ />
             <EcommerceSection />
             <EcommerceCount />
-            {/* <EcommerceFeatures /> */}
+            <EcommerceFeatures />
             <EcommerceProcess />
             <WhyEcommerce />
             <EcommerceFAQ />

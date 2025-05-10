@@ -11,7 +11,7 @@ const EmpDesign = () => {
     <div>
       <EmbDisHome />
       <EmbDisOffer />
-      {/* <WhyEmbDis/> */}
+      <WhyEmbDis/>
       <EmbDisTools />
       <EmbDisDevelopmentProcess />
       <EmbDisFAQ />

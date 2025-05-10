@@ -10,7 +10,7 @@ const Consulting = () => {
     <div>
       <ConsultHome/>
       <ConsultOffer/>
-      {/* <WhyWeb/>  */}
+      <WhyWeb/> 
       <ConsultTools/>
       <ConsultDevelopmentProcess/>
       <ConsultFAQ/>
