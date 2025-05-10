@@ -23,7 +23,7 @@ import SaaS from './Components/SaaS';
 import Agriculture from './Components/Agriculture';
 import Manufacturing from './Components/Manufacturing';
 import Internship from './Components/Internship';
-import ScrollToTop from './Components/Scrolltotop';
+import ScrollToTop from './Components/ScrollToTop';
 import Careers from './Components/Careers';
 import Aboutus from './Components/Aboutus';
 import EmpDesign from './Pages/Services/EmbeddedDesign/EmpDesign';
