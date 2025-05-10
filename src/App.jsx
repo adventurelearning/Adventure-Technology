@@ -45,7 +45,7 @@ function App() {
 
         {/* Industry Pages */}
         <Route path="/Education" element={<Education />} />
-        <Route path="/Healthcare" element={<Healthcare />} />
+        <Route path="/Healthcare" element={<Healthcare/>} />
         <Route path="/Automotive" element={<Automotive />} />
         <Route path="/IndustrialAuto" element={<IndustrialAuto />} />
         <Route path="/Ecommerce" element={<Ecommerce />} />
