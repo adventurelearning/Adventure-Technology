@@ -1,134 +1,133 @@
 import React from 'react';
-import LogoWhite from '../assets/LogoWhite.svg';
-import { FaFacebookF, FaInstagram,FaYoutube } from 'react-icons/fa';
-// import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
+import { FaLinkedinIn, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FiPhone } from 'react-icons/fi';
+import { HiOutlineMail } from 'react-icons/hi';
 
-function Footer() {
-
-    // const navigate = useNavigate()
+const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-4">
-            <div className="container mx-auto px-4 grid grid-cols-1  sm:grid-cols-2 md:grid-cols-4 gap-2">
-                {/* Explore Section */}
-                <div>
-                    <h4 className="font-bold text-base sm:text-lg text-white mb-2 sm:mb-4">Explore</h4>
-                    <ul className="space-y-1 sm:space-y-2 text-sm">
-                        <li><a href="/" className="hover:text-gray-300">Home</a></li>
-                        <li><a href="/course/full-stack" className="hover:text-gray-300">Courses</a></li>
-                        <li><a href="/onlinetraining" className="hover:text-gray-300">Online Training</a></li>
-                        <li><a href="/corporate" className="hover:text-gray-300">Corporate</a></li>
-                        <li><a href="/blogs" className="hover:text-gray-300">Resources</a></li>
-                        <li><a href="/contact" className="hover:text-gray-300">Contact</a></li>
-                    </ul>
-                </div>
-
-                {/* Trending Courses Section */}
-                <div>
-                    <h4 className="font-bold text-base sm:text-lg text-white mb-2 sm:mb-4">Trending Courses</h4>
-                    <ul className="space-y-1 sm:space-y-2 text-sm">
-                        <li><a href="/course/full-stack" className="hover:text-gray-300">Full Stack</a></li>
-                        <li><a href="/course/embedded-system" className="hover:text-gray-300">Embedded System</a></li>
-                        <li><a href="/course/data-science" className="hover:text-gray-300">Data Science</a></li>
-                        <li><a href="/course/cloud-computing" className="hover:text-gray-300">Cloud Computing</a></li>
-                        <li><a href="/course/software-testing" className="hover:text-gray-300">Software Testing</a></li>
-                        <li><a href="/course/data-analytics" className="hover:text-gray-300">Data Analytics</a></li>
-                    </ul>
-                </div>
-
-                {/* All Categories Section */}
-                <div>
-                    <h4 className="font-bold text-base sm:text-lg text-white mb-2 sm:mb-4">All Categories</h4>
-                    <ul className="space-y-1 sm:space-y-2 text-sm">
-                        <li><button onClick={()=>navigate('/#logo')} className="hover:text-gray-300">Our Technology</button></li>
-                        <li><a href="#couses" className="hover:text-gray-300">Our Top Class Courses</a></li>
-                        <li><a href="#whyAvd" className="hover:text-gray-300">Why Adventure</a></li>
-                        <li><a href="#companies" className="hover:text-gray-300">Our Hiring Companies</a></li>
-                        <li><a href="#webinar" className="hover:text-gray-300">Our Webinar & Events</a></li>
-                        <li><a href="#new&blogs" className="hover:text-gray-300">News & Blogs</a></li>
-                        <li><a href="#review" className="hover:text-gray-300">Our Testimonials</a></li>
-                    </ul>
-                </div>
-
-                {/* Contact Us Section */}
-                <div>
-                    <h4 className="font-bold text-base sm:text-lg text-white mb-2 sm:mb-4">Contact Us</h4>
-                    <div className="space-y-4">
-                        <div className="flex items-start">
-                            <i className="bi bi-telephone text-xl sm:text-2xl"></i>
-                            <div className="ml-3 sm:ml-5 text-sm">
-                                <p className='pt-1'>Coimbatore: +91-9884445571</p>
-                                <p className='pt-1'>Chennai: +91-8111005300</p>
-                                <p className='pt-1'>Hire from us: +91-9884220600</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start text-sm">
-                        <a
-                            href="https://www.google.com/maps?q=No:121/4,7th+Street,Tatabad,Gandhipuram,Coimbatore,Tamil+Nadu-641012"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-start text-sm hover:text-gray-300 "
-                        >
-                            <i className="bi bi-geo-alt text-xl sm:text-2xl"></i>
-                            <p className="ml-3 sm:ml-5">
-                                No:121/4, 7th Street,
-                                <span className='block'>Tatabad, Gandhipuram,</span>
-                                Coimbatore, Tamil Nadu-641012.
-                            </p>
-                        </a>
-                        </div>
-                        <div className="flex items-center text-sm">
-                            <i className="bi bi-envelope text-xl sm:text-2xl"></i>
-                            <a
-                                href="mailto:info@adventurelearning.in"
-                                className="ml-3 sm:ml-5 flex items-center gap-1 hover:text-gray-300"                               
-                            >
-                                info@adventurelearning.in
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container mx-auto px-4 mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white">
-                <div className="flex flex-col sm:flex-row justify-between items-center">
-                    <div className="mb-4 sm:mb-0">
+        <footer className="bg-gradient-to-t from-black via-slate-900 to-blue-900 text-white pt-12 pb-5">
+            <div className="container mx-auto px-6 md:px-8 lg:px-10">
+                <div className="flex flex-col lg:flex-row gap-12 xl:gap-5">
+                    {/* Left side - Logo and description */}
+                    <div className="lg:w-2/5 xl:w-1/3">
                         <img
                             src={LogoWhite}
-                            alt="Logo"
-                            className="w-48 sm:w-32 lg:w-48 h-auto object-contain logo-footer"
+                            alt="Adventure Technology Solutions Pvt Ltd Logo"
+                            className="w-72"
                         />
-                        <h4 className="text-xs sm:text-sm mt-2">As we are a leader in the Technology Development, Training and R&D Services. Our <span className='sm:block '> responsibility is to empower Education through the knowledge transformation for better Wisdom society.</span></h4>
+                        <div className="mt-6">
+                            <p className="text-sm lg:text-base">
+                                We are dedicated to providing exceptional service wherever you need us.
+                                With a focus on quality and reliability, we're always here to support you.
+                            </p>
+                            <h3 className="text-lg font-semibold mt-6 mb-3">Follow Us</h3>
+                            <div className="flex space-x-4 text-white">
+                                <div className="flex space-x-4">
+                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
+                                        <FaLinkedinIn size={20} />
+                                    </Link>
+                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
+                                        <FaTwitter size={20} />
+                                    </Link>
+                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
+                                        <FaWhatsapp size={20} />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h4 className="font-bold text-base sm:text-lg text-white mb-2">Follow us</h4>
-                        <div className="flex items-center space-x-4">
-                            <a href="https://www.facebook.com/profile.php?id=61570475203188&mibextid=ZbWKwL" className="bg-[#3275fc] text-white rounded-full p-2">
-                                <FaFacebookF size={20} />
-                            </a>
-                            <a href="https://www.instagram.com/adventure_learning_kovai/" className="bg-gradient-to-r from-purple-500 to-yellow-700 text-white rounded-full p-2">
-                                <FaInstagram size={20} />
-                            </a>                          
-                            <a href="https://www.youtube.com/@Adventure_Learning" className="bg-[#FF0000] text-white rounded-full p-2">
-                                <FaYoutube size={20} />
-                            </a>
+
+                    {/* Right side - Links */}
+                    <div className="lg:w-3/5 xl:w-2/3">
+                        <div className="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-8">
+                            {/* HOME */}
+                            <div>
+                                <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">HOME</h3>
+                                <ul className="space-y-2 text-sm">
+                                    <li><Link to="#" className="hover:text-gray-300">Our Services</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Why Choose Us</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Explore Tools</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Lets Connect</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">FAQ</Link></li>
+                                </ul>
+                            </div>
+
+                            {/* SERVICES */}
+                            <div>
+                                <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">SERVICES</h3>
+                                <ul className="space-y-2 text-sm">
+                                    <li><Link to="#" className="hover:text-gray-300">WebApp Development</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Software Development</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">UI & UX Design</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">IOT Development</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">AI & ML Solutions</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Data Science & Analytics</Link></li>
+                                </ul>
+                            </div>
+
+                            {/* INDUSTRIES */}
+                            <div>
+                                <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">INDUSTRIES</h3>
+                                <ul className="space-y-2 text-sm">
+                                    <li><Link to="#" className="hover:text-gray-300">Manufacturing</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Agriculture</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Healthcare</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Automotive</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">E-commerce</Link></li>
+                                </ul>
+                            </div>
+
+                            {/* COMPANY */}
+                            <div>
+                                <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">COMPANY</h3>
+                                <ul className="space-y-2 text-sm">
+                                    <li><Link to="#" className="hover:text-gray-300">About</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Internship</Link></li>
+                                    <li><Link to="#" className="hover:text-gray-300">Career</Link></li>
+                                </ul>
+                            </div>
+
+                            {/* CONTACT */}
+                            <div>
+                                <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">CONTACT</h3>
+                                <div className="space-y-3 text-sm">
+                                    <div className="flex items-start">
+                                        {/* <FiPhone className="w-5 h-5 mt-1 mr-2 flex-shrink-0" /> */}
+                                        <div className="text-sm">
+                                            <p>Coimbatore<span className="block">+91-9884445571</span></p>
+                                            <p className="mt-2">Chennai<span className="block">+91-8111005300</span></p>
+                                            <p className="mt-2">Hire from us<span className="block">+91-9884220600</span></p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-start">
+                                        <HiOutlineMail className="w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
+                                        <a
+                                            href="mailto:info@adventurelearning.in"
+                                            className="hover:text-gray-300 transition-colors duration-200"
+                                        >
+                                            info@adventuretechsolution.in
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="w-full px-4 border-t mt-6 sm:mt-10 border-white"></div>
-
-            <div className="flex flex-col sm:flex-row mt-3 sm:mt-4 text-xs sm:text-sm justify-between w-full px-4">
-                <h5 className="mb-2 sm:mb-0">©2025 Adventure Technology Solutions Pvt Ltd.</h5>
-                <div className='flex space-x-3 sm:space-x-4'>
-                    <h5>
-                    <button className="hover:text-gray-300 underline"> Terms & Conditions</button>
-                    <span>   |   </span>
-                    <a href="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</a></h5>
+                {/* Bottom line */}
+                <div className="mt-12 pt-4 border-t w-full border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
+                    <p className="mb-2 md:mb-0">© 2025 Adventure Technology Solutions Pvt Ltd.</p>
+                    <div className="flex space-x-4">
+                        <Link to="/TermsAndConditions" className="hover:text-gray-300">Terms & Conditions</Link>
+                        <span className="text-gray-500">|</span>
+                        <Link to="/PrivacyPolicy" className="hover:text-gray-300">Privacy Policy</Link>
+                    </div>
                 </div>
             </div>
         </footer>
     );
-}
+};
 
 export default Footer;

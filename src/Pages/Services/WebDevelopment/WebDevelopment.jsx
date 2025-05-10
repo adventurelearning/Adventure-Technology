@@ -1,16 +1,20 @@
 import React from 'react'
-import WebHome from '../../../Components/WebHome'
-import WebOffer from '../../../Components/WebOffer'
-import WebDevelopmentProcess from '../../../Components/WebDevelopmentProcess'
-import WebTools from '../../../Components/WebTools'
+import WebHome from '../../../Components/webServ/WebHome'
+import WebOffer from '../../../Components/webServ/WebOffer'
+import WebDevelopmentProcess from '../../../Components/webServ/WebDevelopmentProcess'
+import WebTools from '../../../Components/webServ/WebTools'
+import WhyWeb from '../../../Components/webServ/WhyWeb'
+import WebFAQ from '../../../Components/webServ/WebFAQ'
 
 const WebDevelopment = () => {
   return (
     <div>
       <WebHome/>
       <WebOffer/>
-      <WebDevelopmentProcess/>
+      {/* <WhyWeb/>       */}
       <WebTools/>
+      <WebDevelopmentProcess/>
+      <WebFAQ/>
     </div>
   )
 }
