@@ -12,7 +12,7 @@ import Locations from './Locations';
 import ConsultationForm from './ConsultationForm';
 
 
-const HealthCare = () => {
+const Healthcare = () => {
     return (
         <>
             <HealthCareHome />
@@ -32,4 +32,4 @@ const HealthCare = () => {
     );
 };
 
-export default HealthCare;
+export default Healthcare;
