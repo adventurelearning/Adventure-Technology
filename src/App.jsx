@@ -15,7 +15,7 @@ import Consulting from './Pages/Services/Consulting/Consulting';
 import ContactForm from './Pages/Contact/Contact';
 import Industries from './Pages/Industries/Industries';
 import Education from './Components/Education';
-import Healthcare from './Components/HealthCare';
+import HealthCare from './Components/HealthCare';
 import Automotive from './Components/Automotive';
 import IndustrialAuto from './Components/IndustrialAuto';
 import Ecommerce from './Components/Ecommerce';
@@ -45,7 +45,7 @@ function App() {
 
         {/* Industry Pages */}
         <Route path="/Education" element={<Education />} />
-        <Route path="/Healthcare" element={<Healthcare />} />
+        <Route path="/Healthcare" element={<HealthCare />} />
         <Route path="/Automotive" element={<Automotive />} />
         <Route path="/IndustrialAuto" element={<IndustrialAuto />} />
         <Route path="/Ecommerce" element={<Ecommerce />} />

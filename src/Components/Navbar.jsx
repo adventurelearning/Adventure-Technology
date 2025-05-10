@@ -104,7 +104,7 @@ function Navbar() {
                 {/* Service 2: Software Development */}
                 <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
                   <Link to="/App-Development" className="text-blue-400 hover:text-blue-300  font-medium">
-                    <h3 className="font-semibold text-base ">Software Development</h3>
+                    <h3 className="font-semibold text-base ">App Development</h3>
                     <p className="text-gray-200 text-sm font-normal">Custom solutions for business process automation.</p>
                   </Link>
                 </div>
@@ -149,7 +149,7 @@ function Navbar() {
               <div className="grid grid-cols-3 gap-6 mt-6 justify-items-center">
                 {/* Service 7: AI & ML Solutions */}
                 <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/Ai&Ml-Solutions" className="text-blue-400 hover:text-blue-300 font-medium">
+                  <Link to="/AiMl-Solutions" className="text-blue-400 hover:text-blue-300 font-medium">
                     <h3 className="font-semibold text-base ">AI & ML Solutions</h3>
                     <p className="text-gray-200 text-sm font-normal">Leverage AI to automate and improve decisions.</p>
                   </Link>
@@ -299,7 +299,7 @@ function Navbar() {
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Software Development</h3>
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">App Development</h3>
                     </Link>
                     <div className="border-t border-white/10"></div>
 
@@ -322,7 +322,7 @@ function Navbar() {
                     <div className="border-t border-white/10"></div>
 
                     <Link
-                      to="/Ai&Ml-Solutions"
+                      to="/AiMl-Solutions"
                       className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >

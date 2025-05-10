@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 
 const IotHome = () => {
     const canvasRef = useRef(null);
@@ -153,13 +153,15 @@ const IotHome = () => {
                         transition={{ duration: 0.8, delay: 0.7, ease: "easeInOut" }}
                         className="mt-8 sm:mt-10"
                     >
+                        <Link to="/Contact">
                         <button
                             variant="default"
                             size="lg"
-                            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg sm:text-xl px-7 sm:px-9 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                            className="bg-gradient-to-r from-sky-700 via-blue-600 to-blue-800 text-white text-lg sm:text-xl px-7 sm:px-9 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
                         >
                             Get a Free Consultation
                         </button>
+                        </Link>
                     </motion.div>
                 </div>
             </div>
