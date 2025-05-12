@@ -5,7 +5,7 @@ const AboutCount = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [stats, setStats] = useState([
         { value: 0, target: 150, label: 'Projects Completed', suffix: '+' },
-        { value: 0, target: 50, label: 'Team Members', suffix: '+' },
+        { value: 0, target: 30, label: 'Team Members', suffix: '+' },
         { value: 0, target: 15, label: 'Years Experience', suffix: '' },
         { value: 0, target: 95, label: 'Client Satisfaction', suffix: '%' }
     ]);
@@ -25,7 +25,7 @@ const AboutCount = () => {
     }, []);
 
     return (
-        <div className='bg-black py-10'>
+        <div className='bg-black py-10 '>
             {/* Stats Section */}
             <motion.div
                 initial={{ opacity: 0 }}

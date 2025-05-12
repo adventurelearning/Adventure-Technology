@@ -1,53 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const AboutConnect = () => {
     return (
         <div>
-            <div className="py-20 px-6 md:px-16 bg-black text-white">
-                <div className="max-w-4xl mx-auto text-center">
-
-
-                    <motion.h2
-                        className="text-3xl md:text-4xl font-bold mb-6 cursor-pointer"
+            <section className="md:py-24 bg-gradient-to-b from-blue-950 to-black text-white pb-15">
+                <div className="container mx-auto px-6 text-center">
+                    <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        className="p-12 rounded-2xl border border-gray-700/50 bg-white/5 backdrop-blur-lg shadow-lg"
+                        style={{
+                            // Glass effect
+                            background: 'rgba(255, 255, 255, 0.05)',
+                            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+                            backdropFilter: 'blur(12px)',
+                            WebkitBackdropFilter: 'blur(12px)', // For Safari
+                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                        }}
                     >
-                        Ready to Transform Your Business?
-                    </motion.h2>
-                    <motion.p
-                        className="text-xl text-gray-300 mb-8 "
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                        Let's discuss how our technology solutions can drive your success.
-                    </motion.p>           
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-            > <Link to="/Contact">
-                    <button className="bg-blue-600 cursor-pointer hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full text-lg font-medium text-white transition-all duration-300 shadow-lg mr-4">
-                        Get Started
-                    </button>
-                </Link>
-                <Link to="/">
-                    <button className="border-2 cursor-pointer border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-full text-lg font-medium transition-all duration-300">
-                        Learn More
-                    </button>
-                </Link>
-            </motion.div>
+                        <h2 className="text-3xl md:text-4xl font-semibold mb-6">Ready for Your Next Adventure?</h2>
+                        <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                            Join a team that values your curiosity and rewards your creativity.
+                        </p>
+                        <Link to="/Career">
+                        <button className="bg-blue-500 cursor-pointer hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/30">
+                            Explore Careers
+                        </button>
+                        </Link>
+                    </motion.div>
+                </div>
+            </section>
         </div>
-            </div >
-
-        </div >
     )
 }
 
-export default AboutConnect
+export default AboutConnect;

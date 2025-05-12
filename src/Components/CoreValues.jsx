@@ -35,7 +35,7 @@ const CoreValues = () => {
     };
 
     return (
-        <div id='corevalue' className="bg-gradient-to-t from-black via-gray-900 to-blue-950 text-gray-100 py-2 px-6">
+        <div id='corevalue' className="bg-gradient-to-t from-gray-900 to-gray-900 text-gray-100  px-6 py-8 md:py-0">
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-12">
                 {/* Left Column - Core Values and Connect Button */}
                 <div className="lg:col-span-1 flex flex-col justify-between">
