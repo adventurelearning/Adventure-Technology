@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
-import { FaLinkedinIn, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { FiPhone } from 'react-icons/fi';
 import { HiOutlineMail } from 'react-icons/hi';
 
@@ -25,15 +25,21 @@ const Footer = () => {
                             <h3 className="text-lg font-semibold mt-6 mb-3">Follow Us</h3>
                             <div className="flex space-x-4 text-white">
                                 <div className="flex space-x-4">
-                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
-                                        <FaLinkedinIn size={20} />
-                                    </Link>
-                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
-                                        <FaTwitter size={20} />
-                                    </Link>
-                                    <Link to="#" className="hover:text-gray-300 transition-colors duration-200">
+                                    <a href="https://in.linkedin.com/company/adventure-technology-solutions-pvt-ltd" className="text-white hover:text-blue-400 transition-colors">
+                                        <FaLinkedin className="text-xl" />
+                                    </a>
+                                    <a
+                                        href="https://wa.me/9884445571"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-gray-300 transition-colors duration-200"
+                                    >
                                         <FaWhatsapp size={20} />
-                                    </Link>
+                                    </a>
+
+                                    <a href="https://www.instagram.com/adventure_ats_official/" className="text-white hover:text-blue-400 transition-colors">
+                                        <FaInstagram className="text-xl" />
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -46,11 +52,11 @@ const Footer = () => {
                             <div>
                                 <h3 className="text-base font-semibold mb-3 uppercase tracking-wider">HOME</h3>
                                 <ul className="space-y-2 text-sm">
-                                    <li><Link to="/#service" className="hover:text-gray-300">Our Services</Link></li>
-                                    <li><Link to="/#choose" className="hover:text-gray-300">Why Choose Us</Link></li>
-                                    <li><Link to="/#tools" className="hover:text-gray-300">Explore Tools</Link></li>
-                                    <li><Link to="/#connect" className="hover:text-gray-300">Lets Connect</Link></li>
-                                    <li><Link to="/#faq" className="hover:text-gray-300">FAQ</Link></li>
+                                    <li><Link to="/" className="hover:text-gray-300">Our Services</Link></li>
+                                    <li><Link to="/" className="hover:text-gray-300">Why Choose Us</Link></li>
+                                    <li><Link to="/" className="hover:text-gray-300">Explore Tools</Link></li>
+                                    <li><Link to="/" className="hover:text-gray-300">Lets Connect</Link></li>
+                                    <li><Link to="/" className="hover:text-gray-300">FAQ</Link></li>
                                 </ul>
                             </div>
 
@@ -81,7 +87,7 @@ const Footer = () => {
                                     <li><Link to="/Ecommerce" className="hover:text-gray-300">E-commerce</Link></li>
                                     <li><Link to="/SaaS" className="hover:text-gray-300">SaaS</Link></li>
                                     <li><Link to="/IndustrialAuto" className="hover:text-gray-300">IndustrialAuto</Link></li>
-                                    
+
                                 </ul>
                             </div>
 

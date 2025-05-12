@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaCar, FaCode, FaChartLine, FaCogs, FaWifi, FaBatteryFull, FaShieldAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const AutomotiveServ = () => {
     const [activeCategory, setActiveCategory] = useState('Embedded Automotive Software Development');
@@ -189,9 +190,11 @@ const AutomotiveServ = () => {
                                  transition={{ delay: 0.8, duration: 0.5 }}
                                  className="mt-auto"
                                >
+                                   <Link to="/Contact">
                                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
                                    Get Started with {category.name}
                                  </button>
+                                  </Link>
                                </motion.div>
                              </motion.div>
                            )

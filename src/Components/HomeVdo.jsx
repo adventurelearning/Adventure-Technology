@@ -18,7 +18,7 @@ const HomeVdo = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-3/4 min-h-[600px] md:h-[90vh] lg:h-[85vh] xl:h-[80vh] overflow-hidden text-white">
+    <div id='#home' className="relative w-full h-3/4 min-h-[600px] md:h-[90vh] lg:h-[85vh] xl:h-[80vh] overflow-hidden text-white">
       {/* Navbar - Uncomment if needed */}
       {/* <div className="relative z-30"><Navbar /></div> */}
 
