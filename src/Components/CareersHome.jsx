@@ -34,7 +34,7 @@ const CareersHome = () => {
                     <span className='md:block'>who you are is welcome here</span>
                 </h3>
 
-                <Link
+                <a href='#career'
                     smooth={true}
                     duration={500}
                     offset={-70} >
@@ -44,7 +44,7 @@ const CareersHome = () => {
                             <i className="bi bi-arrow-right-short"></i>
                         </span>
                     </button>
-                    </Link>
+                    </a>
             </div>
         </div>
     );

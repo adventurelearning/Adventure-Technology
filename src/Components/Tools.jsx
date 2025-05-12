@@ -72,7 +72,7 @@ const Tools = () => {
     };
 
     return (
-        <div className="bg-black text-white min-h-screen p-4 sm:p-8">
+        <div id='tools' className="bg-black text-white min-h-screen p-4 sm:p-8">
             <div className="max-w-6xl mx-auto bg-black bg-opacity-70 rounded-xl shadow-lg overflow-hidden">
                 <h1 className="text-white text-2xl sm:text-3xl md:text-4xl text-start leading-snug py-6 px-4 sm:px-8">
                     <span className="font-semibold">Explore</span> the Tools We Use

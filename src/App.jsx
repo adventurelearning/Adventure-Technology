@@ -34,7 +34,7 @@ import { Helmet } from "react-helmet";
 
 function App() {
   return (
-    <> <ScrollToTop/>
+    <>
       <Helmet>
         <title>Adventure Technology</title>
         <meta
@@ -56,10 +56,10 @@ function App() {
           content="https://www.adventuretechnology.com/"
         />
       </Helmet>
-     
+
       <Header />
       <Navbar />
-
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Contact" element={<ContactForm />} />

@@ -117,7 +117,7 @@ const Provides = () => {
   }, []);
 
   return (
-    <div className="bg-black flex flex-col gap-12 py-16 md:py-24">
+    <div id='service' className="bg-black flex flex-col gap-12 py-16 md:py-24">
       <h1 className="text-white text-3xl md:text-4xl text-center leading-snug pb-8">
         Our Services
       </h1>
@@ -169,11 +169,11 @@ const Provides = () => {
             </div>
 
             {/* Right Image */}
-            <div className="w-full md:w-3/4 flex justify-center md:justify-end pt-4 md:pt-0 md:pr-10 transition-opacity duration-500">
+            <div className="w-full  md:w-3/4 flex justify-center md:justify-end pt-4 md:pt-0 md:pr-10 transition-opacity duration-500">
               <img
                 src={service.link}
                 alt={service.title}
-                className={`rounded-lg w-full md:w-1/2 h-auto transition-all duration-500 transform ${activeIndex === index
+                className={`rounded-lg w-full md:w-3/5 h-auto transition-all duration-500 transform ${activeIndex === index
                     ? 'opacity-100 scale-100'
                     : 'opacity-30 md:opacity-0 md:scale-95'
                   }`}

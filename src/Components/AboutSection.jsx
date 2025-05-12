@@ -29,7 +29,7 @@ const AboutSection = () => {
     };
 
     return (
-        <div className="min-h-screen bg-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div id='about' className="min-h-screen bg-black py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
 
 
             <div className="max-w-7xl mx-auto relative z-10 space-y-20">
@@ -117,20 +117,24 @@ const AboutSection = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-start text-center">
+                                <a href='#corevalue'>
                                 <motion.button
                                     whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(59, 130, 246, 0.5)" }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3.5 text-center rounded-lg font-semibold shadow-lg transition-all flex items-center justify-center"
+                                    className="bg-blue-600 hover:bg-blue-700 cursor-pointer text-white px-8 py-3.5 text-center rounded-lg font-semibold shadow-lg transition-all flex items-center justify-center"
                                 >
                                     Our Core Values <FiArrowRight className="ml-2" />
                                 </motion.button>
+                                </a>
+                                <a href='#timeline'>
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-transparent border border-gray-600 hover:border-gray-500 text-white px-8 py-3.5 rounded-lg font-medium shadow-sm transition-all"
+                                    className="bg-transparent border cursor-pointer border-gray-600 hover:border-gray-500 text-white px-8 py-3.5 rounded-lg font-medium shadow-sm transition-all"
                                 >
                                     Time Line
                                 </motion.button>
+                                </a>
                             </div>
 
                         </motion.div>

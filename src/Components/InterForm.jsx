@@ -144,7 +144,7 @@ const InterForm = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+        <div id='internform' className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
             <div className="container mx-auto px-4 py-12 flex md:flex-nowrap flex-col md:flex-row items-start gap-8">
 
                 {/* Left Content */}

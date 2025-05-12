@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Link } from 'react-router-dom';
 
 // Section Component for dynamic content rendering
 const Section = ({ title, description, icon }) => (
@@ -112,12 +113,13 @@ const WhyManufacturing = ({
               <h1 className="text-2xl text-white font-semibold py-4">
                 Optimize your manufacturing operations with advanced IT solutions.
               </h1>
-              <button
-                to="/contact"
+                <Link to="/Contact">
+              <button                
                 className="register-button hidden lg:inline-block mt-4 px-5 py-2 rounded-lg text-base font-semibold text-white border border-transparent transition-all"
               >
                 Start Your Project
               </button>
+              </Link>
               <div
                 className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
                 style={{
