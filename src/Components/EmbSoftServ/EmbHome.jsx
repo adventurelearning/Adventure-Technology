@@ -157,7 +157,7 @@ const EmbHome= () => {
                         <button
                             variant="default"
                             size="lg"
-                            className="bg-gradient-to-r from-sky-700 via-blue-600 to-blue-800 text-white text-lg sm:text-xl px-7 sm:px-9 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
+                            className="bg-gradient-to-r cursor-pointer from-sky-700 via-blue-600 to-blue-800 text-white text-lg sm:text-xl px-7 sm:px-9 py-3 sm:py-3.5 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
                         >
                             Get a Free Consultation
                         </button>

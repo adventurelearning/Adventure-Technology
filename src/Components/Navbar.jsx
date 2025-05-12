@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp,FaMapMarkerAlt, FaWhatsapp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
 
 const getLinkClasses = (pathname, path) => {
@@ -450,21 +450,33 @@ function Navbar() {
         {/* Social Links at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/20 backdrop-blur-3xl">
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-white hover:text-blue-400 transition-colors">
-              <FaFacebook className="text-xl" />
-            </a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors">
-              <FaTwitter className="text-xl" />
-            </a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+             <a href="https://in.linkedin.com/company/adventure-technology-solutions-pvt-ltd" className="text-white hover:text-blue-400 transition-colors">
               <FaLinkedin className="text-xl" />
+            </a>            
+            <a
+              href="https://wa.me/9884445571"  // Replace with your actual WhatsApp number
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-green-400 transition-colors"
+            >
+              <FaWhatsapp className="text-xl" />
             </a>
-            <a href="#" className="text-white hover:text-blue-400 transition-colors">
+           
+            <a href="https://www.instagram.com/adventure_ats_official/" className="text-white hover:text-blue-400 transition-colors">
               <FaInstagram className="text-xl" />
             </a>
+            <a
+              href="https://www.google.com/search?q=adventure+technology+coimbatore&rlz=1C1GCEA_enIN1155IN1155&oq=&gs_lcrp=EgZjaHJvbWUqCQgAECMYJxjqAjIJCAAQIxgnGOoCMgkIARAjGCcY6gIyCQgCECMYJxjqAjIJCAMQIxgnGOoCMg8IBBAuGCcYxwEY6gIY0QMyCQgFECMYJxjqAjIJCAYQIxgnGOoCMgkIBxAjGCcY6gLSAQkxMzg5ajBqMTWoAgiwAgHxBQnen9dfk1Gd8QUJ3p_XX5NRnQ&sourceid=chrome&ie=UTF-8&lqi=Ch9hZHZlbnR1cmUgdGVjaG5vbG9neSBjb2ltYmF0b3JlSKaCj6-ovYCACForEAAQARgAGAEYAiIfYWR2ZW50dXJlIHRlY2hub2xvZ3kgY29pbWJhdG9yZZIBEHNvZnR3YXJlX2NvbXBhbnmqAWIQASoYIhRhZHZlbnR1cmUgdGVjaG5vbG9neSgAMh8QASIbiD1ZUnd1NFdVSX4BwsxihNgdmPGaZ3vsBccIMiMQAiIfYWR2ZW50dXJlIHRlY2hub2xvZ3kgY29pbWJhdG9yZQ#rlimm=13896972483454842117"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-red-400 transition-colors"
+            >
+              <FaMapMarkerAlt className="text-xl" />
+            </a>
+
           </div>
           <p className="text-center text-gray-300 text-sm mt-4">
-            © {new Date().getFullYear()} Your Company. All rights reserved.
+            © {new Date().getFullYear()} Adventure Technology Solutions Pvt Ltd.<span className='block'> All rights reserved.</span>
           </p>
         </div>
       </div>

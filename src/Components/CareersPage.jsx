@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 const CareerPage = () => {
 
-   
+
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -66,7 +66,7 @@ const CareerPage = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         className="w-full lg:w-1/2"
                     >
-                        <div                           
+                        <div
                         >
                             <motion.h1
                                 initial={{ opacity: 0 }}
@@ -135,29 +135,29 @@ const CareerPage = () => {
                                 </ul>
 
                                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                                    <a href='#career'>                                    
-                                    <motion.button
-                                        whileHover={{
-                                            scale: 1.05,
-                                           
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md  transition-all"
-                                    >
-                                        View Open Positions
-                                    </motion.button>
+                                    <a href='#career'>
+                                        <motion.button
+                                            whileHover={{
+                                                scale: 1.05,
+
+                                            }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md  transition-all"
+                                        >
+                                            View Open Positions
+                                        </motion.button>
                                     </a>
                                     <Link to="/Aboutus">
-                                    <motion.button
-                                        whileHover={{
-                                            scale: 1.05,
-                                            
-                                        }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="bg-gray-700/60 cursor-pointer border border-gray-600 text-white px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-gray-700 transition-all"
-                                    >
-                                        Learn About Our Culture
-                                    </motion.button>
+                                        <motion.button
+                                            whileHover={{
+                                                scale: 1.05,
+
+                                            }}
+                                            whileTap={{ scale: 0.95 }}
+                                            className="bg-gray-700/60 cursor-pointer border border-gray-600 text-white px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-gray-700 transition-all"
+                                        >
+                                            Learn About Our Culture
+                                        </motion.button>
                                     </Link>
                                 </div>
                             </motion.div>
@@ -166,21 +166,22 @@ const CareerPage = () => {
                 </div>
 
                 {/* Additional animated elements */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0 }}
                     animate={isVisible ? { opacity: 1 } : {}}
                     transition={{ delay: 1.5, duration: 0.6 }}
                     className="mt-16 text-center"
-                >                   
+                >
                     <motion.a
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        href="#"
+                        href="mailto:info@adventuretechsolution.com"
                         className="inline-block text-blue-400 font-medium hover:text-blue-300 transition-colors"
                     >
                         Contact our recruitment team →
                     </motion.a>
-                </motion.div>
+
+                </motion.div> */}
             </div>
         </div>
     );

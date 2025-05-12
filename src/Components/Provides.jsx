@@ -23,7 +23,7 @@ const services = [
   },
   {
     id: '02',
-    title: 'Software Development',
+    title: 'App Development',
     description:
       'Adventure Technology builds custom, high-performance software solutions that drive efficiency and innovation. Using the latest technologies and agile practices, we deliver scalable applications tailored to your business needs.',
     link: softwareDevelopmentImage,

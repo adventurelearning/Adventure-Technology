@@ -41,7 +41,7 @@ const EmbDisOffer = () => {
                             <button
                                 className="text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl
                                        transition-all duration-300 hover:scale-105
-                                       border-2 border-white"
+                                       border-2 border-white cursor-pointer"
                             >
                                 Start Your Project <span className="pl-3"><i className="bi bi-arrow-right"></i></span>
                             </button>

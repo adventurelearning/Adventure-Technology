@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaHeartbeat, FaChartLine, FaLaptopCode, FaCog, FaLaptop, FaStore, FaClinicMedical } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 const HealthCareServ = () => {
     const [activeCategory, setActiveCategory] = useState('Fitness and Wellness Apps');
 
@@ -188,10 +188,11 @@ const HealthCareServ = () => {
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.8, duration: 0.5 }}
                                     className="mt-auto"
-                                  >
+                                  >   <Link to="/Contact">
                                     <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-blue-500/20">
                                       Get Started with {category.name}
                                     </button>
+                                    </Link>
                                   </motion.div>
                                 </motion.div>
                               )
