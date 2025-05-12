@@ -29,7 +29,7 @@ const AboutHome = () => {
           <h3 className="text-lg sm:text-lg md:text-3xl max-w-full sm:max-w-2xl md:max-w-7xl mb-6 sm:mb-8">
           Where cutting-edge tech meets real-world business impact
           </h3>
-          <Link 
+          <a href='#about'
             smooth={true}
             duration={500}
             offset={-70} to="" >
@@ -37,7 +37,7 @@ const AboutHome = () => {
               Explore Our Story
               <FiArrowRight className="ml-2" />
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

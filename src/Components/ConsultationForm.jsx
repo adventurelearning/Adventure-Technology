@@ -91,7 +91,7 @@ const ConsultationForm = () => {
     }, [showPopup]);
 
     return (
-        <div className="bg-gradient-to-br from-blue-950 via-black to-blue-900 min-h-screen flex items-center justify-center py-0  sm:px-6 lg:px-8 relative overflow-hidden">
+        <div id='connect' className="bg-gradient-to-br from-blue-950 via-black to-blue-900 min-h-screen flex items-center justify-center py-0  sm:px-6 lg:px-8 relative overflow-hidden">
 
           
 

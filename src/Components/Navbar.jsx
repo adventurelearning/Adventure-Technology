@@ -1,11 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import {
-  FaBars, FaTimes, FaChevronDown, FaChevronUp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope,
-  FaFacebook, FaTwitter, FaLinkedin, FaInstagram
-} from 'react-icons/fa';
+import { FaBars, FaTimes, FaChevronDown, FaChevronUp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
-
 
 const getLinkClasses = (pathname, path) => {
   const baseClasses = 'hover:text-gray-200 transition-colors';

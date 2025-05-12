@@ -56,7 +56,7 @@ const DomainsSection = () => {
   ];
 
   return (
-    <section  className="py-8  px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-x-hidden">
+    <section id="intern" className="py-8  px-4 sm:px-6 lg:px-8 bg-gray-950 overflow-x-hidden">
       <div  className="max-w-7xl mx-auto relative">
         {/* Animated Header */}
         <motion.div
@@ -97,7 +97,8 @@ const DomainsSection = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-white">{domain.name}</h3>
                 <div className="mt-auto pt-4">
-                  <button className="w-full py-2 px-4 bg-transparent border border-blue-500 text-blue-400 rounded-md font-medium hover:bg-blue-900/30 transition-colors duration-300 flex items-center justify-center">
+                  <a href="#internform">
+                  <button className="w-full cursor-pointer py-2 px-4 bg-transparent border border-blue-500 text-blue-400 rounded-md font-medium hover:bg-blue-900/30 transition-colors duration-300 flex items-center justify-center">
                     Apply Now
                     <svg
                       className="w-4 h-4 ml-2"
@@ -113,6 +114,7 @@ const DomainsSection = () => {
                       />
                     </svg>
                   </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

@@ -103,7 +103,7 @@ const CareerOpportunities = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white px-4 py-8">
+    <div id='career' className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white px-4 py-8">
       <div className=" mx-auto">    
 
 
@@ -195,7 +195,7 @@ const CareerOpportunities = () => {
                   ></textarea>
                 </div>
                 <div className="text-sm text-blue-300">
-                  By submitting this form, you agree to our <a href="#" className="text-cyan-400 hover:underline">Privacy Policy</a> and consent to having your data stored for future recruitment purposes.
+                  By submitting this form, you agree to our <a href="/PrivacyPolicy" className="text-cyan-400 hover:underline">Privacy Policy</a> and consent to having your data stored for future recruitment purposes.
                 </div>
                 <button
                   type="submit"

@@ -262,7 +262,6 @@
 /* Hide scrollbar for webkit browsers (Chrome, Safari, Edge) */
 html, body {
   height: 100%;
-  overflow: hidden;  /* Hide the default scrollbar */
 }
 
 body {

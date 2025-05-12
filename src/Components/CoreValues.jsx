@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 const CoreValues = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -35,7 +35,7 @@ const CoreValues = () => {
     };
 
     return (
-        <div className="bg-gradient-to-t from-black via-gray-900 to-blue-950 text-gray-100 py-2 px-6">
+        <div id='corevalue' className="bg-gradient-to-t from-black via-gray-900 to-blue-950 text-gray-100 py-2 px-6">
             <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-12">
                 {/* Left Column - Core Values and Connect Button */}
                 <div className="lg:col-span-1 flex flex-col justify-between">
@@ -46,9 +46,11 @@ const CoreValues = () => {
                         <p className="text-lg text-gray-300 leading-relaxed mb-6">
                             At Adventure Technology, we're more than just a digital agency. We're a collective of passionate innovators driven by a shared set of core values that fuel our journey and yours.
                         </p>
-                        <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-sm font-medium text-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all w-full lg:w-auto">
+                        <Link to="/Contact">
+                        <button className="px-8 cursor-pointer py-4 bg-gradient-to-r from-blue-600 to-blue-500 rounded-sm font-medium text-lg hover:shadow-lg hover:shadow-blue-500/20 transition-all w-full lg:w-auto">
                             Let's Explore Together
                         </button>
+                        </Link>
                     </div>
                 </div>
 

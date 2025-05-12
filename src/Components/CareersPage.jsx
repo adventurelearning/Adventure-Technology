@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
 const CareerPage = () => {
 
    
@@ -135,26 +135,30 @@ const CareerPage = () => {
                                 </ul>
 
                                 <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                                    <a href='#career'>                                    
                                     <motion.button
                                         whileHover={{
                                             scale: 1.05,
                                            
                                         }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md  transition-all"
+                                        className="bg-blue-600 cursor-pointer text-white px-6 py-3 rounded-lg font-semibold shadow-md  transition-all"
                                     >
                                         View Open Positions
                                     </motion.button>
+                                    </a>
+                                    <Link to="/Aboutus">
                                     <motion.button
                                         whileHover={{
                                             scale: 1.05,
                                             
                                         }}
                                         whileTap={{ scale: 0.95 }}
-                                        className="bg-gray-700/60 border border-gray-600 text-white px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-gray-700 transition-all"
+                                        className="bg-gray-700/60 cursor-pointer border border-gray-600 text-white px-6 py-3 rounded-lg font-semibold shadow-sm hover:bg-gray-700 transition-all"
                                     >
                                         Learn About Our Culture
                                     </motion.button>
+                                    </Link>
                                 </div>
                             </motion.div>
                         </div>

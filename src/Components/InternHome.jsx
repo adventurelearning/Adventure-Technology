@@ -24,18 +24,18 @@ const InternHome = () => {
           Work on real projects, learn from top engineers,
           <span className="block">and take the first step toward a future in tech.</span>
         </h3>
-        <Link 
+        <a href="#intern"
           smooth={true}
           duration={500}
           offset={-70} >
           <button className="bg-blue-600 cursor-pointer hover:bg-white hover:text-blue-600 px-4 py-2 sm:py-3 mt-3 sm:mt-5 rounded-md text-base sm:text-lg font-medium text-white flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg">
-          Explore Internships
-          <span className="text-2xl sm:text-3xl pl-2">
-            <i className="bi bi-arrow-right-short"></i>
-          </span>
-        </button>
-      </Link>
-    </div>
+            Explore Internships
+            <span className="text-2xl sm:text-3xl pl-2">
+              <i className="bi bi-arrow-right-short"></i>
+            </span>
+          </button>
+        </a>
+      </div>
 
     </div >
   );
