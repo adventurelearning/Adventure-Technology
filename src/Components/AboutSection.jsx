@@ -130,7 +130,7 @@ const AboutSection = () => {
                                 <motion.button
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="bg-transparent border cursor-pointer border-gray-600 hover:border-gray-500 text-white px-8 py-3.5 rounded-lg font-medium shadow-sm transition-all"
+                                    className="bg-transparent border cursor-pointer border-gray-600 hover:border-gray-500 text-white px-8 py-3.5 rounded-lg font-medium shadow-sm transition-all flex items-center justify-center"
                                 >
                                     Time Line
                                 </motion.button>

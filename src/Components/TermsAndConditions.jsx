@@ -21,7 +21,7 @@ const TermsAndConditions = () => {
           <section>
             <h2 className="text-2xl font-semibold text-blue-400 mb-4">1. Introduction</h2>
             <p className="text-gray-300 leading-relaxed">
-              Welcome to Adventure Technology Solutions ("Company", "we", "our", "us"). These Terms and Conditions ("Terms") are a legally binding agreement that governs your access to and use of our website and the various technology services we offer. By engaging with our Services, which include Web Development, Software Development, UI/UX Design, IoT Development, AI/ML Solutions, Embedded Product Design, Embedded Software, Data Science & Analytics, and Digital Marketing (collectively referred to as the "Services"), you acknowledge that you have read, understood, and agree to be bound by these Terms. We are dedicated to providing innovative and high-quality technology solutions, and these terms are designed to ensure a clear understanding of the framework under which these services will be delivered.
+              Welcome to Adventure Technology Solutions. These Terms and Conditions ("Terms") are a legally binding agreement that governs your access to and use of our website and the various technology services we offer. By engaging with our Services, which include Web Development, Software Development, UI/UX Design, IoT Development, AI/ML Solutions, Embedded Product Design, Embedded Software, Data Science & Analytics, and Digital Marketing (collectively referred to as the "Services"), you acknowledge that you have read, understood, and agree to be bound by these Terms. We are dedicated to providing innovative and high-quality technology solutions, and these terms are designed to ensure a clear understanding of the framework under which these services will be delivered.
             </p>
           </section>
 
@@ -126,17 +126,19 @@ const TermsAndConditions = () => {
               <br />
               <span className="text-blue-400">Adventure Technology Solutions</span>
               <br />
-              [Your Company Address]
+              No:121/4, 7th Street,
+              Tatabad, Gandhipuram,
+              Coimbatore, Tamil Nadu-641012.
               <br />
-              [Your Contact Email]
+              info@adventuretechsolution.com
               <br />
-              [Your Phone Number]
+              +91-9884445571
             </p>
           </section>
 
           <div className="pt-6 border-t border-gray-800">
-            <p className="text-sm text-gray-400">
-              Last updated: {new Date().toLocaleDateString()}
+            <p className="mt-2 text-xs text-gray-500">
+              © {new Date().getFullYear()} Adventure Technology Solutions. All rights reserved.
             </p>
           </div>
         </div>

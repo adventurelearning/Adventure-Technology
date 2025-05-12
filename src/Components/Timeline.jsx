@@ -76,7 +76,7 @@ const Timeline = () => {
     ];
 
     return (
-        <div id='timeline' className="bg-gradient-to-b from-black via-gray-900 to-blue-950 min-h-screen w-full overflow-hidden py-16 md:py-20 px-4 md:px-6">
+        <div id='timeline' className="bg-gradient-to-b from-black via-gray-900 to-blue-950 min-h-screen w-full overflow-hidden py-10 md:py-20 px-4 md:px-6">
         <div className="w-full max-w-6xl mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}

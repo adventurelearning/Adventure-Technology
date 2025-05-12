@@ -113,15 +113,18 @@ const Footer = () => {
                                             <p className="mt-2">Hire from us<span className="block">+91-9884220600</span></p>
                                         </div>
                                     </div>
-                                    <div className="flex items-start pr-5">
+                                    <div className="flex items-start ">
                                         <HiOutlineMail className="w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
                                         <a
-                                            href="mailto:info@adventurelearning.in"
+                                            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@adventuretechsolution.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             className="hover:text-gray-300 transition-colors duration-200"
                                         >
-                                            info@adventuretechsolution.com
+                                            info@adventure<span className='md:block'>techsolution.com</span>
                                         </a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -131,10 +134,12 @@ const Footer = () => {
                 {/* Bottom line */}
                 <div className="mt-12 pt-4 border-t w-full border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
                     <p className="mb-2 md:mb-0">© 2025 Adventure Technology Solutions Pvt Ltd.</p>
-                    <div className="flex space-x-4">
-                        <Link to="/TermsAndConditions" className="hover:text-gray-300">Terms & Conditions</Link>
-                        <span className="text-gray-500">|</span>
-                        <Link to="/PrivacyPolicy" className="hover:text-gray-300">Privacy Policy</Link>
+                    <div className='flex space-x-3 sm:space-x-4'>
+                        <h5>
+                            <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
+                            <span> | </span>
+                            <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
+                        </h5>
                     </div>
                 </div>
             </div>

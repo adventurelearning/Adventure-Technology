@@ -72,18 +72,19 @@ const PrivacyPolicy = () => {
               <br />
               Adventure Technology Solutions
               <br />
-              [Your Company Address]
+              No:121/4, 7th Street,
+              Tatabad, Gandhipuram,
+              Coimbatore, Tamil Nadu-641012.
               <br />
-              [Your Contact Email]
+              info@adventuretechsolution.com
               <br />
-              [Your Phone Number]
+              +91-9884445571
             </p>
           </section>
         </div>
 
         {/* Footer */}
-        <div className="px-8 py-6 sm:px-12 sm:py-8 border-t border-gray-700 text-center text-sm text-gray-400">
-          Last updated: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+        <div className="px-8 py-6 sm:px-12 sm:py-8 border-t border-gray-700 text-center text-sm text-gray-400">        
           <p className="mt-2 text-xs text-gray-500">
             © {new Date().getFullYear()} Adventure Technology Solutions. All rights reserved.
           </p>
