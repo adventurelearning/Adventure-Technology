@@ -146,8 +146,8 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Bottom line */}
+                </div>
+                   {/* Bottom line */}
                     <div className="mt-12 pt-4 border-t w-full border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
                         <p className="mb-2 md:mb-0">© 2025 Adventure Technology Solutions Pvt Ltd.</p>
                         <div className='flex space-x-3 sm:space-x-4'>
@@ -165,7 +165,6 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </footer>
     );
