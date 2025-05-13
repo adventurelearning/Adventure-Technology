@@ -6,7 +6,7 @@ import webDevelopmentImage from '../assets/Provids/WEB DEVELOPMENT.svg';
 import softwareDevelopmentImage from '../assets/Provids/Software Development.svg';
 import uiux from '../assets/Provids/UI & UX.svg';
 import iotDevelopmentImage from '../assets/Provids/IOT (1).svg';
-import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS.svg';
+import dataScienceImage from '../assets/Provids/DATA SCIENCE & DATA ANALYTICS 2.svg';
 import AIML from '../assets/Provids/AI & ML.svg';
 import marketing from '../assets/Provids/DIGITAL MARKETING.svg';
 import Embdesign from '../assets/Provids/EMBEDDED PRODUCT DESIGN.svg';
@@ -117,8 +117,8 @@ const Provides = () => {
   }, []);
 
   return (
-    <div id='service' className="bg-black flex flex-col gap-12 py-16 md:py-24">
-      <h1 className="text-white text-3xl md:text-4xl text-center leading-snug pb-8">
+    <div id='service' className="bg-black flex flex-col gap-12 pt-8 md:pt-16">
+      <h1 className="text-white text-3xl md:text-4xl text-center leading-snug">
         Our Services
       </h1>
 

@@ -31,7 +31,9 @@ const ContactHome = () => {
         {/* Button group with hover effects */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
           <a
-            href="mailto:info@adventuretechsolution.com"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@adventuretechsolution.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-flex items-center justify-center bg-transparent border-2 border-blue-400 text-white px-8 py-3 rounded-full font-medium hover:bg-blue-400 hover:border-blue-400 hover:shadow-lg hover:shadow-blue-400/30 transition-all duration-300 group overflow-hidden"
           >
             <span className="relative z-10 flex items-center">

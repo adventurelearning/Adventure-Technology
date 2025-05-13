@@ -31,9 +31,10 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
     const handleMouseLeave = () => {
         setOpacity(0);
     };
+    
     return (
-        <div className="bg-black py-8">
-            <div className="container mx-auto  text-white flex flex-col md:flex-row items-center justify-around px-6">
+        <div className="bg-black  pt-8 md:py-16 -mt-24">
+            <div className="container mx-auto text-white flex flex-col md:flex-row items-center justify-around px-6">
                 <div className="text-start md:text-left">
                     <h1 className="text-4xl mb-4 max-w-sm">
                         Empowering Businesses with Technology That Breaks Every Barrier
@@ -48,7 +49,7 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
                     </h3>
                 </div>
             </div>
-            <div className="py-12 px-4 sm:px-6 lg:px-8 lg:ml-12">
+            <div className="py-8 px-4 sm:px-6 lg:px-8 lg:ml-12">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 justify-center">
 

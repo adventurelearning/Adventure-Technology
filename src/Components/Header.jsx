@@ -1,58 +1,71 @@
 import React from 'react';
-import { FaWhatsapp, FaLinkedin, FaInstagram, FaMapMarkerAlt, FaRocket, FaMedal } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaMapMarkerAlt, FaRocket, FaMedal, FaShieldAlt, FaHeadset, FaChevronRight } from 'react-icons/fa';
+import { IoRocketSharp } from 'react-icons/io5';
 
 const Header = () => {
+    // Animation variants
+
+
+    const itemVariants = {
+        hidden: { opacity: 0, x: -20 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                type: 'spring',
+                stiffness: 100,
+                damping: 10
+            }
+        },
+        hover: {
+            scale: 1.05,
+            transition: { duration: 0.2 }
+        }
+    };
+
     return (
-        <header className="bg-gradient-to-r  space-x-2 from-blue-700 to-blue-500 text-white py-3 px-8 hidden lg:flex justify-between items-center">
-            <div className="text-sm flex flex-wrap justify-center lg:justify-start items-center space-x-6">
-                <div className="flex items-center space-x-2 bg-blue-700/80 px-3 py-1 rounded-md animate-pulse">                    
-                    <p className="whitespace-nowrap font-semibold">
-                         Fastest Growing Tech Company 
-                    </p>
-                </div>                           
-            </div>
-            
-            <div className="flex items-center space-x-6 text-base font-semibold">                
-                <div className="flex space-x-5 text-white text-lg">
-                    <a 
-                        href="https://in.linkedin.com/company/adventure-technology-solutions-pvt-ltd" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-blue-300 transition-all transform hover:scale-125 hover:rotate-6"
-                        aria-label="LinkedIn"
-                    >
-                        <FaLinkedin />
-                    </a>
-                    <a
-                        href="https://wa.me/9884445571"  
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-green-300 transition-all transform hover:scale-125 hover:-rotate-6"
-                        aria-label="WhatsApp"
-                    >
-                        <FaWhatsapp />
-                    </a>
-                    <a 
-                        href="https://www.instagram.com/adventure_ats_official/" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-pink-300 transition-all transform hover:scale-125 hover:rotate-6"
-                        aria-label="Instagram"
-                    >
-                        <FaInstagram />
-                    </a>
-                    <a
-                        href="https://maps.app.goo.gl/5nTRz6mHX6Q2mJYx9"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white hover:text-red-300 transition-all transform hover:scale-125 hover:-rotate-6"
-                        aria-label="Location"
-                    >
-                        <FaMapMarkerAlt />
-                    </a>
-                </div>
-            </div>
-        </header>
+        <motion.header
+            initial="hidden"
+            animate="visible"
+            className="bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600 text-white z-50  hidden lg:flex justify-center items-center shadow-xl relative overflow-hidden"
+        >
+            {/* Animated background circles */}
+            <motion.div
+                className="absolute top-0 left-1/4 transform -translate-x-1/2 -translate-y-1/4 bg-blue-600 rounded-full opacity-20 blur-2xl w-48 h-48"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1.2, opacity: 0.3, y: 10 }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
+            />
+            <motion.div
+                className="absolute bottom-0 right-1/4 transform translate-x-1/2 translate-y-1/4 bg-blue-500 rounded-full opacity-20 blur-xl w-32 h-32"
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1.1, opacity: 0.3, x: -10 }}
+                transition={{ duration: 2.5, repeat: Infinity, repeatType: 'reverse', delay: 0.5 }}
+            />
+
+            {/* Middle Section - Centered CTA */}
+            <motion.div
+                variants={itemVariants}
+                className="z-10 text-center" // Added text-center for centering
+            >
+                <motion.div
+                    className="relative group inline-block" // Changed to inline-block to contain text width
+                >
+                    <div className="p-1 text-sm text-white flex items-center justify-center space-x-3">
+                        <span>Empowering businesses with innovative technology solutions</span>
+                        <span className="text-blue-200 font-semibold cursor-pointer group-hover:text-white transition-colors duration-300 flex items-center space-x-1">
+                            <span className="underline-animation">Explore Our Services</span>
+                            <span><FaChevronRight /></span>
+                        </span>
+                    </div>
+
+                    <motion.div
+                        className="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10 rounded-md" // Changed to rounded-md to match text container
+                    />
+                </motion.div>
+            </motion.div>
+        </motion.header>
     );
 };
 
