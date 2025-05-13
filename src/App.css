@@ -271,3 +271,24 @@ body {
 ::-webkit-scrollbar {
   display: none;  /* Hides the scrollbar */
 }
+
+
+/* Add this to your global CSS file */
+.underline-animation {
+    position: relative;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 0.5px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.underline-animation:hover::after {
+    width: 100%;
+}

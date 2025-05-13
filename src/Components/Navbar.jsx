@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaTimes, FaChevronDown, FaChevronUp,FaMapMarkerAlt, FaWhatsapp, FaHome, FaBuilding, FaCode, FaIndustry, FaUsers, FaEnvelope, FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import {
+  FaBars, FaTimes, FaChevronDown, FaChevronUp, FaMapMarkerAlt,
+  FaWhatsapp, FaLinkedin, FaInstagram
+} from 'react-icons/fa';
 import LogoWhite from '../assets/logo/ATS WEB LOGO 3.svg';
 
 const getLinkClasses = (pathname, path) => {
@@ -12,7 +15,7 @@ const getLinkClasses = (pathname, path) => {
 function Navbar() {
   const location = useLocation();
   const pathname = location.pathname;
-
+  const isHomePage = pathname === '/';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileDropdowns, setMobileDropdowns] = useState({
@@ -20,6 +23,7 @@ function Navbar() {
     company: false,
     joinus: false,
   });
+
   const servicesDropdownRef = useRef(null);
   const companyDropdownRef = useRef(null);
   const joinusDropdownRef = useRef(null);
@@ -44,7 +48,6 @@ function Navbar() {
     }));
   };
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (servicesDropdownRef.current && !servicesDropdownRef.current.contains(event.target)) {
@@ -55,7 +58,7 @@ function Navbar() {
       }
     };
 
-    if (isMobileMenuOpen) { // Only add listener when menu is open
+    if (isMobileMenuOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
@@ -64,12 +67,12 @@ function Navbar() {
     };
   }, [isMobileMenuOpen]);
 
-
   return (
-    <nav className="px-4 py-2 sticky top-0 z-50 bg-black transition-all duration-1000">
-      <div className="flex items-center justify-between transition-all duration-1000 p-2">
+    <nav className={`px-4 py-2 sticky top-0 z-50 transition-all duration-1000 ${isHomePage && !isScrolled ? 'bg-transparent' : 'bg-black'}`}>
+
+      <div className="flex items-center justify-between transition-all duration-500 p-2">
         {/* Logo */}
-        <Link to="/" className="transition-all duration-500">
+        <Link to="/" className="transition-all duration-500" onClick={() => setTrans('home')}>
           <img
             src={LogoWhite}
             alt="Logo"
@@ -79,7 +82,7 @@ function Navbar() {
 
         {/* Desktop Nav */}
         <ul className="hidden lg:flex space-x-12 text-base text-white font-Satoshi,Arial,sans-serif">
-          <li><Link to="/" className={getLinkClasses(pathname, '/')}>HOME</Link></li>
+          <li><Link to="/" className={getLinkClasses(pathname, '/')} onClick={() => setTrans('home')} >HOME</Link></li>
 
           {/* Services Dropdown - Desktop */}
           <li className="relative group">
@@ -91,7 +94,7 @@ function Navbar() {
               <div className="grid grid-cols-3 gap-6 justify-items-center">
                 {/* Service 1: Development */}
                 <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
-                  <Link to="/Web-Development" className="text-blue-400 hover:text-blue-300 font-medium">
+                  <Link to="/Web-Development" className="text-blue-400 hover:text-blue-300 font-medium" onClick={() => setTrans(' ')}>
                     <h3 className="font-semibold text-base ">Web App Development</h3>
                     <p className="text-gray-200 text-sm font-normal">Scalable web apps to meet your business needs.</p>
                   </Link>
@@ -199,7 +202,7 @@ function Navbar() {
                   <Link to="/Career" className="text-blue-400 hover:text-blue-300  font-medium">
                     <h3 className="font-semibold text-base mb-2">Join Us</h3>
                     <p className="text-sm text-gray-200 mb-2  font-normal">We are always on the lookout for talented individuals passionate about software building.</p>
-                  </Link>
+                  </Link>"/Internship"
                 </div>
               </div>
             </div>
@@ -450,9 +453,9 @@ function Navbar() {
         {/* Social Links at Bottom */}
         <div className="absolute bottom-0 left-0 right-0 p-6 bg-black/20 backdrop-blur-3xl">
           <div className="flex justify-center space-x-6">
-             <a href="https://in.linkedin.com/company/adventure-technology-solutions-pvt-ltd" className="text-white hover:text-blue-400 transition-colors">
+            <a href="https://in.linkedin.com/company/adventure-technology-solutions-pvt-ltd" className="text-white hover:text-blue-400 transition-colors">
               <FaLinkedin className="text-xl" />
-            </a>            
+            </a>
             <a
               href="https://wa.me/9884445571"  // Replace with your actual WhatsApp number
               target="_blank"
@@ -461,7 +464,7 @@ function Navbar() {
             >
               <FaWhatsapp className="text-xl" />
             </a>
-           
+
             <a href="https://www.instagram.com/adventure_ats_official/" className="text-white hover:text-blue-400 transition-colors">
               <FaInstagram className="text-xl" />
             </a>

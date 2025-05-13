@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import certificte from "../assets/certificate/sample_c.jpeg";
+import certificte from "../assets/certificate/Sample certificate ATS.svg"
 import { useLocation } from "react-router-dom";
 
 const InternCertificate = () => {
@@ -39,15 +39,19 @@ const InternCertificate = () => {
 
               <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-indigo-700 rounded-2xl transform rotate-2 blur-lg opacity-30 group-hover:opacity-50 transition-opacity"></div>
 
-              <div className="relative border-8 border-white rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:rotate-[-1deg] hover:scale-105">
+              <div className="group relative border-8 border-white rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:rotate-[-1deg] hover:scale-105">
+                {/* Image */}
                 <img
                   src={certificte}
                   alt="Professional Certificate"
-                  className="w-80 sm:w-96 object-cover select-none"
+                  className="w-80 md:w-76 object-cover select-none"
                   onContextMenu={(e) => e.preventDefault()}
                   onDragStart={(e) => e.preventDefault()}
                   draggable="false"
                 />
+
+                {/* Hover overlay background */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition-colors duration-300 z-10"></div>
 
                 {/* Ribbon */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-500 to-blue-700 px-6 py-2 rounded-full shadow-md rotate-12 z-20">
@@ -57,12 +61,13 @@ const InternCertificate = () => {
                 </div>
 
                 {/* Hover overlay badge text */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white font-bold text-lg bg-black/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+                  <span className="text-white font-bold text-lg px-4 py-2 rounded-full backdrop-blur-sm">
                     Certificate Protected
                   </span>
                 </div>
               </div>
+
             </div>
 
             {/* Highlights */}
