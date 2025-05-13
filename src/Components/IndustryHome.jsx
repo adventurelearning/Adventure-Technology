@@ -7,33 +7,33 @@ const IndustryHome = () => {
         {
             url: 'https://img.freepik.com/free-photo/futuristic-technology-concept_23-2151908113.jpg',
             //   text: 'Cutting-Edge Technology Solutions',
-            direction: 'from-top'
-        },
-        {
-            url: 'https://img.freepik.com/free-photo/laptop-used-by-data-center-system-administrators-using-ai-tech-close-up_482257-121068.jpg?t=st=1746251789~exp=1746255389~hmac=b1f4282df180d5a07fecf948fd362e5e87c8d68aa0c15d4fa9cba65ccd594494&w=1380',
-            //   text: 'Custom Software Development',
             direction: 'from-right'
         },
-        {
-            url: 'https://img.freepik.com/free-photo/hightech-robot-arms-automated-manufacturing-plant_60438-3708.jpg?t=st=1746251647~exp=1746255247~hmac=2554442e3533396407e7593e6e3727e3dcc0ac54ede51afb919f126a8ba7e49d&w=1380',
-            //   text: 'AI & Automation Experts',
-            direction: 'from-bottom'
-        },
-        {
-            url: 'https://img.freepik.com/free-photo/factory-engineers-look-assembly-lines-designs-working-increase-output_482257-119648.jpg?t=st=1746251694~exp=1746255294~hmac=ab50e5863ffff8235c15d7ba38218aecc450c187f6c969278a155061d97017bc&w=1380',
-            //   text: 'Data Analytics & Insights',
-            direction: 'from-left'
-        },
+        // {
+        //     url: 'https://img.freepik.com/free-photo/laptop-used-by-data-center-system-administrators-using-ai-tech-close-up_482257-121068.jpg?t=st=1746251789~exp=1746255389~hmac=b1f4282df180d5a07fecf948fd362e5e87c8d68aa0c15d4fa9cba65ccd594494&w=1380',
+    
+        //     direction: 'from-right'
+        // },
+        // {
+        //     url: 'https://img.freepik.com/free-photo/hightech-robot-arms-automated-manufacturing-plant_60438-3708.jpg?t=st=1746251647~exp=1746255247~hmac=2554442e3533396407e7593e6e3727e3dcc0ac54ede51afb919f126a8ba7e49d&w=1380',
+         
+        //     direction: 'from-bottom'
+        // },
+        // {
+        //     url: 'https://img.freepik.com/free-photo/factory-engineers-look-assembly-lines-designs-working-increase-output_482257-119648.jpg?t=st=1746251694~exp=1746255294~hmac=ab50e5863ffff8235c15d7ba38218aecc450c187f6c969278a155061d97017bc&w=1380',
+   
+        //     direction: 'from-left'
+        // },
         {
             url: 'https://img.freepik.com/free-photo/modern-automated-assembly-line-cars-latest-technological-neutral-technologies-production-cars-plant-assembly-shop-modern-cars_645730-531.jpg?t=st=1746251570~exp=1746255170~hmac=92333a52ae497c204b6ca736b19893ce69b49acd8fe4ca73a2fe3f6f31b44294&w=996',
             //   text: 'Industrial IoT Solutions',
-            direction: 'from-top'
+            direction: 'from-left'
         },
-        {
-            url: 'https://img.freepik.com/free-photo/smiling-caucasian-woman-startup-office-doing-business-presentation-big-tv-screen-with-charts-front-team-confident-employee-presenting-growing-sales-statistics-late-night-meeting_482257-43087.jpg?t=st=1746251849~exp=1746255449~hmac=2e03e25c8abd80feba26bc76c641381222f76cfe011c77475ede0a3987bab454&w=996',
-            //   text: 'Business Process Optimization',
-            direction: 'from-right'
-        },
+        // {
+        //     url: 'https://img.freepik.com/free-photo/smiling-caucasian-woman-startup-office-doing-business-presentation-big-tv-screen-with-charts-front-team-confident-employee-presenting-growing-sales-statistics-late-night-meeting_482257-43087.jpg?t=st=1746251849~exp=1746255449~hmac=2e03e25c8abd80feba26bc76c641381222f76cfe011c77475ede0a3987bab454&w=996',
+   
+        //     direction: 'from-right'
+        // },
     ];
 
     useEffect(() => {

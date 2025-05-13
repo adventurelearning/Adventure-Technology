@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaMapMarkerAlt, FaRocket, FaMedal, FaShieldAlt, FaHeadset, FaChevronRight } from 'react-icons/fa';
 import { IoRocketSharp } from 'react-icons/io5';
-
+import { Link } from 'react-router-dom';
 const Header = () => {
     // Animation variants
 
@@ -54,10 +54,12 @@ const Header = () => {
                 >
                     <div className="p-1 text-sm text-white flex items-center justify-center space-x-3">
                         <span>Empowering businesses with innovative technology solutions</span>
+                        <Link to="/Industries">
                         <span className="text-blue-200 font-semibold cursor-pointer group-hover:text-white transition-colors duration-300 flex items-center space-x-1">
                             <span className="underline-animation">Explore Our Services</span>
                             <span><FaChevronRight /></span>
                         </span>
+                        </Link>
                     </div>
 
                     <motion.div
