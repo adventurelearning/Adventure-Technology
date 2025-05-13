@@ -127,41 +127,43 @@ const Footer = () => {
                                         </div>
                                     </div>
                                     <div className="flex items-start ">
-                                    <div className="flex items-start ">
-                                        <HiOutlineMail className="w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
-                                        <a
-                                            href={emailHref}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="hover:text-gray-300 transition-colors duration-200"
-                                        >
-                                            info@adventure<span className="md:block">technologysolutions.com</span>
-                                        </a>
+                                        <div className="flex items-start ">
+                                            <HiOutlineMail className="w-5 h-5 mt-0.5 mr-2 flex-shrink-0" />
+                                            <a
+                                                href={emailHref}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="hover:text-gray-300 transition-colors duration-200"
+                                            >
+                                                info@adventure<span className="md:block">technologysolutions.com</span>
+                                            </a>
+
+                                        </div>
+
 
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Bottom line */}
-                <div className="mt-12 pt-4 border-t w-full border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
-                    <p className="mb-2 md:mb-0">© 2025 Adventure Technology Solutions Pvt Ltd.</p>
-                    <div className='flex space-x-3 sm:space-x-4'>
-                        <h5>
-                            <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
-                            <span> | </span>
-                            <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
-                        </h5>
-                    <div className='flex space-x-3 sm:space-x-4'>
-                        <h5>
-                            <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
-                            <span> | </span>
-                            <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
-                        </h5>
+                    {/* Bottom line */}
+                    <div className="mt-12 pt-4 border-t w-full border-gray-700 flex flex-col md:flex-row justify-between items-center text-sm">
+                        <p className="mb-2 md:mb-0">© 2025 Adventure Technology Solutions Pvt Ltd.</p>
+                        <div className='flex space-x-3 sm:space-x-4'>
+                            <h5>
+                                <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
+                                <span> | </span>
+                                <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
+                            </h5>
+                            <div className='flex space-x-3 sm:space-x-4'>
+                                <h5>
+                                    <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
+                                    <span> | </span>
+                                    <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
+                                </h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
