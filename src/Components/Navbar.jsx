@@ -68,7 +68,16 @@ function Navbar() {
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className={`px-4 py-2 sticky top-0 z-50 transition-all duration-1000 ${isHomePage && !isScrolled ? 'bg-transparent' : 'bg-black'}`}>
+    <nav className={`px-4 py-2 sticky top-0 z-50 transition-all duration-1000  ${isHomePage && !isScrolled
+        ? 'bg-transparent'
+        : 'bg-black border-0 border-transparent bg-clip-padding '
+      } relative`}>
+
+      {/* Gradient border line (bottom) - only shows when scrolled */}
+      {isScrolled && (
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
+      )}
+
 
       <div className="flex items-center justify-between transition-all duration-500 p-2">
         {/* Logo */}
