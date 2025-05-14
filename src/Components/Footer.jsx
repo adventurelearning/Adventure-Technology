@@ -155,14 +155,7 @@ const Footer = () => {
                                 <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
                                 <span> | </span>
                                 <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
-                            </h5>
-                            <div className='flex space-x-3 sm:space-x-4'>
-                                <h5>
-                                    <Link to="/TermsAndConditions" className="hover:text-gray-300 underline">Terms & Conditions</Link>
-                                    <span> | </span>
-                                    <Link to="/PrivacyPolicy" className="hover:text-gray-300 underline">Privacy Policy</Link>
-                                </h5>
-                            </div>
+                            </h5>                            
                         </div>
                     </div>
             </div>
