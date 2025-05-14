@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import backgroundVideo from '../assets/vdo/home1.mp4';
-import backgroundVideoMobile from '../assets/vdo/home1.mp4';
+import backgroundVideo from '../assets/vdo/home vdo.mp4';
+import backgroundVideoMobile from '../assets/vdo/home vdo.mp4';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
