@@ -40,7 +40,7 @@ const WhyUi = () => {
                 'Responsive & Adaptive Layouts',
                 'Motion & Interaction Design',
             ],
-            image: web3,
+            image: web4,
         },
         {
             title: 'Usability Testing & Handoff',
@@ -51,7 +51,7 @@ const WhyUi = () => {
                 'User Feedback & Iteration',
                 'Developer-Ready Design Specs',
             ],
-            image: web4,
+            image: web3,
         },
     ];
 

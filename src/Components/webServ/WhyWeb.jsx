@@ -2,8 +2,8 @@ import React from 'react';
 import { CheckCircle } from 'react-bootstrap-icons';
 import web1 from '../../assets/Service/WEB 1.svg';
 import web2 from '../../assets/Service/WEB 2.svg';
-import web3 from '../../assets/Service/WEB 3.svg';
-import web4 from '../../assets/Service/WEB 4.svg';
+import secure from '../../assets/Service/secure.svg';
+import final from '../../assets/Service/Final.svg';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -37,7 +37,7 @@ const WhyWeb = () => {
                 'Continuous Testing for High Quality',
                 'Scalable Deployment & Maintenance',
             ],
-            image: web3,
+            image: secure,
         },
         {
             title: 'Post-Launch Support',
@@ -47,7 +47,7 @@ const WhyWeb = () => {
                 'Continuous Testing for High Quality',
                 'Scalable Deployment & Maintenance',
             ],
-            image: web4,
+            image: final,
         },
     ];
 

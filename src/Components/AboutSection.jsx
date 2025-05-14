@@ -40,7 +40,7 @@ const AboutSection = () => {
                         initial={{ opacity: 0, x: -50 }}
                         animate={isVisible ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.8 }}
-                        className="w-full lg:w-1/2 relative"
+                        className="w-full md:w-lg relative"
                     >
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[1]">
                             <img
