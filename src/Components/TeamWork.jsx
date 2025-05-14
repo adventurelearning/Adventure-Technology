@@ -2,7 +2,7 @@ import React from 'react';
 
 const TeamWork = () => {
     return (
- <div className="bg-gradient-to-r from-black via-blue-900 to-gray-950 text-white flex flex-col md:flex-row items-center justify-between p-4 md:p-8 w-full overflow-hidden">
+ <div className="bg-gradient-to-r from-black via-blue-900 to-gray-950 text-white flex flex-col md:flex-row items-center justify-between p-4 md:p-8 w-full overflow-hidden ">
     {/* Left side with SVG icons */}
     <div className="w-full md:w-1/2 p-4 md:p-6 flex justify-center md:justify-start order-2 md:order-1"> {/* Added order-2 for mobile, md:justify-start */}
         <div className="relative w-3/4 md:w-1/2 h-36">

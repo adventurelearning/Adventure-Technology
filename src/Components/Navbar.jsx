@@ -202,7 +202,7 @@ function Navbar() {
                   <Link to="/Career" className="text-blue-400 hover:text-blue-300  font-medium">
                     <h3 className="font-semibold text-base mb-2">Join Us</h3>
                     <p className="text-sm text-gray-200 mb-2  font-normal">We are always on the lookout for talented individuals passionate about software building.</p>
-                  </Link>"/Internship"
+                  </Link>
                 </div>
               </div>
             </div>

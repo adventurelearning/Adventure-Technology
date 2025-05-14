@@ -1,9 +1,9 @@
 import React from 'react';
 import { CheckCircle } from 'react-bootstrap-icons';
-import web1 from '../../assets/Service/WEB 1.svg';
+import iot1 from '../../assets/Service/IOT 2.svg';
 import web2 from '../../assets/Service/WEB 2.svg';
-import web3 from '../../assets/Service/WEB 3.svg';
-import web4 from '../../assets/Service/WEB 4.svg';
+import secure from '../../assets/Service/secure.svg';
+import web4 from '../../assets/Service/WEB 3.svg';
 import { useInView } from 'react-intersection-observer';
 import { motion, useAnimation } from 'framer-motion';
 
@@ -18,7 +18,7 @@ const WhyIot = () => {
                 'Gateway & Protocol Integration (MQTT, CoAP)',
                 'Cloud Connectivity & Management',
             ],
-            image: web1,
+            image: iot1,
         },
         {
             title: 'Real-Time Monitoring & Control',
@@ -40,7 +40,7 @@ const WhyIot = () => {
                 'Role-Based Access Control (RBAC)',
                 'Multi-Device Support & Fleet Management',
             ],
-            image: web3,
+            image: secure,
         },
         {
             title: 'Maintenance, Updates & Analytics',

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const InternCount  = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [stats, setStats] = useState([
-        { value: 0, target: 50, label: 'Real World Project', suffix: '+' },
-        { value: 0, target: 20, label: "Trained Intern's", suffix: '+' },
-        { value: 0, target: 100, label: 'Domains Available', suffix: '+' },
+        { value: 0, target: 500, label: 'Real World Project', suffix: '+' },
+        { value: 0, target: 2000, label: "Trained Intern's", suffix: '+' },
+        { value: 0, target: 20, label: 'Domains Available', suffix: '+' },
         { value: 0, target: 95, label: 'Intern Satisfaction Rate', suffix: '%' }       
     ]);
 
@@ -16,7 +16,7 @@ const InternCount  = () => {
             setStats(prevStats =>
                 prevStats.map(stat => ({
                     ...stat,
-                    value: stat.value < stat.target ? stat.value + 1 : stat.target
+                    value: stat.value < stat.target ? stat.value + 100 : stat.target
                 }))
             );
         }, 30);

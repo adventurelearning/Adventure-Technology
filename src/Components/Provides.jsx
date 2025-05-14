@@ -129,7 +129,7 @@ const Provides = () => {
           className="relative flex px-6 md:px-10"
         >
           {/* Timeline Column (Hidden on small screens) */}
-          <div className="relative flex flex-col items-center w-16 md:w-20 hidden md:flex">
+          <div className="relative flex flex-col items-center w-16 md:w-20 md:flex">
             {/* Dot */}
             <div className="relative z-10 mt-8 md:mt-11">
               <div className="w-5 h-5 md:w-6 md:h-6 relative">
