@@ -41,7 +41,7 @@ const CoreValues = () => {
                 <div className="lg:col-span-1 flex flex-col justify-between">
                     <div>
                         <h1 className="text-4xl md:text-5xl font-semibold mb-6 md:mt-12">
-                            Our Core<span className='md:block'> Values</span>
+                            Our Core<span className='md:block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'> Values</span>
                         </h1>
                         <p className="text-lg text-gray-300 leading-relaxed mb-6">
                             At Adventure Technology, we're more than just a digital agency. We're a collective of passionate innovators driven by a shared set of core values that fuel our journey and yours.

@@ -77,7 +77,7 @@ const InternReviews = () => {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-8">
                     <h2 className="text-4xl lg:text-4xl font-semibold text-white bg-clip-text  mb-4 tracking-tight">
-                        Our Intern <span className="text-blue-400">Experience</span>
+                        Our Intern <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Experience</span>
                     </h2>
                     <p className="text-lg  md:text-xl lg:text-xl xl:text-xl  text-gray-200  leading-relaxed">
                         Real stories from our incredible interns, showcasing their growth, <span className='lg:block'> contributions, and the vibrant culture of our programs.</span>

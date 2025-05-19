@@ -67,7 +67,7 @@ const DomainsSection = () => {
           className="text-center mb-8"
         >
           <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4">
-            Our <span className="text-blue-400">Domains</span>
+            Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Domains</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
             Explore diverse internship opportunities across cutting-edge technology sectors

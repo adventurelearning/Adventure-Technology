@@ -19,7 +19,7 @@ const InternCertificate = () => {
   return (
     <div className="bg-black py-8 sm:py-16 md:py-20">
       <h2 className="text-3xl sm:text-4xl font-semibold bg-clip-text text-white mb-8 lg:mb-12 xl:mb-12 sm:mb-12 text-center tracking-tight">
-        Internship <span className="text-blue-400"> Certification</span>
+        Internship <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300"> Certification</span>
       </h2>
       <div className="glow-cyan i p-3 bg-black rounded-4xl container mx-auto text-white flex flex-col sm:flex-row items-start justify-around px-4 sm:px-6 py-8 sm:py-12 md:py-16">
         <div className="relative bg- rounded-2xl shadow-2xl p-4 sm:p-6 max-w-6xl w-full mx-auto transform transition-all duration-500 hover:shadow-3xl">

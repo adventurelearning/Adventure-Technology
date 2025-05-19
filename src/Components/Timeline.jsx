@@ -84,7 +84,7 @@ const Timeline = () => {
             transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl font-semibold text-white mb-12 md:mb-20 text-center"
           >
-            A Timeline of <span className="text-blue-400">Innovation</span>
+            A Timeline of <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">Innovation</span>
           </motion.h2>
       
           <div className="relative">

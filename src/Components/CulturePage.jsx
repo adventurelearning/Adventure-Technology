@@ -35,7 +35,7 @@ const CulturePage = () => {
                   alt="Adventure Technology Team" 
                   className="rounded-xl shadow-2xl"
                 />
-                <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg">
+                <div className="absolute -bottom-6 -right-6 bg-blue-500 text-white px-6 py-3 mr-4 rounded-lg shadow-lg">
                   <span className="font-bold">30+</span> Innovators
                 </div>
               </div>
@@ -48,7 +48,7 @@ const CulturePage = () => {
               transition={{ duration: 0.8 }}
               className="lg:w-1/2"
             >
-              <h2 className="text-3xl md:text-4xl font-semibold mb-6">We're More Than Colleagues</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold mb-6">We're More Than <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'>Colleagues</span></h2>
               <p className="text-lg text-gray-300 mb-6">
                 At Adventure Technology, we've built a culture where creativity thrives and friendships flourish. Our team is a diverse collective of thinkers, makers, and dreamers who believe work should be both meaningful and fun.
               </p>
@@ -86,7 +86,7 @@ const CulturePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Perks That Matter</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Perks That <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'>Matter</span></h2>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               We invest in our team's growth, wellbeing, and happiness
             </p>

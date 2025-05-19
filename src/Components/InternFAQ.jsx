@@ -71,7 +71,7 @@ const InternfAQ = () => {
     <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 py-16 sm:py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <h2 className="text-3xl sm:text-4xl font-semibold text-white text-center mb-8 sm:mb-12">
-          Frequently Asked<span className="text-blue-400"> Questions</span>
+          Frequently Asked<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300"> Questions</span>
         </h2>
 
         <div className="space-y-4 sm:space-y-6 ">

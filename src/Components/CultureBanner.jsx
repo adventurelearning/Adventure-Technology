@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 const CultureBanner = () => {
     return (
         <div>
-            <div className="bg-gradient-to-b from-black to-gray-900 text-white md:py-15">
+            <div className="bg-gradient-to-b from-black to-gray-900 text-white md:py-10">
                 {/* Hero Section */}
                 <div className="relative overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://img.freepik.com/free-photo/tech-people-trying-achieve-ambitious-sustainability-goals_23-2150950185.jpg?t=st=1747046999~exp=1747050599~hmac=a129267206f73dc881022e43d563a40632e86d53ca1f76121c0cfc9a7cc566db&w=996')] bg-cover bg-center opacity-40"></div>

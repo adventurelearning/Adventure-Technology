@@ -21,7 +21,7 @@ const AboutConnect = () => {
                             border: '1px solid rgba(255, 255, 255, 0.1)',
                         }}
                     >
-                        <h2 className="text-3xl md:text-4xl font-semibold mb-6">Ready for Your Next Adventure?</h2>
+                        <h2 className="text-3xl md:text-4xl font-semibold mb-6">Ready for Your Next <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'>Adventure?</span></h2>
                         <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
                             Join a team that values your curiosity and rewards your creativity.
                         </p>
