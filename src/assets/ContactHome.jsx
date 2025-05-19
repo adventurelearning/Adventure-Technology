@@ -85,7 +85,7 @@ const ContactHome = () => {
             {
               icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z',
               text: 'Coimbatore',
-              href: null,
+              href: 'https://www.google.co.in/maps/place/Adventure+Technology+Solutions+Pvt+Ltd/@11.021711,76.9600853,17z/data=!4m10!1m2!2m1!1sadventure+technology+coimbatore!3m6!1s0x3ba859c25e89dc0f:0xc0dbf6d829b43505!8m2!3d11.0217055!4d76.9626604!15sCh9hZHZlbnR1cmUgdGVjaG5vbG9neSBjb2ltYmF0b3JlWiEiH2FkdmVudHVyZSB0ZWNobm9sb2d5IGNvaW1iYXRvcmWSARBzb2Z0d2FyZV9jb21wYW55mgEkQ2hkRFNVaE5NRzluUzBWSlEwRm5UVU5SYUdaNWN6UjNSUkFCqgFXCg0vZy8xMXliMno3ajk2EAEyHxABIhuIPVlSd3U0V1VJfgHCzGKE2B2Y8Zpne-wFxwgyIxACIh9hZHZlbnR1cmUgdGVjaG5vbG9neSBjb2ltYmF0b3Jl4AEA-gEFCJIBEDs!16s%2Fg%2F11yb2z7j96?entry=ttu&g_ep=EgoyMDI1MDUxMy4xIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D',
             },
             {
               icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
