@@ -77,7 +77,7 @@ const images = [
             </div>
 
             {/* Main Content */}
-            <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 md:px-16 text-left ml-14">
+            <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 md:px-16 text-left md:ml-14">
                 <h1 className="text-3xl md:text-5xl font-semibold mb-4 animate-fade-in">
                     Innovative Technology Solutions<span className='block'> for Every Industry</span>
                 </h1>
