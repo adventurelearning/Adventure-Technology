@@ -15,8 +15,7 @@ const CareerPage = () => {
         "Competitive salary and benefits package",
         "Opportunity for growth and career development",
         "Work with a talented team on exciting projects",
-        "Flexible work environment and remote options",
-        "Medical insurance for the whole family"
+        "Flexible work environment and remote options",        
     ];
 
     return (

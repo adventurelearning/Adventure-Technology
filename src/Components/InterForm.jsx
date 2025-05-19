@@ -157,7 +157,7 @@ const InterForm = () => {
                         <h1 className="text-4xl md:text-5xl font-semibold mb-6 bg-clip-text">
                             Launch Your Career
                         </h1>
-                        <h2 className="text-2xl md:text-3xl font-semibold mb-6 text-blue-300">
+                        <h2 className="text-2xl md:text-3xl font-semibold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
                             Apply for Our Exclusive Internship Program
                         </h2>
                         <div className="space-y-6">

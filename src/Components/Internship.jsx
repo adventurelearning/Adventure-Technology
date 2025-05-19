@@ -7,19 +7,21 @@ import DomainsSection from './DomainSection'
 import InternCertificate from './InternCertificate'
 import InternReviews from './InternReviews'
 import InterForm from './InterForm'
+import Locations from './Locations'
 
 const Internship = () => {
     return (
         <div>
             <InternHome />
-            <DomainsSection/>
-            <WhyIntern/>
-            <InternCount/> 
-            <InterForm/> 
-            <InternCertificate/> 
-            <InternReviews/>    
+            <DomainsSection />
+            <WhyIntern />
+            <InternCount />
+            <InterForm />
+            <InternCertificate />
+            <InternReviews />
             <InternfAQ />
-            
+            <Locations />
+
         </div>
     )
 }

@@ -195,7 +195,7 @@ const CareerOpportunities = () => {
                   ></textarea>
                 </div>
                 <div className="text-sm text-blue-300">
-                  By submitting this form, you agree to our <a href="/PrivacyPolicy" className="text-cyan-400 hover:underline">Privacy Policy</a> and consent to having your data stored for future recruitment purposes.
+                  By submitting this form, you agree to our <a href="/PrivacyPolicy" className="text-white hover:underline">Privacy Policy</a> and consent to having your data stored for future recruitment purposes.
                 </div>
                 <button
                   type="submit"

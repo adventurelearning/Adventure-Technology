@@ -4,7 +4,7 @@ const IndustryServ = () => {
     return (
         <div className="bg-black py-16 text-center md:text-start">
             <div className="container mx-auto px-4">
-                <h1 className="text-white text-3xl font-semibold mb-6">Industries We Serve</h1>
+                <h1 className="text-white text-3xl font-semibold mb-6">Industries <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300'></span> We Serve</h1>
                 <h3 className="text-gray-300 text-lg md:text-start text-justify md:w-3/4 md:p-0 mb-4 p-4">
                 We provide smart, scalable technology solutions — from AI and IoT to full-stack software development — designed to meet the unique challenges of every industry. Our expertise spans across multiple domains, helping businesses streamline operations, enhance customer experiences, and stay ahead in the digital era.
                 </h3>

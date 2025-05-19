@@ -121,9 +121,9 @@ const Footer = () => {
                                     <div className="flex items-start">
                                         {/* <FiPhone className="w-5 h-5 mt-1 mr-2 flex-shrink-0" /> */}
                                         <div className="text-sm">
-                                            <p>Coimbatore<span className="block">+91-9884445571</span></p>
-                                            <p className="mt-2">Chennai<span className="block">+91-8111005300</span></p>
-                                            <p className="mt-2">Hire from us<span className="block">+91-9884220600</span></p>
+                                            <p>Coimbatore<span className="block">+91-9840550244</span></p>
+                                            <p className="mt-2">Chennai<span className="block">+91-9150018072</span></p>
+                                           
                                         </div>
                                     </div>
                                     <div className="flex items-start ">

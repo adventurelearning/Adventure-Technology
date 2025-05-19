@@ -25,7 +25,6 @@ const Aboutus = () => {
       <Timeline />
       <AboutConnect />
       <Locations />
-
     </div>
   )
 }

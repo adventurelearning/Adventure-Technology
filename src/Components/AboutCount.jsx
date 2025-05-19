@@ -39,7 +39,7 @@ const AboutCount = () => {
                         whileHover={{ y: -5 }}
                         className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center"
                     >
-                        <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">
+                        <div className="text-3xl md:text-4xl font-bold text-blue-400 pb-2">
                             {stat.value}{stat.suffix}
                         </div>
                         <div className="text-gray-300 text-sm md:text-base">{stat.label}</div>

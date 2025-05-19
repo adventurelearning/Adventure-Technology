@@ -61,7 +61,7 @@ const AboutSection = () => {
                                 className="absolute bottom-8 left-8 text-white"
                             >
                                 <h3 className="text-3xl font-bold">
-                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-200">
+                                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-100">
                                         Join Our Team
                                     </span>
                                 </h3>

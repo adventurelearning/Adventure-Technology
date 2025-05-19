@@ -33,7 +33,7 @@ const AboutStory = () => {
           className=" bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 rounded-xl p-4 text-justify md:p-10 w-full"
         >
           <div className="max-w-5xl mx-auto"> {/* Constrain text width within the wider card */}
-            <h3 className="text-2xl md:text-3xl font-semibold text-blue-400 mb-4"> {/* Increased size */}
+            <h3 className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300 mb-4"> {/* Increased size */}
               Our Story
             </h3>
             <p className="text-sm md:text-base text-gray-300 mb-8"> {/* Increased margin */}
