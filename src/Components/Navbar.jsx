@@ -104,7 +104,7 @@ function Navbar() {
                 {/* Service 1: Development */}
                 <div className="group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg">
                   <Link to="/Web-Development" className="text-blue-400 hover:text-blue-300 font-medium" onClick={() => setTrans(' ')}>
-                    <h3 className="font-semibold text-base ">Web App Development</h3>
+                    <h3 className="font-semibold text-base ">Web Development</h3>
                     <p className="text-gray-200 text-sm font-normal">Scalable web apps to meet your business needs.</p>
                   </Link>
                 </div>

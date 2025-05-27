@@ -47,14 +47,6 @@ const services = [
   },
   {
     id: '05',
-    title: 'AI & ML Solutions',
-    description:
-      'At Adventure Technology, we harness the power of AI and Machine Learning to build intelligent systems that learn, adapt, and optimize. From predictive analytics to natural language processing, our solutions help businesses automate processes, uncover insights, and drive smarter decision-making.',
-    link: AIML,
-    path:"/AiMl-Solutions"
-  },
-  {
-    id: '06',
     title: 'Embedded Product Design',
     description:
       'We design innovative and reliable embedded hardware solutions tailored to your industry needs. From PCB design to microcontroller integration, our expertise ensures optimized, scalable product development for smart devices and systems.',
@@ -62,13 +54,21 @@ const services = [
     path:"/Embedded-Design"
   },
   {
-    id: '07',
+    id: '06',
     title: 'Embedded Software',
     description:
       'We specialize in embedded software development, including firmware, board support packages (BSP), and middleware. Our solutions ensure reliable, low-level hardware control and efficient performance for embedded systems across industries.',
     link: EmbSoft,
     path:"/Embedded-Software"
   },
+  {
+    id: '07',
+    title: 'AI & ML Solutions',
+    description:
+      'At Adventure Technology, we harness the power of AI and Machine Learning to build intelligent systems that learn, adapt, and optimize. From predictive analytics to natural language processing, our solutions help businesses automate processes, uncover insights, and drive smarter decision-making.',
+    link: AIML,
+    path:"/AiMl-Solutions"
+  },  
   {
     id: '08',
     title: 'Data Science & Data Analytics',
@@ -117,7 +117,7 @@ const Provides = () => {
   }, []);
 
   return (
-    <div id='service' className="bg-black flex flex-col gap-12 pt-8 md:pt-16">
+    <div id='service' className="bg-black flex flex-col gap-12 pt-8 md:pt-16 pb-10">
       <h1 className="text-white text-3xl md:text-4xl text-center leading-snug">
         Our Services
       </h1>
@@ -126,12 +126,12 @@ const Provides = () => {
         <div
           key={service.id}
           ref={(el) => (itemRefs.current[index] = el)}
-          className="relative flex px-6 md:px-10"
+          className="relative flex pr-2 md:px-10"
         >
           {/* Timeline Column (Hidden on small screens) */}
           <div className="relative flex flex-col items-center w-16 md:w-20 md:flex">
             {/* Dot */}
-            <div className="relative z-10 mt-8 md:mt-11">
+            <div className="relative z-10 mt-5.5 md:mt-9">
               <div className="w-5 h-5 md:w-6 md:h-6 relative">
                 <div className="absolute inset-1 bg-blue-600 rounded-full z-10"></div>
                 <div className="absolute inset-0 bg-gray-500 rounded-full animate-ping-custom z-0"></div>
@@ -139,13 +139,13 @@ const Provides = () => {
             </div>
 
             {/* Line */}
-            {index !== services.length - 1 && (
-              <div className="absolute top-[3.5rem] md:top-[4.5rem] h-full w-0.5 bg-white z-0"></div>
+            {index !== services.length && (
+              <div className="absolute top-[3.5rem] md:top-[4.5rem]  h-full w-0.5 bg-white z-0"></div>
             )}
           </div>
 
           {/* Content Column */}
-          <div className="flex flex-col md:flex-row w-full justify-between items-start pt-8 md:pt-12">
+          <div className="flex flex-col md:flex-row w-full justify-between items-start pt-5.5 md:pt-8.5">
             {/* Left Content */}
             <div
               className={`w-full md:w-1/2 md:pl-5 text-white transition-opacity duration-500 ${activeIndex === index ? 'opacity-100' : 'opacity-60 md:opacity-30'
@@ -157,7 +157,7 @@ const Provides = () => {
               <h2 className="text-white text-xl md:text-2xl font-semibold max-w-2xl mb-3 md:mb-4 leading-relaxed">
                 {service.title}
               </h2>
-              <p className="text-lg font-light opacity-80 max-w-md mb-3 md:mb-4 leading-7">
+              <p className="text-base md:text-lg font-light text-justify opacity-80 max-w-md mb-3 md:mb-4 leading-7 mr-4">
                 {service.description}
               </p>
               <Link

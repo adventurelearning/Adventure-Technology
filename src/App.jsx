@@ -31,6 +31,8 @@ import EmbSoft from "./Pages/Services/EmbeddedSoft/EmbSoft";
 import TermsAndConditions from "./Components/TermsAndConditions";
 import PrivacyPolicy from "./Components/PrivacyPolicy";
 import { Helmet } from "react-helmet";
+import CookieConsent from "./Components/CookieConsent";
+import CookiePolicy from "./Components/CookiePolicy";
 
 function App() {
   return (
@@ -95,7 +97,9 @@ function App() {
         {/*Terms&Condition*/}
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-      </Routes>
+        <Route path="/cookie-policy" element={<CookiePolicy/>} />
+      </Routes>     
+      <CookieConsent/>
       <Footer />
     </>
   );

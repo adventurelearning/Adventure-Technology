@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
         {/* Header */}
         <div className="p-8 sm:p-10 bg-gradient-to-r from-blue-800 to-gray-800">
           <div className="flex items-center">
-            <h1 className="text-3xl sm:text-4xl font-bold text-white">
+            <h1 className="text-3xl sm:text-4xl font-semibold text-white">
               Adventure Technology Solutions
             </h1>
           </div>
