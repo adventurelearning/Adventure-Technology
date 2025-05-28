@@ -6,7 +6,7 @@ const ManufacturingImg = () => {
       <div className='w-full max-w-7xl aspect-[12/6] sm:aspect-[16/5] lg:aspect-[16/4] overflow-hidden rounded-2xl'>
         <img
           className='w-full h-full object-cover'
-          src='https://img.freepik.com/free-photo/solar-panel-plant-manager-showing-engineer-how-develop-prototypes_482257-119875.jpg?t=st=1746444492~exp=1746448092~hmac=62ba9a1c23971add29a92e87b7d2264847e9fb9c695cf9304e21e111ac1d322e&w=1380'
+          src='https://img.freepik.com/free-photo/futuristic-technology-concept_23-2151908114.jpg?uid=R200981764&ga=GA1.1.1434543349.1747649132&semt=ais_hybrid&w=740'
           alt='Manufacturing'
         />
       </div>

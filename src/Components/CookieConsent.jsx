@@ -2,23 +2,34 @@ import { useEffect, useState } from "react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from 'react-router-dom';
 
+function getCookie(name) {
+  const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  return match ? match[2] : null;
+}
+
+function setCookie(name, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${name}=${value}; expires=${expires}; path=/`;
+}
+
+
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent");
+    const consent = getCookie("cookieConsent");
     if (!consent) {
       setShowBanner(true);
     }
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem("cookieConsent", "accepted");
+    setCookie("cookieConsent", "accepted", 365);
     setShowBanner(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem("cookieConsent", "declined");
+    setCookie("cookieConsent", "declined", 365);
     setShowBanner(false);
   };
 
@@ -31,7 +42,6 @@ export default function CookieConsent() {
   return (
     <div className="fixed bottom-6 md:bottom-6 left-3 md:left-6 z-50 w-80">
       <div className="relative bg-gray-950/100 backdrop-blur-lg p-5 rounded-xl border border-gray-700 shadow-2xl">
-        {/* Close button */}
         <button
           onClick={handleClose}
           className="absolute top-3 right-3 text-gray-400 hover:text-white transition-colors"
@@ -40,7 +50,6 @@ export default function CookieConsent() {
           <XMarkIcon className="h-5 w-5" />
         </button>
 
-        {/* Header */}
         <div className="flex items-start mb-3">
           <div className="bg-blue-600/20 p-2 rounded-lg mr-3">
             <svg
@@ -60,18 +69,13 @@ export default function CookieConsent() {
           </div>
           <div>
             <h2 className="text-white text-xl font-semibold pt-1.5">We Use Cookies</h2>
-            {/* <p className="text-gray-300 text-sm">To enhance your browsing experience</p> */}
           </div>
         </div>
 
-        {/* Content */}
         <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-          {/* We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience and analyze website traffic. */}
-          {/* We use cookies to make your experience on this website better. */}
           This website uses cookies to ensure you get the best experience on our website.
         </p>
 
-        {/* Buttons */}
         <div className="flex gap-3">
           <button
             onClick={handleAccept}
@@ -87,15 +91,11 @@ export default function CookieConsent() {
           </button>
         </div>
 
-        {/* Policy link */}
         <p className="text-gray-400 text-xs mt-3 text-center">
           By continuing, you agree to our{' '}
-          {/* <a href="/cookie-policy" className="text-blue-400 hover:underline">
-            Cookie Policy
-          </a> */}
           <Link to="/cookie-policy" className="text-blue-400 hover:underline">Cookie Policy</Link>
-        </p>        
-      </div>      
+        </p>
+      </div>
     </div>
   );
 }
