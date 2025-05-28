@@ -33,6 +33,7 @@ import PrivacyPolicy from "./Components/PrivacyPolicy";
 import { Helmet } from "react-helmet";
 import CookieConsent from "./Components/CookieConsent";
 import CookiePolicy from "./Components/CookiePolicy";
+import NotFound from "./Components/NotFound";
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Contact" element={<ContactForm />} />
         <Route path="/Industries" element={<Industries />} />
+      
 
         {/* Industry Pages */}
         <Route path="/Education" element={<Education />} />
@@ -98,6 +100,7 @@ function App() {
         <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/cookie-policy" element={<CookiePolicy/>} />
+        <Route path="*" element={<NotFound/>}/>
       </Routes>     
       <CookieConsent/>
       <Footer />
