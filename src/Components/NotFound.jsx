@@ -10,15 +10,13 @@ function NotFound() {
 
     // Animation variants
     const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3,
-                delayChildren: 0.2
-            }
-        }
-    };
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {}
+    }
+};
+
 
     const itemVariants = {
         hidden: { y: 20, opacity: 0 },
@@ -44,7 +42,7 @@ function NotFound() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-950 text-white px-4 overflow-hidden">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-950 text-white px-2 md:px-4 overflow-hidden">
             {/* Animated background elements */}
             <motion.div
                 className="absolute top-1/4 left-1/4 w-16 h-16 rounded-full bg-blue-900 opacity-20 blur-xl"
@@ -94,7 +92,7 @@ function NotFound() {
 
                 <motion.h2
                     variants={itemVariants}
-                    className="text-3xl font-semibold mb-2"
+                    className="text-2xl md:text-3xl font-semibold mb-2"
                 >
                     Oops! We Couldn't Find That Page
                 </motion.h2>
@@ -119,7 +117,7 @@ function NotFound() {
 
                 <motion.div
                     variants={itemVariants}
-                    className="mt-12 text-gray-500 text-sm"
+                    className="mt-12 text-gray-500 text-xs md:text-sm"
                     animate={{
                         opacity: [0.6, 1, 0.6],
                         transition: { duration: 3, repeat: Infinity }
