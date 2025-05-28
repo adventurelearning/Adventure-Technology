@@ -207,7 +207,7 @@ function Navbar() {
                   </Link>
                 </div>
                 <hr className='border-t border-gray-700 ' />
-                <div className=" group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 ">
+                <div className=" group cursor-pointer transition-all hover:scale-105 text-start p-4 hover:bg-gray-800/50 rounded-lg ">
                   <Link to="/Career" className="text-blue-400 hover:text-blue-300  font-medium">
                     <h3 className="font-semibold text-base mb-2">Join Us</h3>
                     <p className="text-sm text-gray-200 mb-2  font-normal">We are always on the lookout for talented individuals passionate about software building.</p>
