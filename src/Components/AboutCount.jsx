@@ -6,8 +6,8 @@ const AboutCount = () => {
     const [stats, setStats] = useState([
         { value: 0, target: 150, label: 'Projects Completed', suffix: '+' },
         { value: 0, target: 30, label: 'Team Members', suffix: '+' },
-        { value: 0, target: 15, label: 'Years Experience', suffix: '' },
-        { value: 0, target: 95, label: 'Client Satisfaction', suffix: '%' }
+        { value: 0, target: 11, label: 'Years Experience', suffix: '+' },
+        { value: 0, target: 10, label: 'Industries', suffix: '+' }
     ]);
 
     useEffect(() => {

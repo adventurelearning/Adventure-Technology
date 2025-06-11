@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const IndustrialCount= () => {
   const stats = [
     { value: "10+", label: "App developers" },
-    { value: "7+", label: "years of running company" },
+    { value: "11+", label: "years of running company" },
     { value: "20k+", label: "happy clients" },
   ];
 
