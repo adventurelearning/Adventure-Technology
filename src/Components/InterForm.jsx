@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { ToastContainer ,toast} from 'react-toastify';
 
 const InterForm = () => {
     const [formData, setFormData] = useState({
@@ -117,7 +118,18 @@ const InterForm = () => {
 
             if (response.ok) {
                 console.log('Form submitted successfully!');
-                alert('Application submitted successfully!');
+                // alert('Application submitted successfully!');
+                toast.success('Application submitted successfully!', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+
                 setFormData({
                     fullName: '',
                     contactNumber: '',
@@ -132,8 +144,10 @@ const InterForm = () => {
                 setUrl(''); // Clear the resume URL after successful submission
             } else {
                 const errorData = await response.json();
+                toast.warning(errorData.message)
                 console.error('Form submission failed:', errorData);
-                alert('Form submission failed. Please try again.');
+
+                // alert('Form submission failed. Please try again.');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -145,6 +159,17 @@ const InterForm = () => {
 
     return (
         <div id='internform' className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white">
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+             />
             <div className="container mx-auto px-4 py-12 flex md:flex-nowrap flex-col md:flex-row items-start gap-8">
 
                 {/* Left Content */}
