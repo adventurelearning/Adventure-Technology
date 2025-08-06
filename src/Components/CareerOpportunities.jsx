@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const CareerOpportunities = () => {
   const [fullName, setFullName] = useState('');
+  const[isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [resumeUrl, setResumeUrl] = useState('');
@@ -56,8 +57,10 @@ const CareerOpportunities = () => {
   };
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
     setSubmissionStatus(null);
+    setIsLoading(true);
 
     if (!fullName || !email || !phone || !resumeUrl) {
       alert('Please fill in all required fields and upload your resume.');
@@ -95,9 +98,12 @@ const CareerOpportunities = () => {
         setSubmissionStatus('error');
         // Optionally, show an error message to the user
       }
+
+      setIsLoading(false);
     } catch (error) {
       console.error('Error submitting application:', error);
       setSubmissionStatus('error');
+      setIsLoading(false);
       // Optionally, show an error message to the user
     }
   };
@@ -200,9 +206,9 @@ const CareerOpportunities = () => {
                 <button
                   type="submit"
                   className="w-fit bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-[1.02]"
-                  disabled={uploading}
+                  disabled={isLoading}
                 >
-                  Submit
+                  {isLoading ? 'Uploading...' : 'Submit Application'}
                 </button>
               </form>
             </div>
