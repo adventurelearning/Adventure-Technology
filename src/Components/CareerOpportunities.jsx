@@ -9,6 +9,7 @@ const CareerOpportunities = () => {
   const [coverLetter, setCoverLetter] = useState('');
   const [uploading, setUploading] = useState(false);
   const [uploadError, setUploadError] = useState('');
+  const [failedstatus, setFailedstatus] = useState(null);
   const [submissionStatus, setSubmissionStatus] = useState(null); // 'success', 'error', null
 
   const handleUploadClick = () => {
@@ -96,6 +97,7 @@ const CareerOpportunities = () => {
       } else {
         console.error('Failed to submit application:', data);
         setSubmissionStatus('error');
+        setFailedstatus(data.message);
         // Optionally, show an error message to the user
       }
 
@@ -103,6 +105,7 @@ const CareerOpportunities = () => {
     } catch (error) {
       console.error('Error submitting application:', error);
       setSubmissionStatus('error');
+      setFailedstatus(error.message);
       setIsLoading(false);
       // Optionally, show an error message to the user
     }
@@ -136,7 +139,7 @@ const CareerOpportunities = () => {
               )}
               {submissionStatus === 'error' && (
                 <div className="bg-red-500 text-white p-4 rounded-md mb-4 text-center">
-                  Failed to submit application. Please try again later.
+                  {failedstatus}
                 </div>
               )}
               <form className="space-y-6" onSubmit={handleSubmit}>
