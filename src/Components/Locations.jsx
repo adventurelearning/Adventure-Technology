@@ -42,14 +42,16 @@ const Locations = () => {
                             <img
                                 src={coimbatore}
                                 alt="New York Office"
-                                className="w-48 sm:w-56 md:w-44 mt-1"
+                                className="w-48 sm:w-56 md:w-44 mt-1 ml-10"
                             />
                             {/* <div className="absolute inset-0 bg-cyan-500 opacity-0 group-hover:opacity-10 rounded-lg transition-opacity"></div> */}
                         </div>
 
-                        <p className="text-gray-300 text-sm pt-3">No:121/4, 7th Street,<br />
-                            Tatabad, Gandhipuram,<br />
-                            Coimbatore, Tamil Nadu-641012.</p>
+                        <p className="text-gray-300 text-sm pt-3">No.76/A1, 1st Floor,Sri Nagar,<br />
+                             Hope College bus stop backside,<br />
+                             Peelamedu,Coimbatore,Tamil Nadu-641004.</p>
+
+                             
                     </div>
                 </div>
             </div>

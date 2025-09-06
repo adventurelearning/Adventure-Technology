@@ -22,6 +22,7 @@ function Navbar() {
     services: false,
     company: false,
     joinus: false,
+    product:false
   });
 
   const servicesDropdownRef = useRef(null);
@@ -69,8 +70,8 @@ function Navbar() {
 
   return (
     <nav className={`px-4 py-2 sticky top-0 z-50 transition-all duration-1000  ${isHomePage && !isScrolled
-        ? 'bg-transparent'
-        : 'bg-black border-0 border-transparent bg-clip-padding '
+      ? 'bg-transparent'
+      : 'bg-black border-0 border-transparent bg-clip-padding '
       } relative`}>
 
       {/* Gradient border line (bottom) - only shows when scrolled */}
@@ -182,6 +183,82 @@ function Navbar() {
 
             </div>
           </li>
+
+          {/* Products */}
+          <li className="relative group">
+            <button className="flex items-center hover:text-gray-200 transition-colors">
+              OUR PRODUCTS
+              <FaChevronDown className="ml-2 text-sm group-hover:rotate-180 transition-transform duration-200" />
+            </button>
+            <div className="absolute z-50 mt-2 left-1/2 transform -translate-x-1/2 w-[900px] rounded-lg shadow-lg backdrop-blur-md bg-black/80 border border-gray-700 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform-gpu translate-y-[-10px] group-hover:translate-y-0 p-5 space-y-4">
+              <div className="grid grid-cols-3 gap-2">
+                {/* Product 1 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Billing-Software" className="text-blue-400 hover:text-blue-300 font-medium" onClick={() => setTrans(' ')}>
+                    <h3 className="font-semibold text-base">Billing Software</h3>
+                    <p className="text-gray-200 text-sm font-normal">Smart billing system for businesses.</p>
+                  </Link>
+                </div>
+
+                {/* Product 2 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Ecommerce-Service" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">E-Commerce</h3>
+                    <p className="text-gray-200 text-sm font-normal">Scalable online store platforms.</p>
+                  </Link>
+                </div>
+
+                {/* Product 3 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/LearningExperience-Platform" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">LXP</h3>
+                    <p className="text-gray-200 text-sm font-normal">Learning Experience Platform for training.</p>
+                  </Link>
+                </div>
+
+                {/* Product 4 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/CustomerRelationship-Management" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">CRM</h3>
+                    <p className="text-gray-200 text-sm font-normal">Customer Relationship Management platform.</p>
+                  </Link>
+                </div>
+
+                {/* Product 5 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Home-Automation" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">Home Automation</h3>
+                    <p className="text-gray-200 text-sm font-normal">Smart devices for modern living.</p>
+                  </Link>
+                </div>
+
+                {/* Product 6 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Vehicle-Tracking" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">Vehicle Tracking</h3>
+                    <p className="text-gray-200 text-sm font-normal">Real-time GPS tracking solutions.</p>
+                  </Link>
+                </div>
+
+                {/* Product 7 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Battery-Management-System" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold text-base">Battery Management System</h3>
+                    <p className="text-gray-200 text-sm font-normal">Reliable power and energy optimization.</p>
+                  </Link>
+                </div>
+
+                {/* Product 8 */}
+                <div className="group cursor-pointer transition-all hover:scale-105 p-4 hover:bg-gray-800/50 rounded-lg text-start">
+                  <Link to="/Attendance-System" className="text-blue-400 hover:text-blue-300 font-medium">
+                    <h3 className="font-semibold">AI Attendance System</h3>
+                    <p className="text-gray-200 text-sm font-normal">Smart AI-based attendance tracking.</p>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </li>
+
 
           {/* Industries */}
           <li><Link to="/Industries" className={getLinkClasses(pathname, '/Industries')}>INDUSTRIES</Link></li>
@@ -372,6 +449,104 @@ function Navbar() {
                     >
                       <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Digital Marketing</h3>
                     </Link>
+
+                  </div>
+                </div>
+              )}
+            </li>
+
+            {/* Products Dropdown - Mobile */}
+            <li ref={servicesDropdownRef} className="">
+              <div
+                className="flex justify-between items-center py-3 px-4 cursor-pointer hover:bg-white/10 transition-colors"
+                onClick={() => toggleMobileDropdown('product')}
+              >
+                <div className="flex items-center">
+                  {/* <FaCode className="mr-3" /> */}
+                  <span className="text-white">Our Products</span>
+                </div>
+                {mobileDropdowns.product ?
+                  <FaChevronUp className="text-white" /> :
+                  <FaChevronDown className="text-white" />
+                }
+              </div>
+              {mobileDropdowns.product && (
+                <div className="bg-black/30 backdrop-blur-lg border-t border-white/10 p-4 animate-fadeIn ">
+                  <div className="grid grid-cols-1 gap-1.5">
+                    <Link
+                      to="/Billing-Software"
+                      className="block py-1 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Billing Software</h3>
+                    </Link>
+
+                    <div className="border-t border-white/10 "></div>
+
+                    <Link
+                      to="/Ecommerce-Service"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">E-Commerce</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/LearningExperience-Platform"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">LXP</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/CustomerRelationship-Management"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">CRM</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Home-Automation"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Home Automation</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Vehicle-Tracking"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">Vehicle Tracking</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Battery-Management-System"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">BMS</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    <Link
+                      to="/Attendance-System"
+                      className="block py-2 px-3 rounded hover:bg-blue-900/50 transition-colors group"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      <h3 className="font-normal text-base text-blue-400 group-hover:text-blue-300 transition-colors">AI Attendance System</h3>
+                    </Link>
+                    <div className="border-t border-white/10"></div>
+
+                    
 
                   </div>
                 </div>
