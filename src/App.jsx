@@ -34,6 +34,14 @@ import { Helmet } from "react-helmet";
 import CookieConsent from "./Components/CookieConsent";
 import CookiePolicy from "./Components/CookiePolicy";
 import NotFound from "./Components/NotFound";
+import Billing from "./Pages/Products/BillingSoftware/Billing";
+import LXPlatform from "./Pages/Products/LXP/LXPlatform";
+import CRManagement from "./Pages/Products/CRM/CRManagement";
+import Ecom from "./Pages/Products/Ecommerce/ecom";
+import HomeAuto from "./Pages/Products/HomeAutomation/HomeAuto";
+import VehicleTracking from "./Pages/Products/VehicleTracking/VehicleTracking";
+import BMS from "./Pages/Products/BMS/BMS";
+import AIAttendanceSystem from "./Pages/Products/AISystem/AIAttendanceSystem";
 
 function App() {
   return (
@@ -79,6 +87,19 @@ function App() {
         <Route path="/Agriculture" element={<Agriculture />} />
         <Route path="/Manufaturing" element={<Manufacturing />} />
 
+        {/* Product Pages */}
+        <Route path="/Billing-Software" element={<Billing/>} />
+        <Route path="/Ecommerce-Service" element={<Ecom/>} />
+        <Route path="/LearningExperience-Platform" element={<LXPlatform/>}/>
+        <Route path="/CustomerRelationship-Management" element={<CRManagement/>}/>
+        <Route path="/Home-Automation" element={<HomeAuto/>} />
+        <Route path="/Vehicle-Tracking" element={<VehicleTracking/>}/>
+        <Route path="/Battery-Management-System" element={<BMS/>}/>
+        <Route path="/Attendance-System" element={<AIAttendanceSystem/>}/>
+
+
+
+        
         {/* Services */}
         <Route path="/Web-Development" element={<WebDevelopment />} />
         <Route path="/App-Development" element={<SoftwareDevelopment />} />
