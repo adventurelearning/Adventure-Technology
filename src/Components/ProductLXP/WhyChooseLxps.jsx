@@ -58,7 +58,7 @@ const features = [
   { icon: <IconGlobe />, title: "Global Learning", description: "Support multi-language and cross-cultural learning experiences." },
 ];
 
-const WhyChooselxp = () => {
+const WhyChooseLxps = () => {
   return (
     <div className="bg-black text-white px-6 md:px-12 lg:px-20 py-16 md:py-24 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -110,4 +110,4 @@ const WhyChooselxp = () => {
   );
 };
 
-export default WhyChooselxp;
+export default WhyChooseLxps;

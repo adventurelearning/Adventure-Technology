@@ -5,13 +5,13 @@ import LxpSupport from '../../../Components/ProductLXP/LxpSupport'
 import LxpFAQ from '../../../Components/ProductLXP/LxpFAQ'
 import LxpSupportIndustries from '../../../Components/ProductLXP/LxpSupportIndustries'
 import LxpFocus from '../../../Components/ProductLXP/LxpFocus'
-import WhyChooselxp from '../../../Components/ProductLXP/WhyChooselxp'
+import WhyChooseLxps from '../../../Components/ProductLXP/WhyChooseLxps'
 
 const LXPlatform = () => {
   return (
     <div>
       <LxpHome/>
-      <WhyChooselxp/>
+      <WhyChooseLxps/>
       <LxpFocus/>
       <KeyFeatures/>
       <LxpSupportIndustries/>

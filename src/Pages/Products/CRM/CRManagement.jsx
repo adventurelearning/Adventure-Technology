@@ -5,7 +5,7 @@ import CRMFocus from '../../../Components/ProductCRM/CRMFocus'
 import KeyFeatures from '../../../Components/ProductCRM/KeyFeatures'
 import CRMSupportIndustry from '../../../Components/ProductCRM/CRMSupportIndustry'
 import CRMSupport from '../../../Components/ProductCRM/CRMSupport'
-import CrmFAQ from '../../../Components/ProductCRM/CrmFAQ.JSX'
+import CrmFAQ from '../../../Components/ProductCRM/CrmFAQ'
 
 
 const CRManagement = () => {
