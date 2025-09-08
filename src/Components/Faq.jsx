@@ -15,12 +15,12 @@ const faqData = [
     answer:
       'We provide custom web apps, enterprise software, APIs, cloud solutions, desktop apps, and software consulting tailored to your business needs.',
   },
-  {
-    id: 3,
-    question: 'What is the average cost and timeline for developing a mobile app?',
-    answer:
-      'Costs vary by complexity. Simple apps take 2–4 months ($10k–$30k), complex ones take 6+ months ($50k+). We provide estimates after a detailed consultation.',
-  },
+  // {
+  //   id: 3,
+  //   question: 'What is the average cost and timeline for developing a mobile app?',
+  //   answer:
+  //     'Costs vary by complexity. Simple apps take 2–4 months ($10k–$30k), complex ones take 6+ months ($50k+). We provide estimates after a detailed consultation.',
+  // },
   {
     id: 4,
     question: 'How do you ensure the security and quality of your software?',
@@ -29,9 +29,9 @@ const faqData = [
   },
   {
     id: 5,
-    question: 'Can you handle both frontend and backend development?',
+    question: 'Can you create projects in any programming language?',
     answer:
-      'Yes! We are a full-stack team experienced in frontend (React, Angular) and backend (Node.js, Django, etc.), providing complete end-to-end development.',
+      'Yes! We have the expertise to develop complete projects in any programming language, covering both frontend and backend, tailored to your business needs.'
   },
   {
     id: 6,
@@ -82,11 +82,10 @@ const Faq = () => {
             >
               <button
                 onClick={() => toggleAccordion(item.id)}
-                className={`w-full flex items-center justify-between py-4 sm:py-5 px-4 sm:px-6 text-gray-100 font-semibold focus:outline-none transition duration-300 ${
-                  expandedId === item.id
+                className={`w-full flex items-center justify-between py-4 sm:py-5 px-4 sm:px-6 text-gray-100 font-semibold focus:outline-none transition duration-300 ${expandedId === item.id
                     ? 'bg-gray-700 rounded-t-xl border-b border-gray-600'
                     : 'bg-gray-800 hover:bg-gray-700 rounded-xl'
-                }`}
+                  }`}
               >
                 <span className="text-base sm:text-lg text-left pr-4">{item.question}</span>
                 {expandedId === item.id ? (
