@@ -8,7 +8,7 @@ import EcomSupport from '../../../Components/ProductEcommerce/EcomSupport';
 import EcomFAQ from '../../../Components/ProductEcommerce/EcomFAQ';
 import EcomContent from '../../../Components/ProductEcommerce/EcomContent';
 
-const Ecom = () => {
+const EcomProduct = () => {
   return (
     <div>
       <EcommerceHome/>
@@ -16,11 +16,11 @@ const Ecom = () => {
       <ECommerceFocus/>
       <KeyFeatures/>
       <EcomContent/>
-      <EcomSupportIndustries path='/EcomSupportIndustries'/>
+      <EcomSupportIndustries />
       <EcomSupport/>
       <EcomFAQ/>
     </div>
   )
 }
 
-export default Ecom;
+export default EcomProduct;
