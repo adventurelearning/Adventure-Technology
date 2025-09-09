@@ -1,5 +1,5 @@
 import React from 'react';
-import BillingImg from '../../assets/billingscreen.png';
+import BillingImg from '../../assets/Product/Billing_Software/billingscreen.png';
 import { Link } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 const BillHome = () => {

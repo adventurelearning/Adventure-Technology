@@ -136,7 +136,7 @@ const HomeAutomationIndustries = () => {
      <div id='Ecomvdo' className="bg-black text-white px-6 sm:px-10 lg:px-16 py-14 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
             Powering Smart Living with Home Automation
           </h1>
           <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl">

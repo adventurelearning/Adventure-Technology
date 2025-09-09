@@ -11,7 +11,7 @@ const AIAttendanceSupport = () => {
           <div className="lg:w-1/2 w-full flex flex-col justify-center px-6 sm:px-10 py-8 order-2 lg:order-1">
             
             {/* For Mobile: Heading first */}
-            <h2 className="text-2xl sm:text-3xl hidden lg:text-5xl font-bold text-white leading-tight mb-6 lg:hidden">
+            <h2 className="text-2xl sm:text-3xl hidden lg:text-5xl font-semibold text-white leading-tight mb-6 lg:hidden">
               Reliable AI Attendance Support
             </h2>
 
@@ -94,7 +94,7 @@ const AIAttendanceSupport = () => {
 
           {/* Left Side (Box Content + Heading for Desktop) */}
           <div className="lg:w-1/2 w-full order-1 lg:order-2">
-            <h2 className="lg:block text-2xl md:text-5xl font-bold text-white leading-tight mb-6 px-1 sm:px-10 lg:px-0">
+            <h2 className="lg:block text-2xl md:text-5xl font-semibold text-white leading-tight mb-6 px-1 sm:px-10 lg:px-0">
               Reliable AI Attendance Support
             </h2>
 

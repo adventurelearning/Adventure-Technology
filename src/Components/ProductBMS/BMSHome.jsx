@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 
 const BMSHome = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black text-white">   
+    <div className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">   
       {/* Hero Section */}
       <div className="mx-auto px-6 md:pl-16 py-12">
         <div className="flex flex-col md:flex-row items-center md:items-start">
@@ -37,7 +37,7 @@ const BMSHome = () => {
             <img 
               src={"https://inrorwxhloqllk5p-static.micyjz.com/cloud/lpBpkKiqloSRlkkmqrrrjo/ADAYO-BMS.jpg"} 
               alt="Battery Management System Illustration" 
-              className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:mr-10"
+              className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-xl lg:mr-10"
             />
           </div>
         </div>

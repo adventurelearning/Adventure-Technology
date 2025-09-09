@@ -163,7 +163,7 @@ const CRMSupportIndustry = () => {
     <div className="bg-black text-white px-6 sm:px-10 lg:px-16 py-14 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-snug tracking-tight mb-4">
             Empowering CRM across industries
           </h1>
           <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto lg:mx-0">

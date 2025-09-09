@@ -71,7 +71,7 @@ const EcomFAQ = () => {
  <div className="bg-gradient-to-b from-black via-slate-900 to-blue-950 pb-12">
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Title */}
-      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-left md:text-center mb-10 sm:mb-12 leading-snug">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-white text-left md:text-center mb-10 sm:mb-12 leading-snug">
         Frequently Asked Questions about{" "}
         <span className="text-blue-400">Shopping</span>
       </h2>

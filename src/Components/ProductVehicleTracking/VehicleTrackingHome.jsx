@@ -5,7 +5,7 @@ import { HashLink } from "react-router-hash-link";
 
 const VehicleTrackingHome = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black text-white">
+    <div className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
       {/* Hero Section */}
       <div className="mx-auto px-6 md:pl-16 py-12">
         <div className="flex flex-col md:flex-row items-center md:items-start">

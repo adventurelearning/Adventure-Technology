@@ -67,41 +67,42 @@ const features = [
 
 const WhyChooseAIAttendance = () => {
   return (
-    <div className="bg-black text-white px-4 md:px-12 lg:px-20 py-16 md:py-24 font-sans">
+    <div className="bg-black text-white px-6 md:px-12 lg:px-20 py-16 font-sans">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row lg:space-x-12 items-center lg:items-start">
-
-          {/* Left Section */}
-          <div className="lg:w-1/2 space-y-6 mb-12 lg:mb-0 text-start lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight tracking-wide">
+        <div className="flex flex-col lg:flex-row lg:space-x-16 items-start">
+          {/* Left Side Text */}
+          <div className="lg:w-1/3 mb-12 lg:mb-0 text-center lg:text-left space-y-6 ">
+            <h1 className="text-3xl sm:text-4xl  font-semibold leading-tight tracking-wide">
               Why choose {" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
                 AI Attendance System
               </span>
               {" "} for your organization?
+
             </h1>
-            <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed text-justify">
               Ensure accurate, real-time attendance with AI-powered facial recognition. Our embedded solution works offline or online, prevents spoofing, and provides flexible storage options — making attendance management smarter, faster, and secure.
             </p>
           </div>
 
-          {/* Right Section: Features Grid */}
-          <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 gap-y-10">
+
+          {/* Right Side Features */}
+          <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="group space-y-2 transform transition-transform duration-300 hover:-translate-y-1">
-                <div className="flex items-center mb-2">
-                  <div className="relative">
-                    <span className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
-                    <span className="relative z-10">{feature.icon}</span>
-                  </div>
-                  <div className="text-sm font-semibold tracking-wide text-gray-400 group-hover:text-blue-300 transition-colors">
-                    0{index + 1}
-                  </div>
+              <div
+                key={index}
+                className="h-full flex flex-col p-6 bg-gray-900 border border-blue-500 rounded-2xl hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+              >
+                {/* Icon */}
+                <div className="flex items-center justify-center w-14 h-14 rounded-xl bg-black border border-blue-500 text-blue-400 mb-4">
+                  {feature.icon}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold text-gray-100 group-hover:text-white transition-colors">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-400 text-sm md:text-base">{feature.description}</p>
+
+                {/* Title + Description */}
+                <div className="flex-grow">
+                  <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 text-sm">{feature.description}</p>
+                </div>
               </div>
             ))}
           </div>

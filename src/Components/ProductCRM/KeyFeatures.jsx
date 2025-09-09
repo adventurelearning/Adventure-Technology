@@ -76,7 +76,7 @@ const KeyFeatures = () => {
         
         {/* Heading Section */}
         <section className="text-left md:text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl  font-semibold mb-4 tracking-tight">
             Key{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
               Features

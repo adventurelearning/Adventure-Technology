@@ -1,5 +1,5 @@
 import React from "react";
-import BillImg from '../../assets/Bills.png';
+import BillImg from '../../assets/Product/Billing_Software/billscreen.jpeg';
 const BillContent = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-black  p-6">
