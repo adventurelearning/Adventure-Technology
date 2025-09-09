@@ -1,5 +1,5 @@
 import React from 'react';
-import crm from '../../assets/crm2.png';
+import crm from '../../assets/Product/CRM/crm2.png';
 import { Link } from 'react-router-dom';
 const CrmHome = () => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import BillImg from '../../assets/ecomorder.png';
+import BillImg from '../../assets/Product/Ecommerce/EcomOrder.jpeg';
 const EcomContent = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-black  p-6">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import backgroundVideoMobile from '../../assets/billingsoftware.mp4';
+import backgroundVideoMobile from '../../assets/Product/Billing_Software/Demobill.mp4';
 // Icon Components (same as before)
 const IconStore = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shopping-bag h-6 w-6 mr-3">
@@ -237,7 +237,7 @@ const BillSupportIndustry = () => {
 
                 {/* Heading */}
                 <div className="mb-10 text-left lg:text-left">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mb-4">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl  font-semibold leading-snug tracking-tight mb-4">
                         Serving businesses across diverse industries
                     </h1>
                     <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto lg:mx-0">

@@ -17,7 +17,7 @@ const BMSFocus = () => {
 
         {/* Text Section */}
         <div className="w-full lg:w-1/2 space-y-6 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight">
+          <h1 className="text-3xl sm:text-4xl  font-semibold leading-snug tracking-tight">
             Focus on Performance,{" "}
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
               Not Downtime

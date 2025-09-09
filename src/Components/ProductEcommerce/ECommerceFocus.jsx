@@ -1,5 +1,5 @@
 import React from 'react';
-import EcomMob from '../../assets/ecommob1.svg'
+import EcomMob from '../../assets/Product/Ecommerce/Frame 18.svg'
 const ECommerceFocus = () => {
   return (
     <div className="bg-black text-white px-6 sm:px-8 lg:px-12 py-12 font-sans">
@@ -16,7 +16,7 @@ const ECommerceFocus = () => {
 
         {/* Text Section */}
         <div className="w-full lg:w-1/2 space-y-6 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight">
+          <h1 className="text-3xl sm:text-4xl  font-semibold leading-snug tracking-tight">
             Power Your Store, <span className="block"> Grow Without Limits </span>
           </h1>
            <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import backgroundVideoMobile from '../../assets/ecommerce.mp4';
+import backgroundVideoMobile from '../../assets/Product/Ecommerce/DemoEcom.mp4';
 // Reusing your icons but with ecommerce-oriented categories
 const IconStore = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -173,7 +173,7 @@ const EcomSupportIndustries = () => {
     <div id='Ecomvdo' className="bg-black text-white px-6 sm:px-10 lg:px-16 py-14 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-snug tracking-tight mb-4">
             Powering E-Commerce Across Industries
           </h1>
           <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto lg:mx-0">

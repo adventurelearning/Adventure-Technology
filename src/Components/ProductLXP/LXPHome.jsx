@@ -1,5 +1,5 @@
 import React from 'react';
-import lxp from '../../assets/lxph1.svg'
+import lxp from '../../assets/Product/LXP/lxph1.svg'
 import { Link } from 'react-router-dom';
 const LxpHome = () => {
   return (

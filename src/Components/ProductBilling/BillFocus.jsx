@@ -1,5 +1,5 @@
 import React from 'react';
-import billlogin from '../../assets/billlogin.png'
+import billlogin from '../../assets/Product/Billing_Software/billlogin.png'
 const BillFocus = () => {
   return (
     <div className="bg-black text-white px-6 sm:px-8 lg:px-12 py-12 font-sans">
@@ -16,7 +16,7 @@ const BillFocus = () => {
 
         {/* Text Section */}
         <div className="w-full lg:w-1/2 space-y-6 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight">
+          <h1 className="text-3xl sm:text-4xl  font-semibold leading-snug tracking-tight">
             Focus on Growth, 
             <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">Not Paperwork</span>
           </h1>

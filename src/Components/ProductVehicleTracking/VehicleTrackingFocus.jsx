@@ -1,5 +1,4 @@
 import React from 'react';
-import EcomMob from '../../assets/ecommob1.svg';
 
 const VehicleTrackingFocus = () => {
   return (
@@ -17,7 +16,7 @@ const VehicleTrackingFocus = () => {
 
         {/* Text Section */}
         <div className="w-full lg:w-1/2 space-y-6 text-left lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight">
+          <h1 className="text-3xl sm:text-4xl  font-semibold leading-snug tracking-tight">
            Real-Time Vehicle  <span className="block"> Tracking System </span>
           </h1>
           <p className="text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0">

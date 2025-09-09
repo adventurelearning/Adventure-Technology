@@ -57,7 +57,7 @@ const BMSSupportIndustry = () => {
 
                 {/* Heading */}
                 <div className="mb-10 text-left lg:text-left">
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-snug tracking-tight mb-4">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-snug tracking-tight mb-4">
                         Powering Industries with{" "}
                         <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-500">
                             Smart Battery Management

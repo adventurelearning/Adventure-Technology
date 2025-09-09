@@ -1,5 +1,5 @@
 import React from 'react';
-import Ecom from '../../assets/Ecommerce.svg';
+import Ecom from '../../assets/Product/Ecommerce/Ecommerce.svg';
 import { Link } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
 const EcommerceHome = () => {
