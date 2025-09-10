@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 const AboutCount = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [stats, setStats] = useState([
-        { value: 0, target: 150, label: 'Projects Completed', suffix: '+' },
+        { value: 0, target: 1200, label: 'Projects Completed', suffix: '+' },
         { value: 0, target: 30, label: 'Team Members', suffix: '+' },
         { value: 0, target: 11, label: 'Years Experience', suffix: '+' },
-        { value: 0, target: 10, label: 'Industries', suffix: '+' }
+        { value: 0, target: 7, label: 'Industries', suffix: '+' }
     ]);
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const AboutCount = () => {
             setStats(prevStats =>
                 prevStats.map(stat => ({
                     ...stat,
-                    value: stat.value < stat.target ? stat.value + 1 : stat.target
+                    value: stat.value < stat.target ? stat.value + 10 : stat.target
                 }))
             );
         }, 30);

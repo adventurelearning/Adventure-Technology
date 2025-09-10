@@ -356,9 +356,9 @@ const InterForm = () => {
                                 onChange={handleChange}
                                 className="w-full bg-gray-800/70 border border-gray-700 px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-white"
                             >
-                                <option value="">-- Select Mode --</option>
-                                <option value="online">Online Training</option>
-                                <option value="offline">Offline Training</option>
+                                <option value="" className="bg-gray-800">-- Select Mode --</option>
+                                <option value="online" className="bg-gray-800">Online Training</option>
+                                <option value="offline" className="bg-gray-800">Offline Training</option>
                             </select>
                             {errors.trainingMode && <p className="text-red-400 text-sm mt-1">{errors.trainingMode}</p>}
                         </div>

@@ -31,7 +31,7 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
     const handleMouseLeave = () => {
         setOpacity(0);
     };
-    
+
     return (
         <div className="bg-black  pt-8 md:py-16 -mt-24">
             <div className="container mx-auto text-white flex flex-col md:flex-row items-center justify-around px-6">
@@ -92,12 +92,13 @@ const Achievements = ({ children, className = "h-fit lg:mt-2", spotlightColor = 
 
 
                         <div className="text-start border-l border-gray-400 h-full pl-8 self-start">
-                            <div className="text-4xl font-bold text-blue-600">150+</div>
-                            <h3 className="mt-2 text-xl font-semibold text-white">Federal Agency Partnerships</h3>
+                            <div className="text-4xl font-bold text-blue-600">100%</div>
+                            <h3 className="mt-2 text-xl font-semibold text-white">Client Satisfaction & Trust</h3>
                             <p className="mt-2 text-white w-3/4">
-                                We've built trusted relationships with over 150 federal agencies, collaborating to solve mission-critical challenges and deliver lasting impact.
+                                We are committed to delivering measurable results and long-term value, ensuring every client engagement is built on trust, transparency, and excellence.
                             </p>
                         </div>
+
 
 
                         {/* CTA Box */}
